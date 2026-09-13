@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f6f2e9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Ronnie" />
+    <meta
+      name="description"
+      content="A little home for Ronnie. Feed her, play together, and make her day."
+    />
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <title>Ronnie · A little home</title>
+  </head>
+  <body>
+    <aside class="desktop-note" aria-label="About the game">
+      <span class="wordmark">A LITTLE HOME</span>
+      <h1>Small paws.<br />Big feelings.</h1>
+      <p>A sunny spot, a full bowl,<br />and her favorite person. You.</p>
+      <div class="desktop-line"></div>
+      <p class="subtle">Meet Ronnie.<br />Your everyday little companion.</p>
+      <a
+        href="https://github.com/joshpled/ronnie-game"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Made with love, in progress ↗</a
+      >
+    </aside>
+    <main class="app">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">A LITTLE HOME</p>
+          <div class="name-line">
+            <h1>Ronnie</h1>
+            <span class="girl-tag">good girl club</span>
+          </div>
+        </div>
+        <button class="icon-button" id="help" aria-label="How to play">
+          ?
+        </button>
+      </header>
+      <section class="needs" aria-label="Ronnie’s needs">
+        <div class="need">
+          <div class="need-label">
+            <span><span aria-hidden="true">◒</span> Fullness</span
+            ><output id="fullness-value">68%</output>
+          </div>
+          <div
+            class="meter"
+            role="progressbar"
+            aria-label="Fullness"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="68"
+            id="fullness"
+          >
+            <span></span>
+          </div>
+        </div>
+        <div class="need">
+          <div class="need-label">
+            <span><span aria-hidden="true">♡</span> Happiness</span
+            ><output id="happiness-value">76%</output>
+          </div>
+          <div
+            class="meter"
+            role="progressbar"
+            aria-label="Happiness"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="76"
+            id="happiness"
+          >
+            <span></span>
+          </div>
+        </div>
+        <div class="need">
+          <div class="need-label">
+            <span><span aria-hidden="true">☼</span> Energy</span
+            ><output id="energy-value">82%</output>
+          </div>
+          <div
+            class="meter"
+            role="progressbar"
+            aria-label="Energy"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="82"
+            id="energy"
+          >
+            <span></span>
+          </div>
+        </div>
+      </section>
+      <section class="room-shell" aria-label="Ronnie’s room">
+        <div class="room-label">
+          <span class="sun" aria-hidden="true">☀</span> Her happy place
+        </div>
+        <div
+          id="game"
+          role="img"
+          aria-label="Ronnie in her cozy room. Tap the floor to call her over, or use the care buttons below."
+        ></div>
+        <div class="loading" id="loading">Making a little room for Ronnie…</div>
+        <button class="call-hint" id="call">
+          ⌖ <span>Tap the rug to call her over</span>
+        </button>
+      </section>
+      <div class="moment">
+        <span class="status-dot" aria-hidden="true"></span>
+        <p id="message" role="status" aria-live="polite">
+          She’s so happy you’re here.
+        </p>
+      </div>
+      <section class="actions" aria-label="Care for Ronnie">
+        <button data-action="feed" disabled>
+          <span class="action-icon" aria-hidden="true"
+            ><svg viewBox="0 0 32 32">
+              <path d="M5 14h22l-3 11H8z" />
+              <ellipse cx="16" cy="14" rx="11" ry="4" />
+              <path d="M11 9l1-2m5 1V5m5 5 2-2" /></svg></span
+          ><strong>Feed</strong><span>A little snack</span>
+        </button>
+        <button data-action="pet" disabled>
+          <span class="action-icon" aria-hidden="true"
+            ><svg viewBox="0 0 32 32">
+              <path
+                d="M16 26 5 15C-1 6 11 1 16 10 21 1 33 6 27 15Z"
+              /></svg></span
+          ><strong>Pet</strong><span>All the love</span>
+        </button>
+        <button data-action="play" disabled>
+          <span class="action-icon" aria-hidden="true"
+            ><svg viewBox="0 0 32 32">
+              <circle cx="16" cy="16" r="12" />
+              <path d="M6 9c7 0 17 10 17 16M9 27c0-7 10-17 16-17" /></svg></span
+          ><strong>Play</strong><span>Chase a ball</span>
+        </button>
+        <button data-action="rest" disabled>
+          <span class="action-icon" aria-hidden="true"
+            ><svg viewBox="0 0 32 32">
+              <path d="M24 23A12 12 0 0 1 10 4a12 12 0 1 0 14 19Z" />
+              <path d="M22 5v6m-3-3h6" /></svg></span
+          ><strong id="rest-label">Rest</strong
+          ><span id="rest-description">A quiet moment</span>
+        </button>
+      </section>
+      <footer class="app-footer">
+        <span id="bond">♡ 0 little moments together</span
+        ><span id="save-status">Saved on this device</span>
+      </footer>
+    </main>
+    <dialog id="help-dialog">
+      <form method="dialog">
+        <button class="icon-button close" aria-label="Close instructions">
+          ×
+        </button>
+      </form>
+      <p class="eyebrow">WELCOME TO HER WORLD</p>
+      <h2>A little care.<br />A lot of love.</h2>
+      <p>
+        Tap the floor to call Ronnie over, or tap her for a little affection.
+        You can also use the buttons below her room.
+      </p>
+      <ul>
+        <li><strong>Feed</strong> fills her bowl and restores fullness.</li>
+        <li><strong>Pet</strong> gives her a happiness boost.</li>
+        <li>
+          <strong>Play</strong> sends her chasing a ball. It uses a little
+          energy.
+        </li>
+        <li>
+          <strong>Rest</strong> restores energy over time, even while you’re
+          away. Tap Wake when she’s ready.
+        </li>
+      </ul>
+      <p>
+        Her needs change gently. Time away is capped at eight hours, so there’s
+        no rush to return.
+      </p>
+      <p class="privacy-note">
+        Progress stays in this browser on this device. Clearing website data
+        clears the save. This early prototype reuses her existing poses;
+        dedicated eating and sleeping animations are next.
+      </p>
+      <button class="primary" id="back-to-ronnie">Back to Ronnie</button>
+    </dialog>
+    <noscript
+      >This game needs JavaScript enabled to bring Ronnie to life.</noscript
+    >
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
