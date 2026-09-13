@@ -21,7 +21,9 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 
 ## Structure and rules
 
-- Animation direction: preserve Ronnie’s existing sprite artwork and style. Josh rejected the replacement joint rig/body design. Refine movement within that style; slower is not automatically better. A new rig or visual redesign requires Josh’s explicit direction.
+- Canonical character reference: `public/assets/ronnie.webp`, the original 1536 × 2288 game atlas, and Josh’s original dog photos. Atlas SHA-256: `b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e`.
+- Design exclusion: the withdrawn 16-frame walk study and replacement rig are rejected material, not references. Do not retrieve, display, regenerate from, or use their images, prompts, derivatives, prior messages, caches or Git-history versions to guide future design. Keep only this exclusion rule; do not carry their visual descriptions forward into plans, summaries, memory or agent handoffs.
+- Preserve the original sprite style when refining motion. Slower is not automatically better. A new rig or visual redesign requires Josh’s explicit direction.
 
 - Care rules: `src/care.ts`; browser state: `src/main.ts`; animations and movement: `src/Room.ts`.
 - Keep care rules independent of animation timing. Award actions only once, after completion.
