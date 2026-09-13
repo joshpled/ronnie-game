@@ -6,6 +6,8 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 
 - Read `KANBAN.md` before substantive work. It is the canonical project board.
 - Delegate a bounded board synchronization to `project_manager` at planning, review, blocker and merge checkpoints. Use `.codex/agents/project_manager.toml`; if the role is not loaded, pass its instructions to a normal subagent. See `docs/project-management.md`.
+- Before spawning, check the current agent roster. Reuse the existing `project_manager` via follow-up when available; do not create a new PM for every checkpoint. Keep the main agent and PM as the ongoing team. Additional agents require explicit authorization or applicable skill instructions and a bounded task.
+- Treat completed QA runs as historical work, not current team members. Report live status separately from saved roles and sidebar history; never claim a partial tool roster is the full sidebar. Preserve useful QA evidence in repo docs before retiring a run, and only claim closure/archive when a supported tool confirms it.
 - The PM owns board edits; implementation agents provide evidence and avoid concurrent writes. Keep ideas distinct from authorized scope. A deployed preview is not Done: verify acceptance and merge first.
 - Keep one implementation feature active unless Josh explicitly changes the order. PM checkpoint work may accompany it. No unattended polling is configured.
 

@@ -10,6 +10,14 @@ The reusable role is in [`.codex/agents/project_manager.toml`](../.codex/agents/
 
 The agent runs at active work checkpoints. There is no background schedule or automatic GitHub webhook synchronization. The board's last-verified date makes that limit visible. A request for unattended monitoring would be separate work.
 
+## Agent roster and reuse
+
+The ongoing team is the main development/coordinating agent and `project_manager`. Before creating a PM, inspect the available roster and send a follow-up to the existing one. If it is no longer available in a new session, load the saved role once for that session. Temporary QA agents are added only when authorized and are not permanent team members.
+
+At the 2026-09-13 cleanup check, the runtime exposed the main agent plus completed `project_manager`, `blind_3`, `standard_qa` and `final_qa` runs. Josh reported 20 subagents in the sidebar; the tool roster was incomplete and cannot account for all sidebar entries. All exposed child runs had completed. No sidebar records were removed: the available controls could not close/archive subagents, and computer control of Codex was blocked.
+
+Keep useful outcomes in validation docs and link temporary work to its Kanban card. After a temporary run, record completion and use a supported close/archive control if available. Do not repeatedly interrupt completed agents or modify application storage to hide records. When listing the team, distinguish ongoing roles, currently running agents, and historical runs.
+
 ## Move a card
 
 | Column      | Entry condition                                                              |
