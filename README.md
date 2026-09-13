@@ -44,6 +44,8 @@ This first prototype reuses the approved desktop pet atlas. Feeding uses her dow
 
 ## Project map
 
+The [right-facing walk study](docs/animation-preview/README.md) is a separate artwork preview with sixteen proposed poses and a frame-by-frame comparison. It is not integrated into the game.
+
 Start with [the Kanban board](KANBAN.md) for current work, open reviews and future ideas. The [project manager workflow](docs/project-management.md) explains how the agent keeps it current from idea to completion.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the ownership boundaries, [docs/decisions.md](docs/decisions.md) for decisions and tradeoffs, and [docs/validation.md](docs/validation.md) for checks and remaining device testing.

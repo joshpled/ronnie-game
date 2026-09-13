@@ -4,20 +4,19 @@ Last reconciled: **2026-09-13**. Ronnie is a girl (she/her). The product is an i
 
 This file is the canonical board. Card details below own scope, evidence and next actions; the table is an index. A live preview does not mean a pull request has merged. Ideas are not authorization to implement them.
 
-| Ideas                                                      | Ready | In progress | Review                                          | Done                                      |
-| ---------------------------------------------------------- | ----- | ----------- | ----------------------------------------------- | ----------------------------------------- |
-| [RON-004 — Physical iPhone validation (pending)](#ron-004) | —     | —           | [RON-002 — Refine existing motion](#ron-002)    | [RON-001 — First playable room](#ron-001) |
-| [RON-005 — Denser walk frames](#ron-005)                   |       |             | [RON-003 — Project manager and board](#ron-003) |                                           |
-| [RON-006 — Eating animation](#ron-006)                     |       |             |                                                 |                                           |
-| [RON-007 — Sleeping animation](#ron-007)                   |       |             |                                                 |                                           |
-| [RON-008 — Toy carrying](#ron-008)                         |       |             |                                                 |                                           |
-| [RON-009 — Capacitor iPhone package](#ron-009)             |       |             |                                                 |                                           |
+| Ideas                                                      | Ready | In progress                                              | Review                                       | Done                                            |
+| ---------------------------------------------------------- | ----- | -------------------------------------------------------- | -------------------------------------------- | ----------------------------------------------- |
+| [RON-004 — Physical iPhone validation (pending)](#ron-004) | —     | [RON-005 — 16-frame right-facing walk preview](#ron-005) | [RON-002 — Refine existing motion](#ron-002) | [RON-001 — First playable room](#ron-001)       |
+| [RON-006 — Eating animation](#ron-006)                     |       |                                                          |                                              | [RON-003 — Project manager and board](#ron-003) |
+| [RON-007 — Sleeping animation](#ron-007)                   |       |                                                          |                                              |                                                 |
+| [RON-008 — Toy carrying](#ron-008)                         |       |                                                          |                                              |                                                 |
+| [RON-009 — Capacitor iPhone package](#ron-009)             |       |                                                          |                                              |                                                 |
 
 ## How the board moves
 
 - **Ideas:** Possible work awaiting Josh's scope and priority decision.
 - **Ready:** Josh selected the scope and acceptance criteria are clear; no implementation started.
-- **In progress:** The single active work item. Currently empty: motion and project manager setup both await review/merge decisions.
+- **In progress:** The single active work item. Josh approved the limited RON-005 art preview ahead of game integration; RON-002 remains in Review.
 - **Review:** Deliverable exists and validation is recorded; review, acceptance or merge remains.
 - **Done:** Acceptance criteria have evidence. Repository changes require a verified merged PR; device testing requires an actual device report.
 
@@ -25,6 +24,7 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ## Change history
 
+- **2026-09-13:** Moved RON-003 to Done after the coordinating agent verified PR #3 merged at 17:32:59 UTC as `91bc668afa58cdac8389956e482382f8414325c5`; remote and local setup branches were deleted. Moved RON-005 to In progress for Josh's approved 16-frame right-facing walk preview and phone-size before/after loop. This approval excludes game integration, left-facing frames and merging PR #2; other ideas remain uncommitted.
 - **2026-09-13:** Moved RON-003 to Review after [PR #3](https://github.com/joshpled/ronnie-game/pull/3) opened. Role/workflow, board initialization, implementation review, TOML validation, local links/anchors, formatting and main-derived source checks (5 tests) are complete, as reported by the coordinating agent. No active implementation remains; PRs #2 and #3 are pending review/merge.
 - **2026-09-13:** Initialized from the documented prototype and motion work plus current PR status supplied by the coordinating agent: PR #1 merged, PR #2 open. Added the explicitly requested PM setup and retained future work and pending device validation without claiming approval or completion.
 
@@ -56,12 +56,12 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ### RON-003 — Project manager and board
 
-- **Status:** Review
+- **Status:** Done
 - **Owner:** Codex project manager and coordinating agent; Josh workflow owner
-- **Source / evidence:** Josh's request: “Add a project manager agent that keeps track of a kanban board so as to keep us organized from idea to completion.” [Open PR #3](https://github.com/joshpled/ronnie-game/pull/3), [agent role](.codex/agents/project_manager.toml), [workflow](docs/project-management.md) and this board are the reviewable artifacts. The coordinating agent reports valid TOML fields, passing local links/anchors and formatting, passing `npm run check` on this main-derived branch (5 tests), and completed implementation review.
-- **Acceptance:** A reusable project manager role and invocation workflow exist; this versioned board records ideas through completion with owners, criteria and evidence; one active item is enforced; current PR status is represented accurately; documentation is reviewed and the setup PR is merged.
-- **Next action:** Josh reviews the project manager workflow and decides whether to request changes or merge PR #3. Recheck current PR checks before a merge.
-- **Dependency / boundary:** Awaiting acceptance/merge; setup remains unmerged. RON-002 also remains in Review, and no implementation is active. No new game feature is authorized by organizing the backlog.
+- **Source / evidence:** Josh requested a project manager agent and Kanban. [PR #3](https://github.com/joshpled/ronnie-game/pull/3) merged on 2026-09-13 at 17:32:59 UTC as [91bc668](https://github.com/joshpled/ronnie-game/commit/91bc668afa58cdac8389956e482382f8414325c5), verified by the coordinating agent. [Agent role](.codex/agents/project_manager.toml), [workflow](docs/project-management.md) and board initialization are complete. Recorded checks: valid TOML fields, local links/anchors and formatting, `npm run check` on the main-derived setup branch (5 tests), and implementation review.
+- **Acceptance:** Reusable role and invocation workflow, versioned board with owners/criteria/evidence, one-active-item rule, reviewed documentation and merged setup PR are complete.
+- **Next action:** Reuse this PM at bounded project checkpoints and record only evidence-backed status changes.
+- **Dependency / boundary:** Remote and local setup branches are confirmed deleted. This organization setup does not authorize future game features.
 
 <a id="ron-004"></a>
 
@@ -76,14 +76,14 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 <a id="ron-005"></a>
 
-### RON-005 — Denser, more natural walking frames
+### RON-005 — 16-frame right-facing walk preview
 
-- **Status:** Ideas — implementation not approved
-- **Owner:** Josh scope decision; implementer unassigned
-- **Source / evidence:** Josh's longer-term request for refined movement and more animations; RON-002's documented eight-pose limitation.
-- **Proposed acceptance:** Consistent Ronnie markings, scale and planted feet; additional intermediate poses improve walking at phone size; left/right gait, reversals and stride are checked at normal speed; save/care behavior is unchanged.
-- **Next action:** After current review, agree on one walking cycle's art scope and a comparison that demonstrates improvement.
-- **Dependency:** Adopt the reviewed animation catalogue from RON-002 before integration. New artwork requires visual review.
+- **Status:** In progress — limited art preview approved
+- **Owner:** Art worker and main coordinating agent; Josh visual acceptance
+- **Source / evidence:** Josh approved a 16-frame right-facing walk preview with a phone-size before/after loop, ahead of integration. Current branch: `feature/ronnie-walk-preview`. RON-002 documents the existing eight-pose limitation; no completed new-art validation is claimed yet.
+- **Acceptance:** Sixteen coherent, distinct right-facing walk poses preserve Ronnie's tall ears, tan face, black saddle, white bib, freckled paws, scale and foot placement. A seamless loop and side-by-side phone-size before/after preview are visually checked at normal speed, with results and limitations recorded. Josh reviews the loop; any repository change still requires a reviewed, merged PR before Done.
+- **Next action:** Art worker produces the poses; the main agent checks pose consistency and loop continuity, then presents the phone-size comparison for Josh's review.
+- **Dependency / boundary:** Preview only: game integration, left-facing frames and merging PR #2 are not authorized. RON-002 remains in Review. Future integration requires its own approved scope and the reviewed animation catalogue; no commitments are added to other ideas.
 
 <a id="ron-006"></a>
 
