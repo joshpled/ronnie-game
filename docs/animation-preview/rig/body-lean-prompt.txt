@@ -1,7 +1,0 @@
-Create ONE isolated body-and-head animation puppet component for Ronnie, the small lean female dog in the attached approved sprites. Match the approved dog's head/face, tan upright ears, natural dark eyes, golden tan face, black nose, black saddle, tan flank, white chest bib, detailed natural outlined illustrated game art. Use the character in the attached strip as identity/proportion reference, not as sheet layout.
-
-Critical silhouette: long LEAN abdomen with a sharply TUCKED-UP WAIST, slender natural small-dog build, modest head size relative to back. Top of back to belly thickness is approximately ONE HALF of the full head height INCLUDING EARS. Body/head in right-facing side view with slightly three-quarter face, neutral calm expression. No barrel belly. No spherical shoulder or hip masses. No dangling rounded stumps. No visible upper limb embedded into torso. Draw a smooth clean narrow torso contour under shoulder and hip where separate rigged legs will attach later.
-
-The image contains BODY+NECK+HEAD+EARS ONLY, connected into one clean silhouette. Legs are ENTIRELY ABSENT because a separate animation rig supplies them. Tail also absent. Do not draw paws, bent arms, cropped limbs, sockets, joint outlines or circular attachment patches. Do not draw a complete dog, sprite strip or multiple parts.
-
-Whole piece centered with comfortable blank margins, consistent reference fur rendering, lighting and color. Plain perfectly flat MAGENTA #FF00FF background. No shadows, floor, effects, props, text, checkerboard, grid or labels.

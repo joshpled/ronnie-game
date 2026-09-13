@@ -1,0 +1,22 @@
+{
+  "browser": "WebKit",
+  "device": "iPhone 13 emulation",
+  "reducedMotion": "starts paused",
+  "frameStepAndWrap": "pass",
+  "playback": "pass",
+  "speed": "pass",
+  "mobileAndEnlargedOverflow": "none",
+  "embeddedContactSheet": "loaded",
+  "errors": [],
+  "revision": "sprite rollback",
+  "defaultPlaybackSpeed": 1.25,
+  "defaultCycleMs": 1024,
+  "artwork": "All embedded PNG bytes match pre-rig commit66ae27d",
+  "sourceChecks": "Typecheck, lint, 5care tests and production build passed",
+  "publication": {
+    "url": "https://joshpled.github.io/ronnie-game/walk-study.html?v=403cb36",
+    "pagesCommit": "403cb36dc9e83f61b5309e0260f6cb5f29848943",
+    "exactBytesMatch": true,
+    "sha256": "16d889ebd8fb86995d658e15b0e07e60d874878bde31c67629b818b048aee890"
+  }
+}

@@ -17,11 +17,11 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 - `npm run dev` — Vite, exposed on the LAN for iPhone testing.
 - `npm run check` — typecheck, lint, model tests, production build.
 - `npm run format` — format source and docs.
-- `npm run build:walk` — rebuild the standalone experimental walk preview.
-- `npm run test:walk` — contact, joint and loop checks (also in `npm run check`).
 - `npm run preview` — inspect a production build.
 
 ## Structure and rules
+
+- Animation direction: preserve Ronnie’s existing sprite artwork and style. Josh rejected the replacement joint rig/body design. Refine movement within that style; slower is not automatically better. A new rig or visual redesign requires Josh’s explicit direction.
 
 - Care rules: `src/care.ts`; browser state: `src/main.ts`; animations and movement: `src/Room.ts`.
 - Keep care rules independent of animation timing. Award actions only once, after completion.

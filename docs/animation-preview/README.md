@@ -1,34 +1,27 @@
-# Ronnie’s right-facing walk study
+# Right-facing walk study
 
-Open [the interactive preview](ronnie-walk-review.html). Revision 02 replaces the rejected sequence of separate drawings with a continuous joint rig. The [GIF](rig/walk.gif) and [16 sampled poses](rig/contact-sheet.png) come from the same renderer. This is a preview awaiting Josh’s visual acceptance, not an integrated game animation.
+The joint-rig revision was rejected by Josh for changing Ronnie’s style. The previous sprite artwork is restored unchanged. The interactive preview now defaults to **1.25×**, giving a **1.024-second cycle** instead of the rejected rig’s 1.6 seconds. No new artwork or rig is retained in this working tree; the rejected experiment remains in Git history.
 
-## What changed
+Open [the self-contained comparison](ronnie-walk-review.html) to play, pause, slow down, enlarge or step through the proposed 16-pose cycle. [The GIF](comparison.gif) is a simple looping alternative. This is an artwork review draft; it does not replace the live game's atlas or change care/save behavior.
 
-Each paw spends 70% of a 1.6-second cycle on the ground. During contact, its local position moves backward at exactly the speed of forward travel. The scrolling floor uses that same speed. This makes the paw stationary relative to its contact point. A smooth return curve lifts the paw and matches the contact velocity at both ends; landing does not jump between drawings.
+At the base 1× setting (also used by the historical GIF), both comparison sides complete a cycle in 1.28 seconds: the existing eight frames hold for 160 ms each, and the proposed sixteen hold for 80 ms each. Matching duration isolates changes in the drawings. This comparison does not reproduce the game's distance-driven playback, so planted-foot traction during travel must still be checked during integration.
 
-The order is near hind, near front, far hind, far front. This lateral sequence is informed by [published observations of dog locomotion](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0133936). The 1.6-second cycle, 70% stance, stride and joint dimensions are authored animation choices, not measurements of Ronnie.
+## Scope and acceptance
 
-Two fixed-length bones position each foreleg. The hind legs add an ankle segment. A continuous illustrated texture follows a small triangle mesh along those bones. One stable body preserves Ronnie’s face and markings; the replacement body has a slimmer waist. Far legs are darker and sit behind the body. The torso rises and falls by less than one art pixel.
+Josh approved a right-facing preview before integration. Ronnie is a girl. Preserve her tan face, tall ears, natural dark eyes, black saddle, white bib and freckled paws. The proposed walk should have a steadier body, modest steps and a continuous leg sequence. The loop seam and the rear legs need particular scrutiny. Approval of this study does not authorize left-facing artwork, game integration, merging PR #2 or other animations.
 
-## Files and maintenance
+## Production record
 
-- `rig/gait.mjs`: timing, contact paths, roots and joint calculations. Tests run without a browser.
-- `rig/preview.js`: Canvas rendering and preview controls. Bone lengths control the rig; the mesh determines how fur follows it. If a joint looks wrong, inspect the overlay before changing texture geometry.
-- `rig/build-preview.mjs`: embeds the five used PNG textures and JavaScript into the standalone HTML. Run `npm run build:walk` after changes.
-- `rig/gait.test.mjs`: ground locking, lateral footfall order, support count, continuous position/velocity, bone lengths and loop closure. Included in `npm run check`.
-- `rig/browser-qa.mjs`: optional WebKit checks using an existing Playwright installation. Set `PLAYWRIGHT_MODULE` to its package path if it is not installed locally. No Playwright dependency is added to the game.
-- `rig/source-generated.png`, `rig/source-body-lean.png`, prompts and extraction reports: exact generated sources and provenance. Five extracted textures are rendered; unused upper-leg pieces remain only as source assets.
+The built-in image generator produced the artwork from the approved character references. Initial candidates were rejected for a baked checkerboard and nearly static rear-leg positions. A sixteen-phase construction guide made the leg sequence more explicit; a full-sheet repair then addressed guide colors leaking into the coat. Exact selected prompts are saved alongside the assets.
 
-The mesh is a preview implementation, not yet a reusable animation system. The renderer assumes this right-facing pose and two ground-depth lanes. Changing stride or roots can make the joint targets unreachable; the gait deliberately throws instead of silently stretching bones. Original photos are not published in this repository.
+The source sheet contains four rows of four chronological poses. Deterministic processing removes the known magenta key using the hatch-pet extraction routine, crops the sixteen equal slots and applies one shared scale. Every output cell is 192 × 208 with a common baseline of 188. It does not warp limbs, crossfade poses, synthesize in-between drawings, or resize each pose independently. The hatch-pet edge cleanup preserves alpha. `extraction.json` records source bounds and transforms; `chroma-cleanup.json` records edge processing.
 
-## Controls and verification
+`walk-right-current.png` is the unchanged eight-frame row from the approved atlas. `walk-right-16.png` contains the candidate frames in one horizontal strip. The generated source, final prompt and contact sheet preserve provenance. Original dog photographs are not included in this public repository.
 
-Play/pause, small step, restart, speed, scrub, enlargement and a joint/contact overlay are available. Green contact dots mark supporting paws. Reduced motion starts paused and enabling it while playing pauses the preview. Background time is not accumulated into a large jump. Paused scenes are not repeatedly redrawn.
+The preview uses embedded PNG assets with no network requests, dependency installation or backend. Reduced-motion preference starts it paused. Browser QA checks playback, frame step/wrap, speed, enlarged layout, image loading and mobile overflow; it does not certify anatomical gait or physical iPhone performance.
 
-See [visual QA](visual-qa.md), [browser results](rig/browser-qa.json), and [the architecture decision](../adr/0001-walk-rig-preview.md). Browser tests and mathematical contact checks do not establish anatomical quality or physical iPhone performance. Josh’s visual review remains the acceptance gate.
+## Next decision
 
-## Rejected revision 01
+This is a requested rollback, not acceptance of the earlier walk’s quality. [Visual QA](visual-qa.md) records the remaining draft warnings. Supporting-foot changes at 04→05, 08→09, 12→13 and the 16→01 seam need refinement before game integration. Geometry checks and WebKit controls pass; they do not certify anatomical motion.
 
-Josh rejected the earlier sixteen-drawing walk on 2026-09-13. `walk-right-16.png`, `comparison.gif`, the root-level contact sheet, generated source and original QA JSON files are retained as historical evidence only. Their previous technical passes are not approval of the replacement. Independent drawings changed leg phase and foot contact abruptly; adding more drawings did not fix the gait.
-
-The scope remains a right-facing preview. Left-facing artwork, care-game integration, merging PR #2, and additional animations require the next scope decision.
+Review the small-size loop and frame sheet with Josh. Record visual findings before marking this study accepted. Any left-facing counterpart needs its own identity check because Ronnie's socks are asymmetric. Integration belongs in a later approved change after the motion infrastructure is merged.

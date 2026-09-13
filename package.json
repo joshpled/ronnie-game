@@ -9,11 +9,9 @@
     "preview": "vite preview --host 0.0.0.0",
     "format": "prettier --write src tests index.html *.md docs *.json *.ts *.js .github/workflows public/manifest.webmanifest",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src tests docs/animation-preview/rig",
+    "lint": "eslint src tests",
     "test": "tsc -p tsconfig.test.json && node --test .tests/tests/*.test.js",
-    "check": "npm run typecheck && npm run lint && npm test && npm run test:walk && npm run build",
-    "test:walk": "node --test docs/animation-preview/rig/gait.test.mjs",
-    "build:walk": "node docs/animation-preview/rig/build-preview.mjs"
+    "check": "npm run typecheck && npm run lint && npm test && npm run build"
   },
   "dependencies": {
     "phaser": "3.90.0"

@@ -50,7 +50,3 @@ Vite bundles the application and copies public assets. GitHub Actions runs the r
 ## Project coordination
 
 `KANBAN.md` records project status outside the game runtime. `.codex/agents/project_manager.toml` defines the PM role; `AGENTS.md` requests its use at work checkpoints. The [workflow](docs/project-management.md) defines evidence for each status and separates project tracking from gameplay changes. This adds no application dependency, server or scheduled background job.
-
-## Experimental walk preview
-
-`docs/animation-preview/ronnie-walk-review.html` is a self-contained Canvas study outside the game runtime. `rig/gait.mjs` defines contacts and fixed-length joints; `rig/preview.js` renders a continuous texture mesh. `npm run build:walk` embeds its textures and scripts. The study owns no care/save state and is not imported by Phaser. [ADR 0001](docs/adr/0001-walk-rig-preview.md) explains the experiment and its limits.
