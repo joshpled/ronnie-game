@@ -1,5 +1,15 @@
 # Decisions
 
+## 2026-09-13 — Version the board and delegate project tracking
+
+**Context:** Ideas, completed work and open reviews were scattered across conversation history. Josh requested a project manager agent and Kanban before further feature work.
+
+**Decision:** Keep `KANBAN.md` in the repository, with a reusable `project_manager` role and explicit checkpoint delegation in `AGENTS.md`.
+
+**Why:** The board and its evidence travel with the code. The PM keeps status current while Josh controls priority and implementation remains in separate feature PRs.
+
+**Alternatives and tradeoff:** A hosted board adds another service and synchronization responsibility; conversation-only tracking disappears on clear. Markdown is easy to review but has no drag-and-drop or background sync. Done requires verified acceptance and merge, even when a preview is already live.
+
 ## 2026-09-13 — Separate care rules from sprite behavior
 
 **Context:** New animations will be added as the game grows. Care progress must stay reliable when interactions or artwork change.

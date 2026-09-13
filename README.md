@@ -44,6 +44,8 @@ This first prototype reuses the approved desktop pet atlas. Feeding uses her dow
 
 ## Project map
 
+Start with [the Kanban board](KANBAN.md) for current work, open reviews and future ideas. The [project manager workflow](docs/project-management.md) explains how the agent keeps it current from idea to completion.
+
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the ownership boundaries, [docs/decisions.md](docs/decisions.md) for decisions and tradeoffs, and [docs/validation.md](docs/validation.md) for checks and remaining device testing.
 
 `public/assets/ronnie.webp` is the previously approved 1536 × 2288 pet atlas. Source photographs are not included. The character artwork is supplied for this Ronnie project; no separate license to reuse the character is granted by making this repository public.

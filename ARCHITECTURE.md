@@ -46,3 +46,7 @@ Atlas cells are 192 × 208 pixels in an 8 × 11 grid. Current loops are idle (ro
 ## Delivery
 
 Vite bundles the application and copies public assets. GitHub Actions runs the required checks on pushes and pull requests. GitHub Pages serves a static `dist` build from the generated `gh-pages` branch; it does not run care logic on a server. No service worker is present yet, so a fresh page load needs connectivity. Capacitor packaging for an iOS app is deliberately deferred until the care loop feels right.
+
+## Project coordination
+
+`KANBAN.md` records project status outside the game runtime. `.codex/agents/project_manager.toml` defines the PM role; `AGENTS.md` requests its use at work checkpoints. The [workflow](docs/project-management.md) defines evidence for each status and separates project tracking from gameplay changes. This adds no application dependency, server or scheduled background job.
