@@ -17,6 +17,8 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 - `npm run dev` — Vite, exposed on the LAN for iPhone testing.
 - `npm run check` — typecheck, lint, model tests, production build.
 - `npm run format` — format source and docs.
+- `npm run build:walk` — rebuild the standalone experimental walk preview.
+- `npm run test:walk` — contact, joint and loop checks (also in `npm run check`).
 - `npm run preview` — inspect a production build.
 
 ## Structure and rules

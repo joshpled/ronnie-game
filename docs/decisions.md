@@ -1,5 +1,9 @@
 # Decisions
 
+## 2026-09-13 — Trial a continuous walk rig
+
+[ADR 0001](adr/0001-walk-rig-preview.md): replace the rejected image-sequence draft with explicit paw contacts and fixed-length joints in a standalone review page. A continuous texture mesh keeps illustrated limbs connected; visual approval and game integration remain separate.
+
 ## 2026-09-13 — Version the board and delegate project tracking
 
 **Context:** Ideas, completed work and open reviews were scattered across conversation history. Josh requested a project manager agent and Kanban before further feature work.

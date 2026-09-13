@@ -51,3 +51,7 @@ Start with [the Kanban board](KANBAN.md) for current work, open reviews and futu
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the ownership boundaries, [docs/decisions.md](docs/decisions.md) for decisions and tradeoffs, and [docs/validation.md](docs/validation.md) for checks and remaining device testing.
 
 `public/assets/ronnie.webp` is the previously approved 1536 × 2288 pet atlas. Source photographs are not included. The character artwork is supplied for this Ronnie project; no separate license to reuse the character is granted by making this repository public.
+
+## Animation study
+
+The [right-facing walk preview](docs/animation-preview/ronnie-walk-review.html) is an experimental rig awaiting visual acceptance. Run `npm run build:walk` after editing its source and `npm run test:walk` for gait checks (also included in `npm run check`). It does not replace the game’s current sprite animation. See the [study notes](docs/animation-preview/README.md) for controls and provenance.

@@ -1,0 +1,41 @@
+{
+  "sourceBounds": [
+    350,
+    103,
+    1228,
+    774
+  ],
+  "size": [
+    886,
+    679
+  ],
+  "threshold": 150,
+  "cleanup": {
+    "algorithm": "edge-local-chroma-spill-suppression",
+    "strength": 1,
+    "edge_radius": 5,
+    "spill_tolerance": 0.45,
+    "minimum_saturation": 0.1,
+    "changed_pixels": 2309,
+    "decontaminated_pixels": 0,
+    "spill_suppressed_pixels": 2309,
+    "rejected_pixels": 0,
+    "changed_by_cell": {
+      "r1c2": 499,
+      "r1c1": 262,
+      "r1c0": 230,
+      "r1c4": 229,
+      "r2c0": 206,
+      "r0c3": 141,
+      "r2c3": 126,
+      "r2c1": 123,
+      "r3c2": 119,
+      "r0c2": 111,
+      "r1c3": 88,
+      "r0c4": 86,
+      "r3c3": 57,
+      "r3c1": 32
+    },
+    "alpha_preserved": true
+  }
+}

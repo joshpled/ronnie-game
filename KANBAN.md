@@ -4,19 +4,19 @@ Last reconciled: **2026-09-13**. Ronnie is a girl (she/her). The product is an i
 
 This file is the canonical board. Card details below own scope, evidence and next actions; the table is an index. A live preview does not mean a pull request has merged. Ideas are not authorization to implement them.
 
-| Ideas                                                      | Ready | In progress | Review                                            | Done                                            |
-| ---------------------------------------------------------- | ----- | ----------- | ------------------------------------------------- | ----------------------------------------------- |
-| [RON-004 — Physical iPhone validation (pending)](#ron-004) | —     | —           | [RON-002 — Refine existing motion](#ron-002)      | [RON-001 — First playable room](#ron-001)       |
-| [RON-006 — Eating animation](#ron-006)                     |       |             | [RON-005 — Walk preview (draft review)](#ron-005) | [RON-003 — Project manager and board](#ron-003) |
-| [RON-007 — Sleeping animation](#ron-007)                   |       |             |                                                   |                                                 |
-| [RON-008 — Toy carrying](#ron-008)                         |       |             |                                                   |                                                 |
-| [RON-009 — Capacitor iPhone package](#ron-009)             |       |             |                                                   |                                                 |
+| Ideas                                                      | Ready | In progress | Review                                                      | Done                                            |
+| ---------------------------------------------------------- | ----- | ----------- | ----------------------------------------------------------- | ----------------------------------------------- |
+| [RON-004 — Physical iPhone validation (pending)](#ron-004) | —     | —           | [RON-002 — Refine existing motion](#ron-002)                | [RON-001 — First playable room](#ron-001)       |
+| [RON-006 — Eating animation](#ron-006)                     |       |             | [RON-005 — Walk rig (draft review with warnings)](#ron-005) | [RON-003 — Project manager and board](#ron-003) |
+| [RON-007 — Sleeping animation](#ron-007)                   |       |             |                                                             |                                                 |
+| [RON-008 — Toy carrying](#ron-008)                         |       |             |                                                             |                                                 |
+| [RON-009 — Capacitor iPhone package](#ron-009)             |       |             |                                                             |                                                 |
 
 ## How the board moves
 
 - **Ideas:** Possible work awaiting Josh's scope and priority decision.
 - **Ready:** Josh selected the scope and acceptance criteria are clear; no implementation started.
-- **In progress:** The single active work item. Currently empty: RON-005 is a draft awaiting visual feedback; RON-002 remains in Review.
+- **In progress:** The single active work item. Currently empty: RON-005 has returned to draft Review with visual warnings; RON-002 remains in Review.
 - **Review:** Deliverable exists and validation is recorded; review, acceptance or merge remains.
 - **Done:** Acceptance criteria have evidence. Repository changes require a verified merged PR; device testing requires an actual device report.
 
@@ -24,6 +24,8 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ## Change history
 
+- **2026-09-13:** Moved RON-005 back to draft Review after independent final QA passed the continuous leg rig with warnings for user review. Typecheck, lint including rig scripts, 5 care tests, 4 gait tests and production build pass. WebKit controls, reduced motion, mobile/enlarged layout and pixel-identical loop checks pass with zero page errors; revision 02 is published and verified byte-for-byte at the public walk study; the live care-game assets were untouched. Tubular joint bends, close paw overlaps, steady head/body and flat attachment depth remain visible. Josh's acceptance, physical iPhone validation and merge remain outstanding; no integration is approved.
+- **2026-09-13:** Josh rejected the RON-005 image-sequence draft (“very bad. Try again”). Moved the card from Review to In progress on the existing branch and draft PR #4. The retry uses continuous joint-driven walking, imagegen-created character parts and explicit planted-foot constraints. Scope remains a right-facing preview only; no left-facing work, game integration or PR #2 merge is authorized.
 - **2026-09-13:** Moved RON-005 to draft Review with [PR #4](https://github.com/joshpled/ronnie-game/pull/4) and the [walk study](https://joshpled.github.io/ronnie-game/walk-study.html). Sixteen new poses, contact sheet, GIF and controlled before/after preview exist; recorded technical checks pass. Visual QA flags foot-contact transitions 04→05, 08→09, 12→13 and 16→01 for refinement. This is not production-ready or approved for integration; Josh's feedback on identity and calmer movement is next. PR #2 remains open in Review and PR #3 remains Done.
 - **2026-09-13:** Moved RON-003 to Done after the coordinating agent verified PR #3 merged at 17:32:59 UTC as `91bc668afa58cdac8389956e482382f8414325c5`; remote and local setup branches were deleted. Moved RON-005 to In progress for Josh's approved 16-frame right-facing walk preview and phone-size before/after loop. This approval excludes game integration, left-facing frames and merging PR #2; other ideas remain uncommitted.
 - **2026-09-13:** Moved RON-003 to Review after [PR #3](https://github.com/joshpled/ronnie-game/pull/3) opened. Role/workflow, board initialization, implementation review, TOML validation, local links/anchors, formatting and main-derived source checks (5 tests) are complete, as reported by the coordinating agent. No active implementation remains; PRs #2 and #3 are pending review/merge.
@@ -77,15 +79,17 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 <a id="ron-005"></a>
 
-### RON-005 — 16-frame right-facing walk preview
+### RON-005 — Right-facing continuous walk preview
 
-- **Status:** Review — draft for visual feedback; not production-ready
-- **Owner:** Art worker and main coordinating agent; Josh visual acceptance
-- **Source / evidence:** Josh approved the right-facing preview ahead of integration. [Draft PR #4](https://github.com/joshpled/ronnie-game/pull/4), [phone-size walk study](https://joshpled.github.io/ronnie-game/walk-study.html) and [visual QA](docs/animation-preview/visual-qa.md) record the deliverable: 16 new poses, PNG contact sheet, GIF and self-contained comparison controls. The coordinating agent reports passing geometry/chroma checks, WebKit mobile controls, typecheck, lint, build, main-derived tests (5), and green CI. These technical checks do not resolve the visual findings or constitute a physical iPhone pass.
-- **Acceptance:** Sixteen coherent, distinct right-facing walk poses preserve Ronnie's tall ears, tan face, black saddle, white bib, freckled paws, scale and foot placement. A seamless loop and side-by-side phone-size preview must pass visual review at normal speed. Identity is stable and rear-leg progression improved, but the foot-contact findings below remain unresolved. Josh reviews the loop; any repository change still requires a reviewed, merged PR before Done.
-- **Next action:** Josh gives feedback on Ronnie's identity and the calmer movement direction; then refine the flagged contacts and recheck the loop before considering a left-facing counterpart or integration.
-- **Blocker / visual findings:** Foot-contact transitions **04→05, 08→09, 12→13 and 16→01** need refinement. The draft is available for feedback, not ready for game integration.
-- **Dependency / boundary:** Preview only: game integration, left-facing frames and merging PR #2 remain unauthorized. RON-002 remains in Review. Future integration requires its own approved scope and the reviewed animation catalogue; no commitments are added to other ideas.
+- **Status:** Review — revision 02 passes with warnings for user review; PR remains draft
+- **Owner:** Main coordinating agent and art worker; Josh visual acceptance
+- **Source / evidence:** The rejected 16-image draft has been replaced locally on `feature/ronnie-walk-preview`, still [draft PR #4](https://github.com/joshpled/ronnie-game/pull/4). Current artifacts: [interactive preview](docs/animation-preview/ronnie-walk-review.html), [rig GIF](docs/animation-preview/rig/walk.gif), [contact sheet](docs/animation-preview/rig/contact-sheet.png), [browser report](docs/animation-preview/rig/browser-qa.json) and rewritten [visual QA](docs/animation-preview/visual-qa.md). Independent final QA gives **pass with warnings for user review**. `npm run check` passes typecheck, lint including rig scripts, 5 care tests, 4 gait tests and production build. WebKit controls, reduced motion, mobile/enlarged overflow checks and a pixel-identical full loop seam pass with zero page errors. Browser report CPU submission measurements are desktop emulation observations, not actual iPhone performance.
+- **Publication:** [Revision 02 walk study](https://joshpled.github.io/ronnie-game/walk-study.html?v=569e581) is published and verified byte-for-byte, recorded in [publication evidence](docs/animation-preview/rig/publication.json). Pages commit `569e581434f1112c6d932577cb793f1b9c765607`; [deployment workflow 34776905242](https://github.com/joshpled/ronnie-game/actions/runs/34776905242) succeeded. Only `walk-study.html` was deployed; live care-game assets were untouched. Publication does not establish acceptance or merge.
+- **Current approach:** Continuous fixed-length leg rig with generated textures, slimmer torso and explicit planted-paw constraints. The lateral four-beat cycle lasts 1.6 seconds; the isolated preview includes scrubbing and a joint overlay.
+- **Acceptance:** A smooth, continuous four-beat walking cycle with grounded support and stable Ronnie identity, including her tall ears, tan face, black saddle, white bib and freckled paws. An isolated, repeatable preview is checked at normal speed and phone size, with support changes and loop continuity documented. Current sampled phases show no identified planted-paw slip or pose-loop discontinuity, but the visual warnings below remain. Josh's acceptance, physical iPhone validation and a reviewed, merged PR are still required before Done.
+- **Next action:** Josh reviews revision 02's movement and identity. Record physical iPhone feedback and resolve requested refinements before any separately approved integration work.
+- **Warnings:** Knee/hock bends remain tubular; near/far paws overlap closely in some phases; unusually steady head/body retains a puppet quality; limb-root attachment and shading lack depth. This is a reviewable improvement, not a finished realistic gait or production approval.
+- **Dependency / boundary:** Right-facing preview only. Left-facing work, game integration and merging PR #2 remain unauthorized. RON-002 remains in Review and PR #4 remains a draft; other ideas have no new commitments. Prior rejected-draft checks and artifacts are historical, not evidence for revision 02.
 
 <a id="ron-006"></a>
 
