@@ -4,9 +4,11 @@ Checked September 13, 2026.
 
 ## Automated source checks
 
-`npm run check` runs TypeScript, ESLint, five Node test cases, and a production build. Tests cover action rewards, bounds, capped time away, duplicate elapsed-time application, rest restoration, invalid saves, and future saved timestamps. The dependency audit reported no known vulnerabilities at build time.
+`npm run check` runs TypeScript, ESLint, thirteen Node test cases, and a production build. Tests cover care rewards/saves and motion: acceleration/braking, frame-rate consistency, direction changes, short destinations, route cancellation, clip completion and reduced motion. The original dependency audit reported no known vulnerabilities at build time; this refinement adds no dependencies.
 
 ## Browser checks
+
+The refinement's before-and-after interaction checks and timing observations are recorded in [motion.md](motion.md). Saved-care rules are unchanged.
 
 Headless Chrome and WebKit 26.5 were exercised with touch-capable iPhone-sized viewports. This is browser emulation, **not a physical iPhone test**.
 
