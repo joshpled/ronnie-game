@@ -8,7 +8,9 @@ Run `python3 -m http.server 8772 --bind 127.0.0.1 --directory docs/animation-lib
 
 The source is frame 0 of the existing approved `../curled-sleep/candidate.png`, exactly the pose used at the end of the approved bedtime sequence. The independent `../curled-sleep/bed.png` retains its original size and the dog's approved placement `(32, -44)`. The original atlas remains the character/style authority. No source image, approved sheet, previous preview or app file is edited.
 
-This candidate animates the existing bitmap in Canvas; it does not generate or save replacement raster artwork. Every frame starts from the same approved pose, avoiding the head/ear/coat changes in the older eight-pose loop. Only upper-left torso columns move. Within source coordinates `18 ≤ x < 104`, the region from `y96` to the anchored lower edge at `y154` stretches upward. Lift tapers smoothly to zero at the left/right boundaries and remains at most 2 source pixels at the region's top; visible fur moves less than that. The head, ears, paws, haunch and remaining pixels stay fixed.
+This candidate animates the existing bitmap in Canvas; it does not generate or save replacement raster artwork. Every frame starts from the same approved pose, avoiding the head/ear/coat changes in the older eight-pose loop. Only upper-left torso columns move. Within source coordinates `18 ≤ x < 104`, the region from `y96` to the anchored lower edge at `y154` stretches upward. Lift tapers smoothly to zero at the left/right boundaries and remains at most 3 source pixels at the region's top; visible fur moves less than that. The head, ears, paws, haunch and remaining pixels stay fixed.
+
+Revision 2 increases the lift from 2 to 3 source pixels (+50%) following Josh's feedback that the first version was too subtle. Timing, source pose, moving region and protected features are unchanged.
 
 One cycle lasts 4000 ms: 1400 ms inhale, 2000 ms exhale, 600 ms exact rest. Cosine easing gives zero velocity at the inhale/exhale turn and rest join. `requestAnimationFrame` uses elapsed time, so monitor refresh rate does not set the breath duration. There is no automatic playback, including for reduced-motion users.
 
@@ -16,10 +18,10 @@ The tradeoff is local resampling: the small stretch can soften or shimmer the mo
 
 ## Validation and review
 
-Browser pixel sampling at 20 ms intervals across the full cycle (201 samples) found:
+Revision 2 browser pixel sampling at 20 ms intervals across the full cycle (201 samples) found:
 
 - Zero pixel changes outside the torso rectangle.
-- Actual changed-pixel bounds: x25–99, y105–151; maximum 2322 changed pixels at one sample.
+- Actual changed-pixel bounds: x24–99, y104–152; maximum 2559 changed pixels at one sample.
 - All samples from 3400 through 4000 ms equal the original rest render exactly.
 - Bed is a separate static image; source placement is unchanged.
 

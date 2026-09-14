@@ -275,7 +275,7 @@
         for (let x = 18; x < 104; x++) {
           const weight =
             x < 48 ? ease((x - 18) / 30) : x < 66 ? 1 : 1 - ease((x - 66) / 38);
-          const lift = 2 * weight * breath;
+          const lift = 3 * weight * breath;
           context.drawImage(image, x, 96, 1, 58, x, 96 - lift, 1, 58 + lift);
         }
       }
