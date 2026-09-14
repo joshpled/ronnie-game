@@ -1,6 +1,6 @@
 # Curled-sleep breathing — visual checkpoint
 
-[Open the preview](index.html). Josh approved revision 2 of this isolated breathing motion on 2026-09-14 after reviewing the stronger effect. The approved motion uses a maximum 3 px column lift and a four-second cycle. PR #6 remains subject to merge; the motion is not integrated into the approved sheet or bedtime sequence.
+[Open the preview](index.html). Josh approved revision 2 of this isolated breathing motion on 2026-09-14 after reviewing the stronger effect. The approved motion uses a maximum 3 px column lift and a four-second cycle. [PR #6](https://github.com/joshpled/ronnie-game/pull/6) merged on 2026-09-14 as `02d9c9f`; the motion is not integrated into the approved sheet or bedtime sequence.
 
 Run `python3 -m http.server 8772 --bind 127.0.0.1 --directory docs/animation-library` from the repository root, then open `http://127.0.0.1:8772/curled-sleep-breathing/`. The HTML also supports direct file opening. Play starts a continuous loop; Rest pose, Full inhale and the cycle slider pause playback for comparison. The left pose stays at rest. Layer controls apply to both comparisons and the enlarged view. Playback pauses when the page is hidden.
 

@@ -35,4 +35,4 @@ User approvals are distinct from technical validation. Existing face/fur differe
 
 Per-stage `job.json`, cleanup/registration reports and comparison media retain review evidence. [Motion research](bed-entry/research.md) distinguishes inspected video behavior from generated motion. Original photos, external footage and raw generated sources remain outside this repository. The excluded withdrawn walk material is not a design reference.
 
-[Release validation and review](release-review.md) records the packaging checks and maintenance notes for the library merged in PR #5. [KANBAN.md](../../KANBAN.md) remains the project status authority; the new breathing refinement remains a separate review checkpoint.
+[Release validation and review](release-review.md) records the packaging checks and maintenance notes for the library merged in PR #5. The approved standalone breathing refinement merged in [PR #6](https://github.com/joshpled/ronnie-game/pull/6). [KANBAN.md](../../KANBAN.md) remains the project status authority.
