@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ronnie · Sleeping checkpoint</title><style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f6f3ed; color: #302c28; font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 900px; margin: auto; padding: 28px 20px; }
+  h1 { font-size: 28px; margin-bottom: 8px; }
+  .note { padding: 14px 18px; background: #fff1cc; border-left: 4px solid #946900; }
+  .pair { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 24px 0; }
+  figure { margin: 0; text-align: center; }
+  .sprite { width: 192px; height: 208px; background: url('sleeping/candidate.png?v=2') 0 0 / 1536px 208px; }
+  .stage { background-color: #eee9df; border-radius: 12px; padding: 16px; }
+  figcaption { margin-bottom: 8px; font-weight: 600; }
+  .controls { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
+  button, select { font: inherit; padding: 10px 14px; border-radius: 8px; border: 1px solid #746a5f; background: white; color: inherit; min-height: 44px; }
+  button { cursor: pointer; }
+  button:focus-visible, select:focus-visible { outline: 3px solid #226a72; outline-offset: 3px; }
+  .sheet { width: 100%; height: auto; }
+  a { color: #225e65; }
+</style>
+<main>
+<p>STAGE 5 OF 5 · APPROVED</p>
+<nav><a href="preview.html">Tail wag</a> · <a href="sniffing.html">Sniffing</a> · <a href="stretching.html">Stretching</a> · <a href="eating.html">Eating</a></nav>
+<h1>Ronnie settles down to sleep</h1>
+<p class="note"><strong>Approved by Josh.</strong> She lies down, rests her head, closes her eyes and breathes quietly. Ground alignment is corrected. Her neck stays dark and her head tan; softer fur and altered facial detail remain visible compared with the original.</p>
+<div class="pair">
+<figure><figcaption>Original · reference</figcaption><div class="stage"><img src="tail-wag/original.png" width="192" height="208" alt="Ronnie’s original standing sprite"></div></figure>
+<figure><figcaption>Sleeping · approved</figcaption><div class="stage"><div id="sprite" class="sprite" role="img" aria-label="Approved Ronnie sleeping animation"></div></div></figure>
+</div>
+<div class="controls">
+<label>Preview <select id="mode"><option value="full">Settle → sleep → wake · 8 s</option><option value="sleep">Sleeping only · 2.4 s loop</option></select></label>
+<button id="play" type="button">Play</button><button id="step" type="button">Next frame</button>
+<label>Speed <select id="speed"><option value="1">Normal</option><option value="0.5">Half speed</option></select></label>
+<output id="frame">Step 1 / 13 · pose 1</output>
+</div>
+<p>The preview starts paused. Sleeping-only mode repeats the quiet breath without waking her. The original atlas is unchanged; this sleeping pose is approved.</p>
+<details><summary>Compare all eight poses</summary><img class="sheet" src="sleeping/comparison.png?v=2" alt="Original at the left of each row, alongside eight settling, sleeping and waking poses"></details>
+<p><a href="sleeping/comparison.gif?v=2">Full action GIF</a> · <a href="sleeping/breathing.gif?v=2">Sleeping-only GIF</a> · <a href="README.md">Stage notes</a></p>
+<p>A <a href="curled-sleep.html">curled-up sleeping variant with a separate bed</a> is ready for pose and style verification for the same animation-library PR. Body shake remains on the backlog. Game integration follows a separate decision.</p>
+</main>
+<script>
+const profiles = {"full": {"frames": [0, 1, 2, 3, 4, 5, 6, 5, 6, 7, 3, 2, 1], "durations": [300, 300, 300, 300, 400, 1200, 1200, 1200, 1200, 400, 400, 400, 400]}, "sleep": {"frames": [5, 6], "durations": [1200, 1200]}};
+const sprite=document.querySelector('#sprite');
+const play=document.querySelector('#play');
+const speed=document.querySelector('#speed');
+const mode=document.querySelector('#mode');
+let profile=profiles.full;
+let frame=0;
+let timer;
+function render(){
+ sprite.style.backgroundPositionX=`${-192*profile.frames[frame]}px`;
+ document.querySelector('#frame').textContent=`Step ${frame+1} / ${profile.frames.length} · pose ${profile.frames[frame]+1}`;
+}
+function pause(){clearTimeout(timer);timer=undefined;play.textContent='Play';}
+function start(){
+ pause();
+ function tick(){timer=setTimeout(()=>{frame=(frame+1)%profile.frames.length;render();tick();},profile.durations[frame]/Number(speed.value));}
+ tick();play.textContent='Pause';
+}
+play.addEventListener('click',()=>timer===undefined?start():pause());
+document.querySelector('#step').addEventListener('click',()=>{pause();frame=(frame+1)%profile.frames.length;render();});
+speed.addEventListener('change',()=>{if(timer!==undefined)start();});
+mode.addEventListener('change',()=>{const resume=timer!==undefined;pause();profile=profiles[mode.value];frame=0;render();if(resume)start();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+</script></html>

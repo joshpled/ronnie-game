@@ -1,0 +1,901 @@
+{
+  "canvas": [
+    520,
+    320
+  ],
+  "cell": [
+    192,
+    208
+  ],
+  "columns": 8,
+  "anchor": [
+    96,
+    203
+  ],
+  "bedPosition": [
+    252,
+    84
+  ],
+  "sources": {
+    "approach": "../bed-entry/approach.png",
+    "circle": "../bed-entry/circle.png",
+    "settling": "../settling/candidate.png",
+    "curl": "../curled-sleep/candidate.png",
+    "bed": "../curled-sleep/bed.png"
+  },
+  "durationMs": 13520,
+  "sections": [
+    {
+      "label": "Full bedtime sequence",
+      "step": 0
+    },
+    {
+      "label": "Circle",
+      "step": 33
+    },
+    {
+      "label": "Settle",
+      "step": 51
+    },
+    {
+      "label": "Curled sleep",
+      "step": 60
+    }
+  ],
+  "steps": [
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        90.0,
+        243
+      ],
+      "to": [
+        99.0625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        99.0625,
+        243
+      ],
+      "to": [
+        108.125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        108.125,
+        243
+      ],
+      "to": [
+        117.1875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        117.1875,
+        243
+      ],
+      "to": [
+        126.25,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        126.25,
+        243
+      ],
+      "to": [
+        135.3125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        135.3125,
+        243
+      ],
+      "to": [
+        144.375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        144.375,
+        243
+      ],
+      "to": [
+        153.4375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        153.4375,
+        243
+      ],
+      "to": [
+        162.5,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        162.5,
+        243
+      ],
+      "to": [
+        171.5625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        171.5625,
+        243
+      ],
+      "to": [
+        180.625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        180.625,
+        243
+      ],
+      "to": [
+        189.6875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        189.6875,
+        243
+      ],
+      "to": [
+        198.75,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        198.75,
+        243
+      ],
+      "to": [
+        207.8125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        207.8125,
+        243
+      ],
+      "to": [
+        216.875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        216.875,
+        243
+      ],
+      "to": [
+        225.9375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        225.9375,
+        243
+      ],
+      "to": [
+        235.0,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        235.0,
+        243
+      ],
+      "to": [
+        244.0625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        244.0625,
+        243
+      ],
+      "to": [
+        253.125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        253.125,
+        243
+      ],
+      "to": [
+        262.1875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        262.1875,
+        243
+      ],
+      "to": [
+        271.25,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        271.25,
+        243
+      ],
+      "to": [
+        280.3125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        280.3125,
+        243
+      ],
+      "to": [
+        289.375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        289.375,
+        243
+      ],
+      "to": [
+        298.4375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        298.4375,
+        243
+      ],
+      "to": [
+        307.5,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        307.5,
+        243
+      ],
+      "to": [
+        316.5625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        316.5625,
+        243
+      ],
+      "to": [
+        325.625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        325.625,
+        243
+      ],
+      "to": [
+        334.6875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        334.6875,
+        243
+      ],
+      "to": [
+        343.75,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        343.75,
+        243
+      ],
+      "to": [
+        352.8125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        352.8125,
+        243
+      ],
+      "to": [
+        361.875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        361.875,
+        243
+      ],
+      "to": [
+        370.9375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        370.9375,
+        243
+      ],
+      "to": [
+        380.0,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 400,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Pause at bed"
+    },
+    {
+      "asset": "circle",
+      "frame": 0,
+      "duration": 200,
+      "from": [
+        380.0,
+        243.0
+      ],
+      "to": [
+        384.3262379212493,
+        242.60845213036123
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 1,
+      "duration": 200,
+      "from": [
+        384.3262379212493,
+        242.60845213036123
+      ],
+      "to": [
+        388.61926065455924,
+        241.3040860288538
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 2,
+      "duration": 240,
+      "from": [
+        388.61926065455924,
+        241.3040860288538
+      ],
+      "to": [
+        392.2446758999515,
+        238.8784769619707
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 3,
+      "duration": 200,
+      "from": [
+        392.2446758999515,
+        238.8784769619707
+      ],
+      "to": [
+        393.9467257732844,
+        235.69724594198127
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 4,
+      "duration": 240,
+      "from": [
+        393.9467257732844,
+        235.69724594198127
+      ],
+      "to": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 4,
+      "duration": 320,
+      "from": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "to": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "label": "Investigate the cushion"
+    },
+    {
+      "asset": "circle",
+      "frame": 5,
+      "duration": 200,
+      "from": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "to": [
+        389.54797704087497,
+        229.14917038704664
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 6,
+      "duration": 200,
+      "from": [
+        389.54797704087497,
+        229.14917038704664
+      ],
+      "to": [
+        385.0171512936342,
+        227.5313565880224
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 7,
+      "duration": 240,
+      "from": [
+        385.0171512936342,
+        227.5313565880224
+      ],
+      "to": [
+        379.75566630987805,
+        227.00121843874888
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 8,
+      "duration": 200,
+      "from": [
+        379.75566630987805,
+        227.00121843874888
+      ],
+      "to": [
+        374.3056869969388,
+        227.69163633885918
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 9,
+      "duration": 240,
+      "from": [
+        374.3056869969388,
+        227.69163633885918
+      ],
+      "to": [
+        369.43406587688116,
+        229.75152776807593
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 10,
+      "duration": 200,
+      "from": [
+        369.43406587688116,
+        229.75152776807593
+      ],
+      "to": [
+        366.9298740290392,
+        232.1330564036376
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 11,
+      "duration": 240,
+      "from": [
+        366.9298740290392,
+        232.1330564036376
+      ],
+      "to": [
+        366.0,
+        235.0
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 11,
+      "duration": 320,
+      "from": [
+        366.0,
+        235.0
+      ],
+      "to": [
+        366.0,
+        235.0
+      ],
+      "label": "Investigate the cushion"
+    },
+    {
+      "asset": "circle",
+      "frame": 12,
+      "duration": 200,
+      "from": [
+        366.0,
+        235.0
+      ],
+      "to": [
+        366.9298740290392,
+        237.8669435963624
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 13,
+      "duration": 240,
+      "from": [
+        366.9298740290392,
+        237.8669435963624
+      ],
+      "to": [
+        369.92924279525886,
+        240.55726696367196
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 14,
+      "duration": 200,
+      "from": [
+        369.92924279525886,
+        240.55726696367196
+      ],
+      "to": [
+        374.7555076921772,
+        242.4174708365343
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 15,
+      "duration": 240,
+      "from": [
+        374.7555076921772,
+        242.4174708365343
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 0,
+      "duration": 600,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Sniff the spot"
+    },
+    {
+      "asset": "settling",
+      "frame": 0,
+      "duration": 240,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Prepare to settle"
+    },
+    {
+      "asset": "settling",
+      "frame": 1,
+      "duration": 280,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Bend front legs"
+    },
+    {
+      "asset": "settling",
+      "frame": 2,
+      "duration": 320,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Lower chest"
+    },
+    {
+      "asset": "settling",
+      "frame": 3,
+      "duration": 360,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Lower hindquarters"
+    },
+    {
+      "asset": "settling",
+      "frame": 4,
+      "duration": 360,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Rest hips"
+    },
+    {
+      "asset": "settling",
+      "frame": 5,
+      "duration": 360,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Curl body"
+    },
+    {
+      "asset": "settling",
+      "frame": 6,
+      "duration": 400,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Tuck head"
+    },
+    {
+      "asset": "settling",
+      "frame": 7,
+      "duration": 440,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Close eyes"
+    },
+    {
+      "asset": "curl",
+      "frame": 0,
+      "duration": 1800,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Approved curled endpoint"
+    }
+  ]
+}

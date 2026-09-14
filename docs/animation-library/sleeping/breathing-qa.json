@@ -1,0 +1,11 @@
+{
+  "ribcageContourColumns": [
+    45,
+    84
+  ],
+  "max_inhale_rise_px": 14,
+  "mean_inhale_rise_px": 2.62,
+  "ground_contact_baseline_pose6": 203,
+  "ground_contact_baseline_pose7": 203,
+  "note": "Contour measures rendered torso region; this does not imply exact head/paw pixel identity."
+}

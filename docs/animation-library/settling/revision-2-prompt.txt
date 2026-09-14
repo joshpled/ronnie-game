@@ -1,0 +1,8 @@
+Refine this complete eight-pose settling sequence as one coherent 4x2 family. Preserve its front-lowering, hip-lowering, curling, head-tucking order and Ronnie's original illustrated style. Image1 is the current sequence to edit. Image2 original atlas controls appearance. Image3 is exact starting pose. Image4 is exact approved curled destination.
+
+Correct three things only across the family:
+- The starting stance must match image3's compact proportions and screen-right low nose. Keep the standing and final curled poses approximately the SAME overall width, as in those references; do not stretch her torso or legs in early poses. Same dog scale throughout.
+- Spread the bigger change between poses4 and5 across poses4,5,6: lower hips and curve the spine gradually, bringing the haunch forward progressively with tiny intermediate paw repositioning. Avoid a sudden switch to an already completed curl.
+- Finish by matching image4 precisely: black back on left, tan haunch forward, head tucked down to the right and angled down rather than toward viewer; muzzle tucked against the haunch, paws mostly concealed, closed eyes. Pose7 should lead smoothly into that endpoint, no bigger eyes or new face.
+
+Retain tall ears, tan head, black neck and saddle, white bib and freckled paws where visible. Keep the whole dog, common camera and consistent floor contact. Flat #FF00FF throughout all background and gutters; NO white separators, grid lines, bed, shadows, labels or effects. Eight complete sequential sprites with generous margins. Do not replace the illustrated fur with simplified cartoon shapes.

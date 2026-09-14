@@ -1,0 +1,79 @@
+{
+  "id": "bed-entry-approach-circle",
+  "checkpoint": 1,
+  "status": "needs-motion-refinement-and-user-review",
+  "userApproved": false,
+  "scope": "Approach and one circle only; lie-down transition pending user checkpoint.",
+  "generation": "built-in imagegen",
+  "generationCalls": {
+    "approach": 6,
+    "circle": 3
+  },
+  "sources": {
+    "approach": "b40fad3737de6565b6deeb5d37a4cd73caee10255de3ebe241fdaa8a170cf467",
+    "circle": "6efb48a6eeed8a7269644ab9faf7a3e84e07e935e8b3fed0e8c4d53f48c0b4c6"
+  },
+  "styleAuthority": "Original atlas and original standing crop. External videos and veterinary walk phases guide motion only.",
+  "propsIncluded": false,
+  "bedAsset": "../curled-sleep/bed.png",
+  "atlasSizes": {
+    "approach": [
+      1536,
+      208
+    ],
+    "circle": [
+      1536,
+      416
+    ]
+  },
+  "durationMs": 9160,
+  "motionReview": {
+    "completeNaturalWalk": false,
+    "smoothUniformTurn": false,
+    "caveats": [
+      "Generated paw contacts do not lock to scene motion; some foot sliding remains.",
+      "Several neighboring turn headings nearly repeat, followed by a larger heading change.",
+      "Circle torso remains fuller than the original, and the approach-to-low-nose posture change is abrupt.",
+      "A dedicated bed-rim step and the lie-down transition have not been drawn."
+    ],
+    "preserved": "Tan head, dark neck, saddle, upright ears and freckled white paws remain recognizable. Bed asset unchanged.",
+    "parentInspected": [
+      "approach-contact.png",
+      "circle-contact.png",
+      "sequence-contact.png"
+    ],
+    "researchChanges": [
+      "Low nose and lowered tail through the nesting turn.",
+      "Shorter steps around a tighter 14 by 8 pixel arc, with variable timing.",
+      "Two 320 ms investigation holds interrupt the turn."
+    ],
+    "approachSelection": "Existing approach retained: research phase-transfer generated longer legs/smaller head; proportion correction became stockier and lost hind-leg alternation. Neither is used in the preview."
+  },
+  "processing": "Separate full-body components extracted in reading order, shared scale per family, midpoint registration and solid floor baseline203, one final edge cleanup per newly processed source. No pose drawing, flat-image rotation or interpolated artwork.",
+  "checks": {
+    "gifDurationMs": 9160,
+    "gifFrames": 169,
+    "timelineHtmlEqual": true,
+    "completeCirclePath": true,
+    "spriteCellBounds": true,
+    "sceneBounds": true,
+    "originalAtlasSha256": true,
+    "approvedOriginalPixelsEqual": true,
+    "newMotionIncludedInApprovedSheet": false,
+    "previewLinksResolve": true,
+    "javascriptParses": true,
+    "circleOnlyGifDurationMs": 4920,
+    "browserRendering": true,
+    "browserNextPose": true,
+    "browserCircleSelection": true,
+    "browserPlaybackAdvancementAndEndStop": true,
+    "browserRestartResetsPositionAndLabel": true
+  },
+  "revision": 2,
+  "research": "research.md",
+  "researchAttemptOutcome": "Circle revision selected for review; all three researched approach attempts failed gait or style and are excluded.",
+  "continuationPermission": {
+    "userMessage": "good start, continue",
+    "scope": "Proceed to settling checkpoint; does not establish motion lock or erase QA caveats."
+  }
+}

@@ -1,0 +1,929 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ronnie · Bedtime sequence</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f3ed;color:#302c28;font:16px/1.5 system-ui,sans-serif}main{max-width:850px;margin:auto;padding:28px 20px}h1{font-size:28px}.note{padding:14px 18px;background:#fff1cc;border-left:4px solid #946900}canvas{display:block;width:100%;max-width:780px;height:auto;margin:24px auto;background:#eee9df;border-radius:12px}.controls{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}button,select{font:inherit;padding:10px 14px;border:1px solid #746a5f;border-radius:8px;background:white;color:inherit;min-height:44px}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #226a72;outline-offset:3px}.sheet{width:100%;height:auto}a{color:#225e65}output{display:block;text-align:center;margin:12px}</style>
+<main><p>BED ENTRY · CHECKPOINT 3 OF 3</p><nav><a href="bed-entry.html">Approach and circle</a> · <a href="curled-sleep.html">Approved curled pose</a></nav><h1>Ronnie’s bedtime sequence</h1>
+<p class="note"><strong>Full sequence approved.</strong> Ronnie approaches, circles with sniffing pauses, lowers herself and curls up. This combines the existing artwork, ending on her approved sleeping pose. The bed remains separate.</p>
+<canvas id="scene" width="520" height="320" role="img" aria-label="Ronnie approaching, circling and settling into her curled sleeping position"></canvas>
+<div class="controls"><button id="play" disabled>Play</button><button id="restart" disabled>Restart</button><button id="step" disabled>Next pose</button><label>Section <select id="section"><option value="0">Full bedtime sequence</option><option value="33">Circle</option><option value="51">Settle</option><option value="60">Curled sleep</option></select></label><label>Layers <select id="layers"><option value="both">Ronnie + bed</option><option value="dog">Ronnie only</option><option value="bed">Bed only</option></select></label></div><output id="status" aria-live="polite">Loading sprites…</output>
+<p>Playback stops on her approved curled pose. Earlier foot sliding, uneven turns and the accepted settling joins remain visible. This preview holds the sleeping pose; refined breathing is still pending.</p>
+<details><summary>Sequence overview</summary><img class="sheet" src="bedtime/sequence-contact.png" alt="Approach, circling, lowering and final curled sleep"></details>
+<p><a href="bedtime/preview.gif">Full GIF</a> · <a href="settling.html">Approved settling checkpoint</a> · <a href="bedtime/job.json">Review findings</a> · <a href="README.md">Library notes</a></p>
+</main><script>
+const timeline={
+  "canvas": [
+    520,
+    320
+  ],
+  "cell": [
+    192,
+    208
+  ],
+  "columns": 8,
+  "anchor": [
+    96,
+    203
+  ],
+  "bedPosition": [
+    252,
+    84
+  ],
+  "sources": {
+    "approach": "../bed-entry/approach.png",
+    "circle": "../bed-entry/circle.png",
+    "settling": "../settling/candidate.png",
+    "curl": "../curled-sleep/candidate.png",
+    "bed": "../curled-sleep/bed.png"
+  },
+  "durationMs": 13520,
+  "sections": [
+    {
+      "label": "Full bedtime sequence",
+      "step": 0
+    },
+    {
+      "label": "Circle",
+      "step": 33
+    },
+    {
+      "label": "Settle",
+      "step": 51
+    },
+    {
+      "label": "Curled sleep",
+      "step": 60
+    }
+  ],
+  "steps": [
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        90.0,
+        243
+      ],
+      "to": [
+        99.0625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        99.0625,
+        243
+      ],
+      "to": [
+        108.125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        108.125,
+        243
+      ],
+      "to": [
+        117.1875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        117.1875,
+        243
+      ],
+      "to": [
+        126.25,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        126.25,
+        243
+      ],
+      "to": [
+        135.3125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        135.3125,
+        243
+      ],
+      "to": [
+        144.375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        144.375,
+        243
+      ],
+      "to": [
+        153.4375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        153.4375,
+        243
+      ],
+      "to": [
+        162.5,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        162.5,
+        243
+      ],
+      "to": [
+        171.5625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        171.5625,
+        243
+      ],
+      "to": [
+        180.625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        180.625,
+        243
+      ],
+      "to": [
+        189.6875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        189.6875,
+        243
+      ],
+      "to": [
+        198.75,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        198.75,
+        243
+      ],
+      "to": [
+        207.8125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        207.8125,
+        243
+      ],
+      "to": [
+        216.875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        216.875,
+        243
+      ],
+      "to": [
+        225.9375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        225.9375,
+        243
+      ],
+      "to": [
+        235.0,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        235.0,
+        243
+      ],
+      "to": [
+        244.0625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        244.0625,
+        243
+      ],
+      "to": [
+        253.125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        253.125,
+        243
+      ],
+      "to": [
+        262.1875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        262.1875,
+        243
+      ],
+      "to": [
+        271.25,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        271.25,
+        243
+      ],
+      "to": [
+        280.3125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        280.3125,
+        243
+      ],
+      "to": [
+        289.375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        289.375,
+        243
+      ],
+      "to": [
+        298.4375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        298.4375,
+        243
+      ],
+      "to": [
+        307.5,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        307.5,
+        243
+      ],
+      "to": [
+        316.5625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        316.5625,
+        243
+      ],
+      "to": [
+        325.625,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        325.625,
+        243
+      ],
+      "to": [
+        334.6875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        334.6875,
+        243
+      ],
+      "to": [
+        343.75,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        343.75,
+        243
+      ],
+      "to": [
+        352.8125,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        352.8125,
+        243
+      ],
+      "to": [
+        361.875,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        361.875,
+        243
+      ],
+      "to": [
+        370.9375,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        370.9375,
+        243
+      ],
+      "to": [
+        380.0,
+        243
+      ],
+      "label": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 400,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Pause at bed"
+    },
+    {
+      "asset": "circle",
+      "frame": 0,
+      "duration": 200,
+      "from": [
+        380.0,
+        243.0
+      ],
+      "to": [
+        384.3262379212493,
+        242.60845213036123
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 1,
+      "duration": 200,
+      "from": [
+        384.3262379212493,
+        242.60845213036123
+      ],
+      "to": [
+        388.61926065455924,
+        241.3040860288538
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 2,
+      "duration": 240,
+      "from": [
+        388.61926065455924,
+        241.3040860288538
+      ],
+      "to": [
+        392.2446758999515,
+        238.8784769619707
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 3,
+      "duration": 200,
+      "from": [
+        392.2446758999515,
+        238.8784769619707
+      ],
+      "to": [
+        393.9467257732844,
+        235.69724594198127
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 4,
+      "duration": 240,
+      "from": [
+        393.9467257732844,
+        235.69724594198127
+      ],
+      "to": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 4,
+      "duration": 320,
+      "from": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "to": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "label": "Investigate the cushion"
+    },
+    {
+      "asset": "circle",
+      "frame": 5,
+      "duration": 200,
+      "from": [
+        393.15569669100273,
+        232.26383885339465
+      ],
+      "to": [
+        389.54797704087497,
+        229.14917038704664
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 6,
+      "duration": 200,
+      "from": [
+        389.54797704087497,
+        229.14917038704664
+      ],
+      "to": [
+        385.0171512936342,
+        227.5313565880224
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 7,
+      "duration": 240,
+      "from": [
+        385.0171512936342,
+        227.5313565880224
+      ],
+      "to": [
+        379.75566630987805,
+        227.00121843874888
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 8,
+      "duration": 200,
+      "from": [
+        379.75566630987805,
+        227.00121843874888
+      ],
+      "to": [
+        374.3056869969388,
+        227.69163633885918
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 9,
+      "duration": 240,
+      "from": [
+        374.3056869969388,
+        227.69163633885918
+      ],
+      "to": [
+        369.43406587688116,
+        229.75152776807593
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 10,
+      "duration": 200,
+      "from": [
+        369.43406587688116,
+        229.75152776807593
+      ],
+      "to": [
+        366.9298740290392,
+        232.1330564036376
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 11,
+      "duration": 240,
+      "from": [
+        366.9298740290392,
+        232.1330564036376
+      ],
+      "to": [
+        366.0,
+        235.0
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 11,
+      "duration": 320,
+      "from": [
+        366.0,
+        235.0
+      ],
+      "to": [
+        366.0,
+        235.0
+      ],
+      "label": "Investigate the cushion"
+    },
+    {
+      "asset": "circle",
+      "frame": 12,
+      "duration": 200,
+      "from": [
+        366.0,
+        235.0
+      ],
+      "to": [
+        366.9298740290392,
+        237.8669435963624
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 13,
+      "duration": 240,
+      "from": [
+        366.9298740290392,
+        237.8669435963624
+      ],
+      "to": [
+        369.92924279525886,
+        240.55726696367196
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 14,
+      "duration": 200,
+      "from": [
+        369.92924279525886,
+        240.55726696367196
+      ],
+      "to": [
+        374.7555076921772,
+        242.4174708365343
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 15,
+      "duration": 240,
+      "from": [
+        374.7555076921772,
+        242.4174708365343
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 0,
+      "duration": 600,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Sniff the spot"
+    },
+    {
+      "asset": "settling",
+      "frame": 0,
+      "duration": 240,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Prepare to settle"
+    },
+    {
+      "asset": "settling",
+      "frame": 1,
+      "duration": 280,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Bend front legs"
+    },
+    {
+      "asset": "settling",
+      "frame": 2,
+      "duration": 320,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Lower chest"
+    },
+    {
+      "asset": "settling",
+      "frame": 3,
+      "duration": 360,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Lower hindquarters"
+    },
+    {
+      "asset": "settling",
+      "frame": 4,
+      "duration": 360,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Rest hips"
+    },
+    {
+      "asset": "settling",
+      "frame": 5,
+      "duration": 360,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Curl body"
+    },
+    {
+      "asset": "settling",
+      "frame": 6,
+      "duration": 400,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Tuck head"
+    },
+    {
+      "asset": "settling",
+      "frame": 7,
+      "duration": 440,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Close eyes"
+    },
+    {
+      "asset": "curl",
+      "frame": 0,
+      "duration": 1800,
+      "from": [
+        380,
+        243
+      ],
+      "to": [
+        380,
+        243
+      ],
+      "label": "Approved curled endpoint"
+    }
+  ]
+}
+;
+const canvas=document.querySelector('#scene'),ctx=canvas.getContext('2d'),play=document.querySelector('#play'),status=document.querySelector('#status');
+const assets={};let ready=false,playing=false,elapsed=0,started=0,raf;
+const starts=[];let total=0;for(const step of timeline.steps){starts.push(total);total+=step.duration;}
+function load(name,url){return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{assets[name]=image;resolve();};image.onerror=reject;image.src=url;});}
+function locate(time){let i=starts.length-1;while(i>0&&time<starts[i])i--;return i;}
+function draw(time){if(!playing)play.textContent=time>=total?'Replay':'Play';const i=locate(time),step=timeline.steps[i],u=Math.min(1,Math.max(0,(time-starts[i])/step.duration)),position=step.from.map((v,j)=>Math.round(v+u*(step.to[j]-v)-timeline.anchor[j])),layer=document.querySelector('#layers').value;ctx.fillStyle='#eee9df';ctx.fillRect(0,0,...timeline.canvas);ctx.imageSmoothingEnabled=false;if(layer!=='dog')ctx.drawImage(assets.bed,...timeline.bedPosition);if(layer!=='bed')ctx.drawImage(assets[step.asset],step.frame%8*192,Math.floor(step.frame/8)*208,192,208,...position,192,208);status.textContent=`${step.label} · step ${i+1}/${starts.length} · ${(time/1000).toFixed(1)} / ${(total/1000).toFixed(2)} s`;}
+function pause(){if(playing)elapsed=Math.min(total,performance.now()-started);playing=false;cancelAnimationFrame(raf);if(ready)draw(elapsed);}
+function tick(now){if(!playing)return;elapsed=Math.min(total,now-started);draw(elapsed);if(elapsed>=total){playing=false;play.textContent='Replay';return;}raf=requestAnimationFrame(tick);}
+function start(){if(!ready)return;if(elapsed>=total)elapsed=starts[Number(document.querySelector('#section').value)];started=performance.now()-elapsed;playing=true;play.textContent='Pause';raf=requestAnimationFrame(tick);}
+play.addEventListener('click',()=>playing?pause():start());
+document.querySelector('#restart').addEventListener('click',()=>{pause();elapsed=starts[Number(document.querySelector('#section').value)];draw(elapsed);});
+document.querySelector('#step').addEventListener('click',()=>{pause();elapsed=starts[(locate(elapsed)+1)%starts.length];draw(elapsed);});
+document.querySelector('#section').addEventListener('change',event=>{pause();elapsed=starts[Number(event.target.value)];if(ready)draw(elapsed);});
+document.querySelector('#layers').addEventListener('change',()=>{if(ready)draw(elapsed);});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+Promise.all(Object.entries(timeline.sources).map(([name,url])=>load(name,'bedtime/'+url))).then(()=>{ready=true;for(const id of ['play','restart','step'])document.querySelector('#'+id).disabled=false;draw(0);}).catch(()=>{status.textContent='A sprite could not load. Reopen the local preview.';});
+</script></html>

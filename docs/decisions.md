@@ -1,5 +1,13 @@
 # Decisions
 
+## 2026-09-14 — Approve movement before integrating gameplay
+
+**Decision:** Package the staged animation library under `docs/animation-library`, preserving the original atlas and separate props. Keep timing/pose metadata with the artwork and review the full bedtime sequence before game integration.
+
+**Why:** Character style and motion can be checked without changing care rewards, save behavior or the deployed game.
+
+**Tradeoff:** Standalone HTML duplicates timeline JSON for direct file preview; changes must keep them equal. Approved visual caveats remain documented, especially gait contacts and curled breathing. Integration remains a separate PR.
+
 ## 2026-09-13 — Version the board and delegate project tracking
 
 **Context:** Ideas, completed work and open reviews were scattered across conversation history. Josh requested a project manager agent and Kanban before further feature work.

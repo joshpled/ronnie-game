@@ -21,6 +21,8 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 
 ## Structure and rules
 
+- Reviewed animation artwork and preview contracts: `docs/animation-library/README.md`; these assets are not yet integrated into the game. Preserve the original atlas as design authority.
+
 - Care rules: `src/care.ts`; browser state: `src/main.ts`; animations and movement: `src/Room.ts`.
 - Keep care rules independent of animation timing. Award actions only once, after completion.
 - A saved rest must restore on reload. Keep needs bounded and time away capped.

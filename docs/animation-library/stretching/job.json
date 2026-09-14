@@ -1,0 +1,62 @@
+{
+  "stage": "stretching",
+  "status": "user-approved",
+  "user_approved": true,
+  "frameCount": 8,
+  "frameSize": [
+    192,
+    208
+  ],
+  "frameMs": [
+    300,
+    180,
+    180,
+    200,
+    500,
+    200,
+    180,
+    180
+  ],
+  "sourceSize": [
+    1704,
+    923
+  ],
+  "sharedScale": 0.4587378640776699,
+  "sharedCrop": [
+    93,
+    36,
+    363,
+    448
+  ],
+  "registration": "One crop and transform across all source slots, preserving relative paw motion; no per-frame scaling or repositioning.",
+  "source": "work/ronnie-animation-library/stretching/decoded/source.png",
+  "generation_tool": "built-in image_gen",
+  "reference_roles": [
+    "Original-sprite layout",
+    "Original standing crop"
+  ],
+  "qa_note": "Contact review: recognizable full-body stretch with planted forepaws extended and raised hindquarters. Face is softer/eyes larger and tail angle changes versus original. Generated recovery frames 6-8 are unused: playback returns through the lowering poses in reverse to avoid the abrupt 5-to6 jump. Josh explicitly approved; original atlas remains character reference.",
+  "playbackFrames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+  ],
+  "validation": {
+    "gif_steps": 8,
+    "cycle_ms": 1920,
+    "deepest_pose_hold_ms": 500,
+    "original_atlas_unchanged": true,
+    "approved_sheet_original_pixels_unchanged": true,
+    "browser": "Original/candidate render; Next frame reaches deepest pose at step5, then returns to pose4 at step6; Play advances and Pause stops."
+  },
+  "approval": {
+    "date": "2026-09-13",
+    "user_message": "Approved, add to kanban: shaking body action (like when drying off)",
+    "context": "Approved displayed stretching playback with disclosed caveats. Body shake is a separate backlog idea."
+  }
+}

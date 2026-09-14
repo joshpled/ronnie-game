@@ -1,0 +1,22 @@
+{
+  "algorithm": "edge-local-chroma-spill-suppression",
+  "strength": 1,
+  "edge_radius": 5,
+  "spill_tolerance": 0.15,
+  "minimum_saturation": 0.1,
+  "changed_pixels": 14914,
+  "decontaminated_pixels": 14578,
+  "spill_suppressed_pixels": 14914,
+  "rejected_pixels": 0,
+  "changed_by_cell": {
+    "r0c6": 2033,
+    "r0c7": 2031,
+    "r0c0": 2022,
+    "r0c5": 1998,
+    "r0c1": 1821,
+    "r0c2": 1749,
+    "r0c3": 1649,
+    "r0c4": 1611
+  },
+  "alpha_preserved": true
+}

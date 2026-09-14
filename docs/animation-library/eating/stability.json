@@ -1,0 +1,110 @@
+{
+  "method": "Integer translation only, aligning solid front paw baseline at y203. Offsets baked into candidate.png; do not apply again in playback.",
+  "pixel_preservation": "All nontransparent pixels preserved byte-for-byte within translated bounds; nonzero alpha counts unchanged. No resampling/redrawing/additional cleanup.",
+  "offsets": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      6
+    ]
+  ],
+  "paw_measurements": [
+    {
+      "pose": 1,
+      "before_paw_baseline": 203,
+      "after_paw_baseline": 203,
+      "dy": 0
+    },
+    {
+      "pose": 2,
+      "before_paw_baseline": 203,
+      "after_paw_baseline": 203,
+      "dy": 0
+    },
+    {
+      "pose": 3,
+      "before_paw_baseline": 203,
+      "after_paw_baseline": 203,
+      "dy": 0
+    },
+    {
+      "pose": 4,
+      "before_paw_baseline": 203,
+      "after_paw_baseline": 203,
+      "dy": 0
+    },
+    {
+      "pose": 5,
+      "before_paw_baseline": 197,
+      "after_paw_baseline": 203,
+      "dy": 6
+    },
+    {
+      "pose": 6,
+      "before_paw_baseline": 197,
+      "after_paw_baseline": 203,
+      "dy": 6
+    },
+    {
+      "pose": 7,
+      "before_paw_baseline": 197,
+      "after_paw_baseline": 203,
+      "dy": 6
+    },
+    {
+      "pose": 8,
+      "before_paw_baseline": 197,
+      "after_paw_baseline": 203,
+      "dy": 6
+    }
+  ],
+  "max_baseline_range_before_px": 6,
+  "max_baseline_range_after_px": 0,
+  "rear_paw_baselines_before": [
+    186,
+    186,
+    186,
+    186,
+    181,
+    181,
+    181,
+    181
+  ],
+  "rear_paw_baselines_after": [
+    186,
+    186,
+    186,
+    186,
+    187,
+    187,
+    187,
+    187
+  ]
+}

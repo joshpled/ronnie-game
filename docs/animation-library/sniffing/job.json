@@ -1,0 +1,95 @@
+{
+  "stage": "sniffing",
+  "status": "user-approved",
+  "user_approved": true,
+  "frameCount": 8,
+  "frameSize": [
+    192,
+    208
+  ],
+  "frameMs": [
+    280,
+    160,
+    160,
+    200,
+    500,
+    180,
+    160,
+    280
+  ],
+  "sourceSize": [
+    1704,
+    923
+  ],
+  "sharedScale": 0.4576271186440678,
+  "registeredBounds": [
+    [
+      52,
+      14,
+      152,
+      203
+    ],
+    [
+      51,
+      50,
+      155,
+      203
+    ],
+    [
+      52,
+      64,
+      156,
+      203
+    ],
+    [
+      51,
+      64,
+      154,
+      203
+    ],
+    [
+      51,
+      57,
+      157,
+      203
+    ],
+    [
+      51,
+      57,
+      155,
+      203
+    ],
+    [
+      52,
+      29,
+      155,
+      203
+    ],
+    [
+      52,
+      14,
+      152,
+      203
+    ]
+  ],
+  "source": "work/ronnie-animation-library/sniffing/decoded/source.png",
+  "generation_tool": "built-in image_gen",
+  "reference_roles": [
+    "Original-sprite layout (exact copies of original standing crop)",
+    "Original standing crop"
+  ],
+  "qa_note": "Source worker flagged smoother rendering, larger eyes and stronger shoulder/back flexion. Final contact sheet confirms these deviations. Eight separated poses show head lowering and return, consistent front-paw baseline and no clipping. Josh explicitly approved with disclosed differences; original atlas remains identity reference.",
+  "validation": {
+    "gif_frames": 8,
+    "cycle_ms": 1920,
+    "original_atlas_unchanged": true,
+    "approved_sheet_original_pixels_unchanged": true,
+    "browser": "Original/candidate rendered; Play advances, Pause stops, Next frame steps while paused."
+  },
+  "approval": {
+    "date": "2026-09-13",
+    "user_message": "approved, ensure there is also a small pause when head is fully down that shows she is sniffing.",
+    "timing_change": "Hold frame 5 (lowest nose position) for 500 ms, increased from 180 ms. Other frames unchanged.",
+    "artwork": "Approved with previously disclosed visual QA caveats."
+  }
+}

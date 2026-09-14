@@ -1,0 +1,35 @@
+{
+  "canonicalAtlasHash": true,
+  "original11RowsPixelEqual": true,
+  "approvedFiveRowsPixelEqual": true,
+  "gifDurationsMs": {
+    "tail-wag/comparison.gif": 800,
+    "sniffing/comparison.gif": 1920,
+    "stretching/comparison.gif": 1920,
+    "eating/comparison.gif": 5000,
+    "sleeping/comparison.gif": 8000,
+    "sleeping/breathing.gif": 2400,
+    "curled-sleep/combined.gif": 4000,
+    "curled-sleep/dog-only.gif": 4000,
+    "bed-entry/preview.gif": 9160,
+    "settling/preview.gif": 5160,
+    "bedtime/preview.gif": 13520
+  },
+  "htmlPagesParsed": 9,
+  "htmlLocalLinksResolve": true,
+  "allJsonAndPngDecode": true,
+  "runtimeChanged": false,
+  "projectCheck": {
+    "command": "npm run check",
+    "typecheck": "pass",
+    "lint": "pass",
+    "testsPassed": 5,
+    "testsFailed": 0,
+    "productionBuild": "pass"
+  },
+  "review": {
+    "reviewer": "implementing agent",
+    "scope": "Asset integrity, runtime isolation, timeline consistency, local preview scripts/links and publication contents",
+    "blockingFindings": []
+  }
+}
