@@ -22,8 +22,9 @@ Open the HTML files directly, or run `python3 -m http.server 8768 --directory do
 ## Candidate checkpoints
 
 [RON-013 — Ears pulled back](ears-pulled-back/index.html) is a standalone static
-endpoint comparison awaiting Josh's pose/style approval. Its generated ear layer
-is combined with protected original pixels. The transition and playback are not
+endpoint comparison awaiting Josh's pose/style approval. Revision 2 adds the
+requested sad expression; generated ear, eye and mouth regions are combined with
+protected original pixels. The transition and playback are not
 implemented yet; see the [review notes](ears-pulled-back/README.md). This candidate
 is separate from the approved artwork listed above.
 

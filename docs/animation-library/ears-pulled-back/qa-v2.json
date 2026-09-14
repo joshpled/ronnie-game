@@ -1,0 +1,36 @@
+{
+  "revision": 2,
+  "checkpoint": "static ears-back/sad endpoint; visual approval pending",
+  "date": "2026-09-14",
+  "originalAtlasSha256": "b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e",
+  "generator": "built-in imagegen; one face edit",
+  "candidate": "candidate-v2.png",
+  "baseline": "candidate.png (historical v1)",
+  "cellSize": [192, 208],
+  "changedPixelsVsV1": 868,
+  "changedBoundsInclusiveVsV1": [88, 43, 129, 84],
+  "changesOutsideExpressionMask": 0,
+  "silhouetteAlphaExactlyMatchesV1": true,
+  "bodyAtY85AndBelowExactlyMatchesV1": true,
+  "originalAtlasAndPriorArtworkUnchanged": true,
+  "neutralPoseUnchanged": true,
+  "checks": "npm run check: typecheck/lint/13 tests/build passed",
+  "independentVisualQA": "pass for endpoint checkpoint with minor caveats",
+  "caveats": [
+    "Expression can read sleepy or pleading at native size; sadness clearer enlarged.",
+    "Viewer-left eye mildly more closed.",
+    "Closed-mouth downturn faint, mouth detail softer.",
+    "Existing outward airplane-ear silhouette retained."
+  ],
+  "animationImplemented": false,
+  "userVisualApproval": "pending",
+  "earPixelChangesVsV1": 0,
+  "finalAdjustment": "9 ear-boundary pixels excluded from expression mask after visual review; original ear pixels retained.",
+  "browser": "Local standalone comparison rendered at390px width with original neutral and candidate-v2; still-pose labels verified.",
+  "deployment": {
+    "commit": "4bd851e1d9deefb17ee529ea8c48e7f44c010d4c",
+    "status": "built",
+    "url": "https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/?v=2",
+    "browser": "Public page and revised images verified at390px browser width; not physical-device testing"
+  }
+}

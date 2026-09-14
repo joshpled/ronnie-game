@@ -1,64 +1,88 @@
-# Ears pulled back — endpoint checkpoint
+# Ears pulled back — sad-expression checkpoint
 
-[Open the comparison](index.html). This is RON-013's first static pose/style
-checkpoint. Josh approved the implementation plan on 2026-09-14; endpoint visual
-approval is pending. Intermediate poses and the proposed 2.4-second sequence wait
-for that approval. No app integration or approved-atlas promotion.
+[Open revision 2](index.html) · [Public phone preview](https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/?v=2)
 
-Josh requested a public phone preview on 2026-09-14:
-[open the hosted endpoint comparison](https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/).
-Only this preview's HTML and three PNGs are published beneath `previews/ears-pulled-back/`
-on the existing `gh-pages` branch. Deployment keeps the game files unchanged and
-does not merge this candidate into `main`. Remote pose review is separate from
-the deferred integrated-game iPhone validation.
+This is a **still pose**, awaiting Josh's visual approval. Josh approved the
+sad-expression revision after requesting that Ronnie's face look sad when her
+ears are back. Softer, slightly lowered eyelids and a subtly downturned closed
+mouth replace the earlier fixed-face constraint. Her original head shape,
+markings and body remain the design authority. The proposed 2.4-second animation
+waits for approval of this revised endpoint.
 
-## Artwork and preservation
+## Revision 2
 
-The exact neutral pose is original atlas row 0, column 0, extracted into a
-192 × 208 cell. The original atlas remains the style and identity authority.
+The built-in imagegen tool edited a 60 × 60 face crop from revision 1, keeping
+her forward-facing head and adding the sad expression. The exact request is in
+[prompt-v2.txt](prompt-v2.txt). Generated output was registered as separate eye
+and mouth regions, so its other changes do not replace the original artwork.
 
-The built-in imagegen tool produced the ears-back drawing. Both its initial
-output and one correction regenerated the body/face and returned opaque
-checkerboard backgrounds, so neither full generated sprite is used. The actual
-requests are saved in [prompt.txt](prompt.txt).
+`expression-layer-v2.png` contains the registered generated regions, and
+`expression-mask-v2.png` applies a soft blend around those regions. The mask is
+intersected with revision 1's protected face region, keeping every ear pixel
+unchanged. `candidate-v2.png` is the current endpoint. `assemble.py` rebuilds both
+revisions and their comparison media from the saved layers, using Pillow from
+the bundled workspace Python. No new app dependency is required.
 
-Only the generated ear regions were extracted, registered to the original
-forehead and eye line, and assembled with original pixels. `ear-layer.png` holds
-the isolated registered ear artwork; `protected-region.png` is a binary mask:
-white keeps the exact original RGBA pixel, black selects the ear layer.
-`assemble.py` reproduces the neutral, candidate and comparison from those inputs.
-It uses Pillow from the bundled workspace Python; there is no new app dependency.
+The source was 1254 × 1254, normalized to the original 60 × 60 crop. Individual
+eye/mouth offsets and mask construction are recorded in
+[expression-registration-v2.json](expression-registration-v2.json). Soft masks
+avoid hard rectangular joins, while the original alpha channel preserves the
+head silhouette exactly. The existing nose and all pixels at y ≥ 85 stay fixed.
+Do not expand the expression mask into the ear region or body during revisions.
 
-For the extraction, the selected 1205 × 1305 source had neutral-gray checkerboard
-pixels removed where RGB channel range was below 22 and every channel exceeded 95. It was resized to 160 × 173 and placed at (16, 25) in a 192 × 208 cell.
-Only two ear polygons were retained. Those ear pixels are now saved in the
-registered layer, so rebuilding does not need the raw generated image.
-The mask's face boundary follows the forehead and outer ear roots; every pixel
-at y ≥ 61 is protected. Do not expand the editable area into her eyes or face
-when adjusting the ear attachment.
+[Preservation checks](qa-v2.json) find **868 changed pixels** versus revision 1,
+confined to x88–129/y43–84. There are zero changes outside the expression mask,
+zero ear-pixel changes and an identical silhouette alpha channel. Original atlas,
+neutral pose, previously approved artwork and revision-1 assets are unchanged.
+Typecheck, lint, all 13 existing tests and the production build pass.
 
-## Review and limits
+Independent visual QA found aligned eyes, no conspicuous patch seams, preserved
+identity and a subdued/sad expression. Minor caveats: the viewer-left eye is a
+little more closed; the mouth downturn is faint and softer; at natural size the
+expression can also read as sleepy or pleading. Sadness is clearer enlarged.
+After review, nine ear-boundary pixels were excluded from the expression mask to
+retain the exact existing ears. See the
+[previous-versus-revised expression comparison](expression-comparison-v2.png).
 
-Independent visual QA found clean attachments without conspicuous seams or halos
-at natural size, pointed tips, matching tan/brown shading, and a stable face,
-body, paws and tail. The ears read outward and back. The nearly horizontal,
-shortened silhouette reads more like “airplane ears” than ears pinned tightly
-against the skull; Josh should decide whether this is the intended endpoint.
-The newly generated ears are softer than the original tall-ear detail when
-enlarged. No animation smoothness or transition approval is claimed.
+## Preview and deployment
 
-The static page shows both poses at 1× and 2× on larger screens; images shrink
-to fit narrow screens, keeping the first comparison side by side. A 390 px
-browser-width check confirms the phone layout; this is not physical-device QA.
-The comparison PNG uses nearest
-neighbor enlargement so source pixels can be inspected directly; the browser
-uses normal image scaling. [qa.json](qa.json) records the preservation checks.
-Typecheck, lint, all 13 existing tests and production build pass. The original
-atlas and all previously approved artwork remain unchanged.
+The page compares original neutral with revision 2, then offers larger views.
+Both poses stay side by side on narrow phone screens. The page explicitly labels
+this as a still-pose review, not completed animation playback. Comparison PNGs
+use nearest-neighbor enlargement; the browser uses normal image scaling.
 
-After endpoint approval, build the intermediate ear poses and standalone
-playback, then pause for motion review. The proposed timing remains neutral
-400 ms → pull back 400 ms → hold 800 ms → return 500 ms → neutral 300 ms.
-This pose does not set a gameplay emotion or trigger. Physical iPhone testing
+At Josh's request, the standalone review is published beneath
+`previews/ears-pulled-back/` on the existing `gh-pages` branch. Revision-specific
+image filenames prevent the previous face from being reused from cache.
+Deployment changes only the standalone preview. It does not merge the candidate
+into `main`, change the game, or establish physical-device validation.
+
+## Historical revision 1
+
+The neutral pose is original atlas row 0, column 0 (192 × 208). The original atlas
+remains the style and identity authority. The first endpoint kept its neutral
+face and added only generated ears. Both generation attempts returned an opaque
+checkerboard and regenerated body/face detail, so only the ears were extracted.
+The actual requests are in [prompt.txt](prompt.txt).
+
+`ear-layer.png` stores that registered ear artwork; `protected-region.png` selects
+exact original RGBA pixels in white and ear pixels in black. The extraction
+removed neutral-gray pixels (channel range below 22 and all channels above 95),
+resized the 1205 × 1305 source to 160 × 173, and placed it at (16, 25). Only the
+two ear polygons were retained. The saved layer makes rebuilding independent of
+the raw generated output. The original face/body mask protected all y ≥ 61.
+
+`candidate.png`, `comparison.png` and [qa.json](qa.json) retain that historical
+endpoint and its checks. Its 1,559 changed pixels were restricted to the ears.
+The shortened, nearly horizontal ears read more like airplane ears than tightly
+pinned-back ears; their detail is softer when enlarged. Those ear caveats remain
+in revision 2. The original neutral-face endpoint was not visually approved.
+
+## Next checkpoint
+
+After revised endpoint approval, create intermediate poses and playback:
+neutral 400 ms → ears back with sad face 400 ms → hold 800 ms → return 500 ms →
+neutral 300 ms. Then pause for motion review. No gameplay emotion trigger, app
+integration or approved-atlas promotion is included. Physical iPhone testing
 waits until Josh declares the potentially expanding animation set complete and
 selects an integrated build.
