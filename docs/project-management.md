@@ -28,9 +28,17 @@ Keep useful outcomes in validation docs and link temporary work to its Kanban ca
 | Review      | A reviewable result exists; record checks, PR and remaining acceptance work. |
 | Done        | Acceptance criteria are met and repository changes are verified merged.      |
 
-Use a blocker field on the card rather than hiding blocked work in another board. Keep one implementation feature active unless Josh explicitly reprioritizes or authorizes parallel work. PR #2 remains in Review while this requested organization setup is handled separately.
+Use a blocker field on the card rather than hiding blocked work in another board. Keep one implementation feature active unless Josh explicitly reprioritizes or authorizes parallel work. PR #2 is merged and its motion card is Done.
 
 Each card has a stable `RON-NNN` ID, outcome, owner, source, acceptance criteria, next action, dependency/blocker, and evidence. Preserve IDs and history. Do not invent deadlines or make suggested ideas into commitments. A live preview and green CI are evidence, not permission to merge. Physical iPhone checks require a real device result; browser emulation is labeled separately.
+
+## Current animation phase
+
+Continue creating and refining standalone animations as Josh adds and selects them. New requests enter Ideas until their individual plan is approved. The animation set remains open to additions; finishing the current list does not automatically start iPhone testing.
+
+Physical iPhone validation (RON-004) waits until Josh declares the animation set complete and selects a suitable integrated build. Approved preview artwork is not automatically present in the game. App integration remains a separate approval, and device testing is not a prerequisite for continuing animation previews.
+
+The private GitHub Projects board is a visual trial of the canonical Markdown board. Its draft cards are updated manually at active checkpoints; they do not automatically track PR merges. Keep scope and status consistent without treating the trial as a second source of truth.
 
 ## Checkpoint procedure
 

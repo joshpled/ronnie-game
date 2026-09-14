@@ -4,6 +4,8 @@ Last reconciled: **2026-09-14**. Ronnie is a girl (she/her). The product is an i
 
 This file is the canonical board. Card details below own scope, evidence and next actions; the table is an index. A live preview does not mean a pull request has merged. Ideas are not authorization to implement them.
 
+Animation creation is the current priority, and the list may expand as Josh adds ideas. Physical iPhone testing is deferred until Josh declares the full animation set complete and selects an integrated build to test; finishing RON-013–019 alone does not satisfy that gate. No app integration is selected. Each animation still needs its own approved plan before implementation; original atlas style and approved artwork must be preserved.
+
 | Ideas                                                      | Ready | In progress | Review                                       | Done                                            |
 | ---------------------------------------------------------- | ----- | ----------- | -------------------------------------------- | ----------------------------------------------- |
 | [RON-004 — Physical iPhone validation (pending)](#ron-004) | —     | —           | —                                          | [RON-001 — First playable room](#ron-001)       |
@@ -12,6 +14,13 @@ This file is the canonical board. Card details below own scope, evidence and nex
 | [RON-008 — Toy carrying](#ron-008)                         |       |             |                                              | [RON-012 — Curled-sleep breathing](#ron-012)      |
 | [RON-009 — Capacitor iPhone package](#ron-009)             |       |             |                                              | [RON-002 — Refine existing motion](#ron-002)     |
 | [RON-011 — Body shake (drying off)](#ron-011)              |       |             |                                              |                                                 |
+| [RON-013 — Ears pulled back](#ron-013) | | | | |
+| [RON-014 — Howling](#ron-014) | | | | |
+| [RON-015 — Barking](#ron-015) | | | | |
+| [RON-016 — Shaking scared](#ron-016) | | | | |
+| [RON-017 — Sad](#ron-017) | | | | |
+| [RON-018 — Jumping](#ron-018) | | | | |
+| [RON-019 — Waking up and shaking off the sleep](#ron-019) | | | | |
 
 Outside the active pipeline: [RON-005 — Withdrawn](#ron-005).
 
@@ -28,6 +37,7 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ## Change history
 
+- **2026-09-14:** Josh clarified that animation creation comes first and the animation list may expand; physical iPhone testing waits until he declares the full set complete and selects an integrated build. Added RON-013–019 as Ideas in his supplied order: ears pulled back, howling, barking, shaking scared, sad, jumping, waking up and shaking off the sleep. These are backlog entries, not implementation authorization. Original atlas/approved artwork remain protected; no audio, triggers, gameplay, app integration or raster creation is authorized. Reconciled RON-006/007 next actions with completed library work and RON-011 with the completed batch.
 - **2026-09-14:** RON-002 moves to Done after the coordinating agent verified [PR #2](https://github.com/joshpled/ronnie-game/pull/2) squash-merged at 18:49:15 UTC as [798e4a4](https://github.com/joshpled/ronnie-game/commit/798e4a4a96863296fdb2ea1a7646d8cfbb423344). Reviewed head `1a35661ff0e1b7423e4ec48529047cb8faede78a` had both GitHub Checks jobs and GitGuardian successful. Feature-branch deletion is verified locally and remotely, `git fetch -p` completed and `main` was clean. Eight-pose gait limits and pending physical iPhone validation remain; no further implementation is authorized.
 - **2026-09-14:** Josh explicitly requested “review and merge” for RON-002 / [PR #2](https://github.com/joshpled/ronnie-game/pull/2). Latest `main` integration conflicts are resolved; fresh `npm run check` passes typecheck, lint, 13 tests and build, and the coordinating agent's source review found no blocking issues. Original atlas hash is unchanged, with no differences from `origin/main` in `public/assets` or `docs/animation-library`. Fresh local in-app browser smoke passes Feed, Pet, Play, rest persistence after reload and Wake, with no browser error logs. Earlier full Chrome/WebKit and repeated-click checks remain historical. RON-002 stays in Review until exact-head CI and the authorized merge are verified.
 - **2026-09-14:** RON-012 moves to Done. The coordinating agent verified [PR #6](https://github.com/joshpled/ronnie-game/pull/6) squash-merged at 17:58:15 UTC as [02d9c9f](https://github.com/joshpled/ronnie-game/commit/02d9c9f7f1a9cad43a09c81a2d701694296011a8), with all GitHub checks successful at exact head `f768240`. Local and remote `feature/curled-sleep-breathing` deletion are verified. Approved 3 px breathing remains an isolated preview; rendering caveats persist, approved source artwork is intact and no app integration or further work is authorized.
@@ -110,12 +120,12 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ### RON-004 — Validate on Josh's physical iPhone
 
-- **Status:** Ideas — required validation is pending; awaiting Josh's selection of a testing checkpoint
+- **Status:** Ideas — deferred until Josh declares the full animation set complete and selects an integrated build to test
 - **Owner:** Josh performs device checks; Codex project manager records results and separates any fixes
 - **Source / evidence:** [Outstanding device checks](docs/validation.md#still-needs-the-owners-device). Existing Chrome/WebKit emulation is not physical device evidence.
 - **Acceptance:** Record iPhone model, iOS version and tested build/PR; exercise movement and every care action; assess pacing and touch comfort; close/reopen and background/resume; verify rest restoration; try Add to Home Screen; record observed save behavior and any defects. A failed check produces a linked defect card rather than a claimed pass.
-- **Next action:** When Josh is ready, test the [live preview](https://joshpled.github.io/ronnie-game/) and provide observations tied to the tested build.
-- **Dependency / limitation:** Requires Josh's device access and feedback. No device test has been completed. Safari and Home Screen storage may differ.
+- **Next action:** Wait for Josh to declare the full, potentially expanding animation set complete, then select and verify the integrated build for device testing before collecting observations.
+- **Dependency / limitation:** Requires Josh's animation-completion decision, a selected integrated build, device access and feedback. Completing only the seven newly listed animations is not the testing gate. Integration remains a separate scope decision. No device test has been completed; Safari and Home Screen storage may differ.
 
 <a id="ron-005"></a>
 
@@ -129,22 +139,22 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ### RON-006 — Dedicated eating animation
 
-- **Status:** Ideas — gameplay integration not approved; staged artwork authorized under RON-010
+- **Status:** Ideas — gameplay integration deferred; staged artwork completed under RON-010
 - **Owner:** Josh scope decision; implementer unassigned
 - **Source / evidence:** [Prototype art decision](docs/decisions.md#2026-09-13--reuse-approved-art-for-the-first-care-loop); feeding currently reuses gaze artwork.
 - **Proposed acceptance:** Ronnie visibly approaches and eats at the bowl, then settles; character and bowl alignment remain consistent; the sequence finishes once and fullness changes only through the existing care completion boundary; reduced-motion behavior is defined.
-- **Next action:** Complete the eating artwork at stage 4 of RON-010 after the preceding verification gates; revisit game integration separately.
+- **Next action:** Eating artwork is completed under RON-010. Keep integration deferred while animation creation continues; revisit it only through a separate scope decision.
 - **Dependency:** RON-002 catalogue integration; approved art scope. This idea does not include new food systems or rewards.
 
 <a id="ron-007"></a>
 
 ### RON-007 — Dedicated sleeping animation
 
-- **Status:** Ideas — gameplay integration not approved; staged artwork authorized under RON-010
+- **Status:** Ideas — gameplay integration deferred; staged artwork completed under RON-010
 - **Owner:** Josh scope decision; implementer unassigned
 - **Source / evidence:** [Prototype art decision](docs/decisions.md#2026-09-13--reuse-approved-art-for-the-first-care-loop); current rest is seated.
 - **Proposed acceptance:** A consistent curl-up, quiet sleeping loop and wake transition; resting persists through reload; energy rules remain unchanged; reduced-motion still is defined.
-- **Next action:** Complete sleeping artwork at stage 5 of RON-010 after the preceding verification gates; revisit game integration separately.
+- **Next action:** Sleeping library work is completed under RON-010, with refined curled breathing under RON-012. Keep integration deferred while animation creation continues; a new waking animation is separately tracked under RON-019.
 - **Dependency:** RON-002 catalogue integration; approved art scope.
 
 <a id="ron-008"></a>
@@ -212,8 +222,8 @@ Maintain at most one item in progress. The project manager reconciles the board 
 - **Owner:** Josh priority/scope decision; implementer unassigned.
 - **Source / evidence:** Josh: “add to kanban: shaking body action (like when drying off).” No implementation or validation evidence yet.
 - **Proposed acceptance:** A natural head-to-body rotational shake, with ears/coat following through, stable paws and original character details preserved. Review the motion against only the original atlas/photos.
-- **Next action:** Revisit priority and define the preview scope after the current five-stage library; obtain explicit selection before implementation.
-- **Dependency / boundary:** Outside RON-010 and its single final PR; not a sixth stage. This backlog request does not authorize water droplets, a bath system, app integration or immediate implementation.
+- **Next action:** The prior library batch is complete. Await Josh's selection and approval of a drying-off preview plan before implementation.
+- **Dependency / boundary:** Outside RON-010 and its single final PR; not a sixth stage. This drying-off shake is distinct from scared trembling RON-016 and waking shake RON-019. This backlog request does not authorize water droplets, a bath system, app integration or immediate implementation.
 
 <a id="ron-012"></a>
 
@@ -230,3 +240,80 @@ Maintain at most one item in progress. The project manager reconciles the board 
 - **Review limitation:** Josh found the initial 2 px breathing too faint and explicitly approved the stronger revision 2. Moving-fur interpolation can soften or shimmer, especially at 2×. Josh's visual approval is recorded separately from technical checks and does not erase this rendering caveat. Earlier gait/settling caveats remain unaffected.
 - **Next action:** None authorized. Preserve the merged preview and wait for Josh to select any further animation or integration scope.
 - **Dependency / boundary:** Depends on merged RON-010 artwork. The isolated preview is completed through [PR #6](https://github.com/joshpled/ronnie-game/pull/6); approved-sheet/bedtime promotion remains outside this completed scope. No game/app changes, approach/circle/settling revisions, approved-sheet changes or gameplay integration. The original atlas remains style/identity authority; earlier accepted caveats remain recorded.
+
+<a id="ron-013"></a>
+
+### RON-013 — Ears pulled back
+
+- **Status:** Ideas — requested animation backlog item; no implementation authorized.
+- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
+- **Source / evidence:** Josh: “Ears pulled back”. Listed 1 of the seven new animation requests; no implementation or validation evidence yet.
+- **Proposed acceptance:** A readable ears-back pose with a controlled transition and recovery; preserve her face, proportions and coat markings.
+- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
+- **Dependency / boundary:** Define the ear motion and held pose; do not assign a gameplay emotion trigger. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
+
+<a id="ron-014"></a>
+
+### RON-014 — Howling
+
+- **Status:** Ideas — requested animation backlog item; no implementation authorized.
+- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
+- **Source / evidence:** Josh: “Howling”. Listed 2 of the seven new animation requests; no implementation or validation evidence yet.
+- **Proposed acceptance:** A readable head-and-mouth howling gesture with coherent body support and a smooth return to rest.
+- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
+- **Dependency / boundary:** Visual motion only; no audio or howl-trigger system. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
+
+<a id="ron-015"></a>
+
+### RON-015 — Barking
+
+- **Status:** Ideas — requested animation backlog item; no implementation authorized.
+- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
+- **Source / evidence:** Josh: “Barking”. Listed 3 of the seven new animation requests; no implementation or validation evidence yet.
+- **Proposed acceptance:** A readable, brief mouth/head/body bark gesture with steady support and a clean recovery.
+- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
+- **Dependency / boundary:** Visual motion only; no bark audio or behavior triggers. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
+
+<a id="ron-016"></a>
+
+### RON-016 — Shaking scared
+
+- **Status:** Ideas — requested animation backlog item; no implementation authorized.
+- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
+- **Source / evidence:** Josh: “Shaking scared”. Listed 4 of the seven new animation requests; no implementation or validation evidence yet.
+- **Proposed acceptance:** A readable, restrained trembling motion that preserves silhouette and character details without drifting across the ground.
+- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
+- **Dependency / boundary:** Scared trembling is distinct from drying-off body shake RON-011 and waking shake RON-019; no fear system or triggers. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
+
+<a id="ron-017"></a>
+
+### RON-017 — Sad
+
+- **Status:** Ideas — requested animation backlog item; no implementation authorized.
+- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
+- **Source / evidence:** Josh: “Sad”. Listed 5 of the seven new animation requests; no implementation or validation evidence yet.
+- **Proposed acceptance:** A readable sad pose or expression with restrained movement and consistent face, ears and body proportions.
+- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
+- **Dependency / boundary:** Define the visual expression before implementation; no mood-state or care-rule changes. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
+
+<a id="ron-018"></a>
+
+### RON-018 — Jumping
+
+- **Status:** Ideas — requested animation backlog item; no implementation authorized.
+- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
+- **Source / evidence:** Josh: “Jumping”. Listed 6 of the seven new animation requests; no implementation or validation evidence yet.
+- **Proposed acceptance:** A coherent anticipation, takeoff, airborne pose, landing and recovery with consistent proportions and ground alignment.
+- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
+- **Dependency / boundary:** Inspect existing approved jump material during planning and reuse it where appropriate. The original-atlas jump and PR #2 motion work do not establish completion of this newly requested animation. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
+
+<a id="ron-019"></a>
+
+### RON-019 — Waking up and shaking off the sleep
+
+- **Status:** Ideas — requested animation backlog item; no implementation authorized.
+- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
+- **Source / evidence:** Josh: “Waking up and shaking off the sleep”. Listed 7 of the seven new animation requests; no implementation or validation evidence yet.
+- **Proposed acceptance:** A coherent waking transition followed by a brief shake and settled finish, with consistent pose joins and body support.
+- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
+- **Dependency / boundary:** Inspect approved sleeping sources during planning. This wake shake is distinct from scared trembling RON-016 and drying-off shake RON-011; no sleep-state, wake-trigger or gameplay changes. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
