@@ -9,6 +9,7 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 - Before spawning, check the current agent roster. Reuse the existing `project_manager` via follow-up when available; do not create a new PM for every checkpoint. Keep the main agent and PM as the ongoing team. Additional agents require explicit authorization or applicable skill instructions and a bounded task.
 - Treat completed QA runs as historical work, not current team members. Report live status separately from saved roles and sidebar history; never claim a partial tool roster is the full sidebar. Preserve useful QA evidence in repo docs before retiring a run, and only claim closure/archive when a supported tool confirms it.
 - The PM owns board edits; implementation agents provide evidence and avoid concurrent writes. Keep ideas distinct from authorized scope. A deployed preview is not Done: verify acceptance and merge first.
+- Current priority: create and refine standalone animations as Josh adds and selects them. The list may grow. Physical iPhone testing is deferred until Josh declares the animation set complete and selects an integrated build for testing; game integration requires separate scope approval. Backlog additions alone do not authorize implementation.
 - Keep one implementation feature active unless Josh explicitly changes the order. PM checkpoint work may accompany it. No unattended polling is configured.
 
 ## Commands
