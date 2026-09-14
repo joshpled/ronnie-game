@@ -35,6 +35,8 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 
 ## Decisions log
 
+- 2026-09-14 — Merge the existing-motion refinement through PR #2 (`798e4a4`) — velocity-driven travel and distance-matched gait make starts/stops calmer; one-shot completion owns reward timing while `care.ts` owns amounts. Review, 13 tests, typecheck, lint, build and fresh care/rest browser smoke checks pass. Eight-pose gait limits and physical iPhone testing remain; the approved library and curled-breathing preview are unchanged and separate from gameplay.
+
 - 2026-09-14 — Animate curled breathing from one approved rest frame in a standalone Canvas preview — a tapered 3 px maximum upper-back lift makes the four-second breath readable while holding head, ears, paws and bed fixed. Josh approved revision 2; PR #6 merged as `02d9c9f`. Preserve the torso boundary when tuning motion; resampling may soften moving fur. No app or bedtime-sequence integration.
 
 - 2026-09-13 — Keep a Markdown Kanban with a reusable project manager agent — project state survives conversation clears without another service; updates happen at active checkpoints and Done requires merge evidence.

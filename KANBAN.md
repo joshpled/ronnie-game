@@ -6,11 +6,11 @@ This file is the canonical board. Card details below own scope, evidence and nex
 
 | Ideas                                                      | Ready | In progress | Review                                       | Done                                            |
 | ---------------------------------------------------------- | ----- | ----------- | -------------------------------------------- | ----------------------------------------------- |
-| [RON-004 — Physical iPhone validation (pending)](#ron-004) | —     | —           | [RON-002 — Refine existing motion](#ron-002) | [RON-001 — First playable room](#ron-001)       |
+| [RON-004 — Physical iPhone validation (pending)](#ron-004) | —     | —           | —                                          | [RON-001 — First playable room](#ron-001)       |
 | [RON-006 — Eating animation](#ron-006)                     |       |             |                                              | [RON-003 — Project manager and board](#ron-003) |
 | [RON-007 — Sleeping animation](#ron-007)                   |       |             |                                              | [RON-010 — Animation library](#ron-010)           |
 | [RON-008 — Toy carrying](#ron-008)                         |       |             |                                              | [RON-012 — Curled-sleep breathing](#ron-012)      |
-| [RON-009 — Capacitor iPhone package](#ron-009)             |       |             |                                              |                                                 |
+| [RON-009 — Capacitor iPhone package](#ron-009)             |       |             |                                              | [RON-002 — Refine existing motion](#ron-002)     |
 | [RON-011 — Body shake (drying off)](#ron-011)              |       |             |                                              |                                                 |
 
 Outside the active pipeline: [RON-005 — Withdrawn](#ron-005).
@@ -19,7 +19,7 @@ Outside the active pipeline: [RON-005 — Withdrawn](#ron-005).
 
 - **Ideas:** Possible work awaiting Josh's scope and priority decision.
 - **Ready:** Josh selected the scope and acceptance criteria are clear; no implementation started.
-- **In progress:** No implementation is active; RON-012 is Done after visual approval and verified PR #6 merge. RON-010 is Done after verified PR #5 merge; RON-002 remains in Review. RON-005 is withdrawn and must not be promoted back into the pipeline without a new explicit user instruction.
+- **In progress:** No implementation is active and Review is empty. RON-002 is Done after verified PR #2 merge; RON-010 and RON-012 remain Done after their verified merges. RON-005 is withdrawn and must not be promoted back into the pipeline without a new explicit user instruction.
 - **Review:** Deliverable exists and validation is recorded; review, acceptance or merge remains.
 - **Done:** Acceptance criteria have evidence. Repository changes require a verified merged PR; device testing requires an actual device report.
 - **Withdrawn:** Rejected or cancelled work, kept outside the pipeline as a minimal tombstone. It is not Done and must not be used as a future design reference.
@@ -28,6 +28,7 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ## Change history
 
+- **2026-09-14:** RON-002 moves to Done after the coordinating agent verified [PR #2](https://github.com/joshpled/ronnie-game/pull/2) squash-merged at 18:49:15 UTC as [798e4a4](https://github.com/joshpled/ronnie-game/commit/798e4a4a96863296fdb2ea1a7646d8cfbb423344). Reviewed head `1a35661ff0e1b7423e4ec48529047cb8faede78a` had both GitHub Checks jobs and GitGuardian successful. Feature-branch deletion is verified locally and remotely, `git fetch -p` completed and `main` was clean. Eight-pose gait limits and pending physical iPhone validation remain; no further implementation is authorized.
 - **2026-09-14:** Josh explicitly requested “review and merge” for RON-002 / [PR #2](https://github.com/joshpled/ronnie-game/pull/2). Latest `main` integration conflicts are resolved; fresh `npm run check` passes typecheck, lint, 13 tests and build, and the coordinating agent's source review found no blocking issues. Original atlas hash is unchanged, with no differences from `origin/main` in `public/assets` or `docs/animation-library`. Fresh local in-app browser smoke passes Feed, Pet, Play, rest persistence after reload and Wake, with no browser error logs. Earlier full Chrome/WebKit and repeated-click checks remain historical. RON-002 stays in Review until exact-head CI and the authorized merge are verified.
 - **2026-09-14:** RON-012 moves to Done. The coordinating agent verified [PR #6](https://github.com/joshpled/ronnie-game/pull/6) squash-merged at 17:58:15 UTC as [02d9c9f](https://github.com/joshpled/ronnie-game/commit/02d9c9f7f1a9cad43a09c81a2d701694296011a8), with all GitHub checks successful at exact head `f768240`. Local and remote `feature/curled-sleep-breathing` deletion are verified. Approved 3 px breathing remains an isolated preview; rendering caveats persist, approved source artwork is intact and no app integration or further work is authorized.
 - **2026-09-14:** Josh explicitly replied “yes approve” to RON-012 revision 2 (3 px lift). Visual approval is recorded with the interpolation caveat and existing validation limits retained. [PR #6](https://github.com/joshpled/ronnie-game/pull/6) remains open; approval-label/documentation updates and ready-for-review transition are being handled by the coordinating agent. RON-012 stays in Review pending PR review and merge. This visual approval does not authorize merge, app integration or approved-sheet/bedtime promotion.
@@ -84,14 +85,15 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ### RON-002 — Refine existing motion
 
-- **Status:** Review
+- **Status:** Done — [PR #2](https://github.com/joshpled/ronnie-game/pull/2) verified squash-merged on 2026-09-14 at 18:49:15 UTC as [798e4a4](https://github.com/joshpled/ronnie-game/commit/798e4a4a96863296fdb2ea1a7646d8cfbb423344).
 - **Owner:** Codex implementation; Josh acceptance and merge decision
-- **Current authorization:** Josh explicitly requested “review and merge” PR #2. Codex may complete review and validation, resolve findings and merge after required checks pass; merge has not yet been verified.
-- **Source / evidence:** Josh requested slower, smoother existing movements; [open PR #2](https://github.com/joshpled/ronnie-game/pull/2); [motion guide at the reviewed commit](https://github.com/joshpled/ronnie-game/blob/6f1d3836ac1d4ece4add4b8800ac302e1dbc98d0/docs/motion.md); [live preview](https://joshpled.github.io/ronnie-game/); [before/after comparison](https://joshpled.github.io/ronnie-game/motion-review.html).
-- **Acceptance:** Gradual starts, braking and turns; gait follows distance; calmer idle/rest and complete gestures; care rewards still occur once; extension guide present; typecheck, lint, 13 tests, build and Chrome/WebKit emulation checks pass; reviewed PR merged. Implementation and documented checks are complete; merge remains outstanding.
+- **Current authorization:** Josh explicitly requested “review and merge” PR #2. Codex completed review, validation and the authorized merge; verified evidence is recorded below.
+- **Source / evidence:** Josh requested slower, smoother existing movements; [merged PR #2](https://github.com/joshpled/ronnie-game/pull/2); [motion guide at the reviewed commit](https://github.com/joshpled/ronnie-game/blob/6f1d3836ac1d4ece4add4b8800ac302e1dbc98d0/docs/motion.md); [live preview](https://joshpled.github.io/ronnie-game/); [before/after comparison](https://joshpled.github.io/ronnie-game/motion-review.html).
+- **Acceptance:** Gradual starts, braking and turns; gait follows distance; calmer idle/rest and complete gestures; care rewards still occur once; extension guide present; typecheck, lint, 13 tests, build and Chrome/WebKit emulation checks pass; reviewed PR merged. Implementation, documented checks, review and verified merge complete this scope.
 - **Current validation:** Latest `main` integration conflicts are resolved. Fresh `npm run check` passes typecheck, lint, 13 tests and build; the coordinating agent's source review found no blocking findings. Original atlas hash remains unchanged, and `public/assets` plus `docs/animation-library` have no differences from `origin/main`. Fresh local in-app browser smoke passes: Feed changes fullness 68→93 and bond to 1; Pet changes happiness 76→84 and bond to 2; Play changes energy 82→74, fullness 93→90 and bond to 3. Rest persists after reload; Wake unlocks controls with bond still 3. No browser error logs were observed. Earlier full Chrome/WebKit emulation and repeated-click checks remain historical and were not repeated.
-- **Next action:** Verify CI for the exact current PR head, then complete the authorized merge. Record actual merge evidence before moving to Done.
-- **Blocker / limitation:** Exact-head CI verification and the authorized merge remain outstanding. Existing eight-pose trot still limits limb smoothness; no new in-between drawings or physical iPhone pass is claimed.
+- **Merge evidence:** The coordinating agent verified PR #2 merged at the timestamp/SHA above. Reviewed head `1a35661ff0e1b7423e4ec48529047cb8faede78a` had both GitHub Checks jobs and GitGuardian successful. The feature branch is deleted locally and remotely; `git fetch -p` completed and `main` was clean.
+- **Next action:** None authorized. Preserve the merged motion/care behavior and wait for Josh to select further scope.
+- **Blocker / limitation:** Existing eight-pose trot still limits limb smoothness; no new in-between drawings or physical iPhone pass is claimed.
 
 <a id="ron-003"></a>
 
