@@ -5,6 +5,13 @@ checkpoint. Josh approved the implementation plan on 2026-09-14; endpoint visual
 approval is pending. Intermediate poses and the proposed 2.4-second sequence wait
 for that approval. No app integration or approved-atlas promotion.
 
+Josh requested a public phone preview on 2026-09-14:
+[open the hosted endpoint comparison](https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/).
+Only this preview's HTML and three PNGs are published beneath `previews/ears-pulled-back/`
+on the existing `gh-pages` branch. Deployment keeps the game files unchanged and
+does not merge this candidate into `main`. Remote pose review is separate from
+the deferred integrated-game iPhone validation.
+
 ## Artwork and preservation
 
 The exact neutral pose is original atlas row 0, column 0, extracted into a
@@ -40,7 +47,10 @@ against the skull; Josh should decide whether this is the intended endpoint.
 The newly generated ears are softer than the original tall-ear detail when
 enlarged. No animation smoothness or transition approval is claimed.
 
-The static page shows both poses at 1× and 2×. The comparison PNG uses nearest
+The static page shows both poses at 1× and 2× on larger screens; images shrink
+to fit narrow screens, keeping the first comparison side by side. A 390 px
+browser-width check confirms the phone layout; this is not physical-device QA.
+The comparison PNG uses nearest
 neighbor enlargement so source pixels can be inspected directly; the browser
 uses normal image scaling. [qa.json](qa.json) records the preservation checks.
 Typecheck, lint, all 13 existing tests and production build pass. The original

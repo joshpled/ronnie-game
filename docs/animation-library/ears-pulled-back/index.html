@@ -66,7 +66,7 @@
     }
     .large img {
       width: 384px;
-      height: 416px;
+      height: auto;
       max-width: 100%;
       object-fit: contain;
     }
@@ -77,6 +77,19 @@
       color: #6b635b;
       max-width: 760px;
     }
+    @media (max-width: 480px) {
+      .pair:not(.large) {
+        flex-wrap: nowrap;
+        gap: 12px;
+      }
+      .pair:not(.large) figure {
+        width: calc((100% - 12px) / 2);
+      }
+      .pair:not(.large) img {
+        width: 100%;
+        height: auto;
+      }
+    }
   </style>
   <main>
     <a href="../README.md">Animation library</a>
@@ -86,7 +99,7 @@
       Candidate for pose and style review. The transition will follow after this
       pose is approved.
     </p>
-    <h2>Normal sprite size</h2>
+    <h2>Compare poses</h2>
     <div class="pair">
       <figure>
         <figcaption>Original neutral</figcaption>
@@ -103,17 +116,17 @@
         />
       </figure>
     </div>
-    <h2>Twice the size</h2>
+    <h2>Closer look</h2>
     <div class="pair large">
       <figure>
-        <figcaption>Original neutral · 2×</figcaption>
+        <figcaption>Original neutral · enlarged</figcaption>
         <img
           src="neutral.png"
           alt="Enlarged original neutral pose for inspecting her face and ear shape."
         />
       </figure>
       <figure>
-        <figcaption>Ears-back candidate · 2×</figcaption>
+        <figcaption>Ears-back candidate · enlarged</figcaption>
         <img
           src="candidate.png"
           alt="Enlarged ears-back candidate for inspecting the ear roots and style."
