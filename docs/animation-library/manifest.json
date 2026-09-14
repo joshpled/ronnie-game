@@ -1,0 +1,257 @@
+{
+  "originalAtlas": "../../public/assets/ronnie.webp",
+  "originalSha256": "b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e",
+  "approvedSheet": "approved-spritesheet.png",
+  "columns": 8,
+  "cellSize": [
+    192,
+    208
+  ],
+  "originalRows": 11,
+  "stages": [
+    {
+      "id": "tail-wag",
+      "status": "user-approved",
+      "row": 11,
+      "frameMs": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "id": "sniffing",
+      "status": "user-approved",
+      "frameMs": [
+        280,
+        160,
+        160,
+        200,
+        500,
+        180,
+        160,
+        280
+      ],
+      "row": 12
+    },
+    {
+      "id": "stretching",
+      "status": "user-approved",
+      "playbackFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        3,
+        2,
+        1
+      ],
+      "frameMs": [
+        300,
+        180,
+        180,
+        200,
+        500,
+        200,
+        180,
+        180
+      ],
+      "row": 13
+    },
+    {
+      "id": "eating",
+      "status": "user-approved",
+      "playbackFrames": [
+        0,
+        6,
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1,
+        6
+      ],
+      "frameMs": [
+        280,
+        180,
+        180,
+        180,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        280,
+        180,
+        180,
+        180
+      ],
+      "revision": 3,
+      "propsIncluded": false,
+      "row": 14
+    },
+    {
+      "id": "sleeping",
+      "status": "user-approved",
+      "revision": 2,
+      "propsIncluded": false,
+      "playbackFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        5,
+        6,
+        7,
+        3,
+        2,
+        1
+      ],
+      "frameMs": [
+        300,
+        300,
+        300,
+        300,
+        400,
+        1200,
+        1200,
+        1200,
+        1200,
+        400,
+        400,
+        400,
+        400
+      ],
+      "sleepLoop": {
+        "playbackFrames": [
+          5,
+          6
+        ],
+        "frameMs": [
+          1200,
+          1200
+        ]
+      },
+      "row": 15
+    },
+    {
+      "id": "curled-sleep",
+      "parentStage": "sleeping",
+      "status": "user-approved-pose-and-style",
+      "propsIncluded": false,
+      "separateProps": [
+        {
+          "id": "dog-bed",
+          "asset": "curled-sleep/bed.png",
+          "canvasSize": [
+            256,
+            224
+          ]
+        }
+      ],
+      "revision": 2,
+      "playbackFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "frameMs": [
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500
+      ],
+      "sprite": "curled-sleep/candidate.png",
+      "previewComposition": {
+        "canvasSize": [
+          256,
+          224
+        ],
+        "bedOffset": [
+          0,
+          0
+        ],
+        "dogOffset": [
+          32,
+          -44
+        ]
+      },
+      "breathingStatus": "refinement-incomplete"
+    },
+    {
+      "id": "bed-entry",
+      "parentStage": "sleeping",
+      "status": "accepted-in-approved-bedtime-sequence-with-disclosed-caveats",
+      "checkpoint": 1,
+      "timeline": "bed-entry/timeline.json",
+      "propsIncluded": false,
+      "separateProps": [
+        "curled-sleep/bed.png"
+      ],
+      "lieDownTransition": "user-approved-settling",
+      "continuationPermission": "good start, continue; retain disclosed gait limitations",
+      "combinedSequence": "bedtime/timeline.json"
+    },
+    {
+      "id": "settling",
+      "parentStage": "sleeping",
+      "checkpoint": 2,
+      "status": "user-approved-with-disclosed-caveats",
+      "timeline": "settling/timeline.json",
+      "propsIncluded": false,
+      "separateProps": [
+        "curled-sleep/bed.png"
+      ],
+      "approvedEndpoint": "curled-sleep/candidate.png#frame-0",
+      "durationMs": 5160,
+      "combinedSequence": "bedtime/timeline.json"
+    },
+    {
+      "id": "bedtime",
+      "parentStage": "sleeping",
+      "checkpoint": 3,
+      "status": "user-approved-with-disclosed-caveats",
+      "timeline": "bedtime/timeline.json",
+      "newArtwork": false,
+      "propsIncluded": false,
+      "durationMs": 13520
+    }
+  ]
+}

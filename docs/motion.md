@@ -34,7 +34,7 @@ Room pixels are logical coordinates, not physical display pixels. Travel duratio
 4. For an existing care action, change the clip sequence in the room. Keep its reward callback at completion. Do not change saved-care rules just to add animation frames.
 5. Review at phone size and normal playback speed. Check direction changes, foot sliding, body/scale jumps, landing and repeated interactions.
 
-Natural walking, eating and curled-up sleeping still need dedicated drawings. This pass does not synthesize in-between limb poses, deform the art, or turn the trot into a fully rigged walk. The timed catalogue is ready for denser sequences, but the current sprite texture still supplies the existing frame count.
+The approved standalone eating/sleeping library is not integrated by this pass. Gameplay continues to use the original atlas. This pass does not synthesize in-between limb poses, deform the art, or turn the trot into a fully rigged walk. The timed catalogue is ready for denser sequences, but the current sprite texture still supplies the existing frame count.
 
 ## Review notes and checks
 
@@ -44,4 +44,12 @@ Before-and-after WebKit recordings exercised the same floor taps, a reversal, pe
 
 The final Chrome and WebKit checks both passed with zero page exceptions, three completed care rewards, and rest/reload/wake working. Source review also caught and fixed a near-target case: tapping Ronnie's current location while she is moving must still brake, rather than immediately zero her velocity. A regression test covers it. Care rules and the sprite image are unchanged.
 
-**Before merging:** Why should gait frames advance with distance rather than a fixed FPS? When we add more eating frames, which layer should continue to own the fullness reward?
+## September 14 merge review
+
+The branch was reconciled with current `main`, retaining the approved animation library and isolated curled-breathing preview. Conflicts were documentation-only. The original atlas and all library files remain byte-for-byte unchanged. Source review found no remaining blocking issues in travel, clip completion, interruption, care sequencing or saved-rest restoration. `npm run check` passed all thirteen tests, typecheck, lint and production build.
+
+For maintenance: footsteps follow distance so they slow with the body; a fixed frame rate would continue cycling during braking. The room reports completion after the final pose hold, while `care.ts` still owns fullness and other rewards. Longer clips therefore delay rewards without changing their amounts. More limb poses require a separately authorized art/integration change; timing alone cannot remove the original eight-pose gait's limitations.
+
+Fresh local in-app browser smoke checks passed Feed, Pet and Play with exactly three completed care moments; rest persisted after reload and Wake unlocked the controls without another reward. No browser error logs were recorded. The broader September 13 Chrome/WebKit suite was not repeated.
+
+Josh explicitly requested review and merge. The earlier Chrome/WebKit observations above remain historical; physical iPhone testing is still pending.

@@ -53,3 +53,11 @@ The clip player and movement math have no Phaser dependency and are unit tested.
 ## Delivery
 
 Vite bundles the application and copies public assets. GitHub Actions runs the required checks on pushes and pull requests. GitHub Pages serves a static `dist` build from the generated `gh-pages` branch; it does not run care logic on a server. No service worker is present yet, so a fresh page load needs connectivity. Capacitor packaging for an iOS app is deliberately deferred until the care loop feels right.
+
+## Project coordination
+
+`KANBAN.md` records project status outside the game runtime. `.codex/agents/project_manager.toml` defines the PM role; `AGENTS.md` requests its use at work checkpoints. The [workflow](docs/project-management.md) defines evidence for each status and separates project tracking from gameplay changes. This adds no application dependency, server or scheduled background job.
+
+## Animation artwork library
+
+`docs/animation-library/` contains reviewed sprite families, timing metadata and standalone HTML/GIF previews. Its extended sheet preserves the original 11 rows and adds five base movements; curled sleep, approach/circle and settling remain separate families. Props are separate assets. The library is documentation/artwork and is not imported by Vite or the game. Future integration must route completion through the existing care callbacks. See the [library contract](docs/animation-library/README.md).

@@ -41,9 +41,11 @@ No environment variables or API keys are required. `vite.config.ts` uses relativ
 - Accessible HTML care controls, readable status messages, and reduced-motion support.
 - Slower movement with acceleration/braking, distance-driven steps, calmer idle/rest, and complete one-shot gestures. See [the motion guide](docs/motion.md) for tuning and adding future frames.
 
-This prototype reuses the approved desktop pet atlas. Feeding now lowers and raises her head through existing gaze poses; rest uses calm seated poses. Dedicated eating, curled-up sleeping, and toy-carrying art are future additions, not finished animations. Timing refinements do not create new in-between limb drawings: the eight-pose trot still limits anatomical smoothness, and small sprites may look soft when enlarged. Canvas details do not have a full screen-reader equivalent, although all care actions are available as HTML buttons.
+This prototype reuses the approved desktop pet atlas. Feeding lowers and raises her head through existing gaze poses; rest uses calm seated poses. Dedicated eating and sleeping artwork is available in the [approved animation library](docs/animation-library/README.md), with disclosed motion limitations; it is not integrated into gameplay. Toy-carrying art remains future work. Timing refinements do not create new in-between limb drawings: the eight-pose trot still limits anatomical smoothness, and small sprites may look soft when enlarged. Canvas details do not have a full screen-reader equivalent, although all care actions are available as HTML buttons.
 
 ## Project map
+
+Start with [the Kanban board](KANBAN.md) for current work, open reviews and future ideas. The [project manager workflow](docs/project-management.md) explains how the agent keeps it current from idea to completion.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the ownership boundaries, [docs/decisions.md](docs/decisions.md) for decisions and tradeoffs, and [docs/validation.md](docs/validation.md) for checks and remaining device testing.
 

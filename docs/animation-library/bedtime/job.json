@@ -1,0 +1,67 @@
+{
+  "id": "bedtime",
+  "checkpoint": 3,
+  "status": "user-approved-with-disclosed-caveats",
+  "userApproved": true,
+  "newArtwork": false,
+  "sourceTimelines": [
+    "../bed-entry/timeline.json",
+    "../settling/timeline.json"
+  ],
+  "durationMs": 13520,
+  "steps": 61,
+  "sourceSha256": {
+    "approach": "bc50092aead164956224e0918ed8097326004b71aea405bca9e00a30edf47d2f",
+    "circle": "2c517f008bf95633121da3e59d6841ffbb5fa6569f38c0ae234cf2c2756f1967",
+    "settling": "ac903810a62a9fe6ecea2e3b9e109bd4198515fb3fad4ba1d0270f6895c9d241",
+    "curl": "ed03030b269a2df3e9b4c1546d489df082388acfbb598a0ec1155fe31c955163",
+    "bed": "4df7b37a8172a836e6426386cda4a1d45da520019e2433d2b5d55fe131f300aa"
+  },
+  "approvedSheetSha256": "096a1d2af90026d647d9b7d6a3f9b0aaa5292849e3b106bc9dfa30c88444d743",
+  "composition": {
+    "entryWorldShift": [
+      0,
+      13
+    ],
+    "restAnchor": [
+      380,
+      243
+    ],
+    "dogOffsetFromBed": [
+      32,
+      -44
+    ],
+    "join": "Remove 800ms checkpoint end hold; reuse the 600ms settling start hold once. All action frame durations retained."
+  },
+  "caveats": [
+    "Earlier approach foot sliding and repeated turn headings remain.",
+    "The settling hip drop and final tuck have the disclosed joins accepted by Josh.",
+    "The final curled pose is held; refined breathing remains incomplete."
+  ],
+  "appIntegration": false,
+  "checks": {
+    "gifDurationMs": 13520,
+    "gifFrames": 178,
+    "htmlTimelineEqual": true,
+    "continuousWorldPositions": true,
+    "allSpritesStayWithinScene": true,
+    "sourceAssetsByteUnchanged": true,
+    "approvedSheetByteUnchanged": true,
+    "canonicalAtlasHash": true,
+    "approvedCurlPlacementExact": true,
+    "settlingOrderAndDurationsUnchanged": true,
+    "localLinksResolve": true,
+    "javascriptParses": true,
+    "parentSequenceContactReviewed": true,
+    "browserRendering": true,
+    "browserNextPose": true,
+    "browserFullPlaybackEndStop": true,
+    "browserSectionSelection": true,
+    "browserDogOnlyLayer": true
+  },
+  "userApproval": {
+    "message": "approved",
+    "scope": "Complete bedtime sequence with existing motion and breathing caveats",
+    "date": "2026-09-14"
+  }
+}

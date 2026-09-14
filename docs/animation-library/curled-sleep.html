@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ronnie · Curled sleeping checkpoint</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f3ed;color:#302c28;font:16px/1.5 system-ui,sans-serif}main{max-width:900px;margin:auto;padding:28px 20px}h1{font-size:28px;margin-bottom:8px}.note{padding:14px 18px;background:#fff1cc;border-left:4px solid #946900}.pair{display:flex;flex-wrap:wrap;justify-content:center;align-items:end;gap:24px;margin:24px 0}figure{margin:0;text-align:center}figcaption{margin-bottom:8px;font-weight:600}.stage{background:#eee9df;border-radius:12px;padding:16px}.scene{width:256px;height:224px;position:relative;overflow:hidden}.bed{position:absolute;inset:0;width:256px;height:224px}.dog{position:absolute;left:32px;top:-44px;width:192px;height:208px;background:url('curled-sleep/candidate.png') 0 0 / 1536px 208px}.controls{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}button,select{font:inherit;padding:10px 14px;border-radius:8px;border:1px solid #746a5f;background:white;color:inherit;min-height:44px}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #226a72;outline-offset:3px}.sheet{width:100%;height:auto}a{color:#225e65}[hidden]{display:none!important}
+</style>
+<main><p>SLEEPING VARIANT · POSE AND STYLE APPROVED</p>
+<nav><a href="preview.html">Tail wag</a> · <a href="sniffing.html">Sniffing</a> · <a href="stretching.html">Stretching</a> · <a href="eating.html">Eating</a> · <a href="sleeping.html">Settle and sleep</a></nav>
+<h1>Ronnie curled in her bed</h1>
+<p class="note">Her sleeping position follows your photo, with the bed saved separately. <strong>Pose and style approved by Josh.</strong> Breathing remains barely visible at this size, and small ear/head and coat variations remain. This is not yet an approved refined breathing loop.</p>
+<div class="pair">
+<figure><figcaption>Original · style reference</figcaption><div class="stage"><img src="tail-wag/original.png" width="192" height="208" alt="Ronnie’s original standing sprite"></div></figure>
+<figure><figcaption>Curled sleep · candidate</figcaption><div class="stage"><div class="scene" role="img" aria-label="Ronnie curled asleep in a pink and cream dog bed"><img id="bed" class="bed" src="curled-sleep/bed.png" alt=""><div id="sprite" class="dog"></div></div></div></figure>
+</div>
+<div class="controls"><label>Layers <select id="layers"><option value="both">Ronnie + bed</option><option value="dog">Ronnie only</option><option value="bed">Bed only</option></select></label><button id="play" type="button">Play</button><button id="step" type="button">Next frame</button><output id="frame" aria-live="polite">Pose 1 / 8</output></div>
+<p>The preview starts paused. Play cycles eight poses over four seconds. Layer controls demonstrate that the dog sprite contains no bed. Her position stays fixed within the bed.</p>
+<details><summary>Compare all eight poses</summary><img class="sheet" src="curled-sleep/comparison.png" alt="Original standing reference alongside eight curled sleeping poses"></details>
+<p><a href="curled-sleep/combined.gif">Combined GIF</a> · <a href="curled-sleep/dog-only.gif">Dog-only GIF</a> · <a href="curled-sleep/bed.png">Separate bed PNG</a> · <a href="README.md">Stage notes</a></p>
+<p>The five base movements are approved. Josh approved this curled pose. The <a href="bed-entry.html">approach and circle draft</a> is now available for the next checkpoint. The original atlas and game remain unchanged.</p>
+</main><script>
+const frames=[0,1,2,3,4,5,6,7];
+const durations=[500,500,500,500,500,500,500,500];
+const sprite=document.querySelector('#sprite');
+const play=document.querySelector('#play');
+let frame=0;let timer;
+function render(){sprite.style.backgroundPositionX=`${-192*frames[frame]}px`;document.querySelector('#frame').textContent=`Pose ${frame+1} / ${frames.length}`;}
+function pause(){clearTimeout(timer);timer=undefined;play.textContent='Play';}
+function start(){pause();function tick(){timer=setTimeout(()=>{frame=(frame+1)%frames.length;render();tick();},durations[frame]);}tick();play.textContent='Pause';}
+play.addEventListener('click',()=>timer===undefined?start():pause());
+document.querySelector('#step').addEventListener('click',()=>{pause();frame=(frame+1)%frames.length;render();});
+document.querySelector('#layers').addEventListener('change',event=>{const mode=event.target.value;document.querySelector('#bed').hidden=mode==='dog';sprite.hidden=mode==='bed';document.querySelector('.scene').setAttribute('aria-label',mode==='dog'?'Ronnie curled asleep without the bed':mode==='bed'?'Empty pink and cream dog bed':'Ronnie curled asleep in a pink and cream dog bed');});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+</script></html>

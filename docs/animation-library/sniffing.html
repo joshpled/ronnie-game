@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ronnie · Sniffing checkpoint</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f6f3ed; color: #302c28; font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 900px; margin: auto; padding: 28px 20px; }
+  h1 { font-size: 28px; margin-bottom: 8px; }
+  .note { padding: 14px 18px; background: #fff1cc; border-left: 4px solid #946900; }
+  .pair { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 24px 0; }
+  figure { margin: 0; text-align: center; }
+  .sprite { width: 192px; height: 208px; background: url('sniffing/candidate.png') 0 0 / 1536px 208px; }
+  .stage { background-color: #eee9df; border-radius: 12px; padding: 16px; }
+  figcaption { margin-bottom: 8px; font-weight: 600; }
+  .controls { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
+  button, select { font: inherit; padding: 10px 14px; border-radius: 8px; border: 1px solid #746a5f; background: white; color: inherit; min-height: 44px; }
+  button { cursor: pointer; }
+  button:focus-visible, select:focus-visible { outline: 3px solid #226a72; outline-offset: 3px; }
+  .sheet { width: 100%; height: auto; }
+  a { color: #225e65; }
+</style>
+<main>
+  <p>STAGE 2 OF 5 · APPROVED</p>
+  <nav><a href="preview.html">← Approved tail wag</a> · <a href="stretching.html">Approved stretching →</a></nav>
+  <h1>Ronnie’s sniffing movement</h1>
+  <p class="note"><strong>Approved by Josh.</strong> Ronnie now holds her lowest sniffing pose for half a second before rising. The previously disclosed appearance differences remain recorded; original atlas artwork remains the reference.</p>
+  <div class="pair">
+    <figure><figcaption>Original · reference</figcaption><div class="stage"><img src="tail-wag/original.png" width="192" height="208" alt="Ronnie’s original standing sprite"></div></figure>
+    <figure><figcaption>Sniffing · approved</figcaption><div class="stage"><div id="sprite" class="sprite" role="img" aria-label="Eight-frame approved sniffing movement"></div></div></figure>
+  </div>
+  <div class="controls">
+    <button id="play" type="button">Play</button>
+    <button id="step" type="button">Next frame</button>
+    <label>Speed <select id="speed"><option value="1">Normal · 1.92 s cycle</option><option value="0.5">Half speed · 3.84 s cycle</option></select></label>
+    <output id="frame">Frame 1 / 8</output>
+  </div>
+  <p>The preview starts paused. The original game atlas is unchanged. The approved sniffing row is included in the review sheet.</p>
+  <details><summary>Compare all eight frames</summary><img class="sheet" src="sniffing/comparison.png" alt="Original at the left of each row, beside the eight candidate sniffing poses"></details>
+  <p>Tail wag, sniffing and stretching approved. Stage 4 in progress: eating. All approved movements will share one PR. Game integration follows a separate decision.</p>
+  <p><a href="sniffing/comparison.gif">Animated GIF</a> · <a href="README.md">Stage notes</a></p>
+</main>
+<script>
+  const sprite = document.querySelector('#sprite');
+  const play = document.querySelector('#play');
+  const speed = document.querySelector('#speed');
+  let frame = 0;
+  let timer;
+  const durations = [280,160,160,200,500,180,160,280];
+  function render() {
+    sprite.style.backgroundPositionX = `${-192 * frame}px`;
+    document.querySelector('#frame').textContent = `Frame ${frame + 1} / 8`;
+  }
+  function pause() { clearTimeout(timer); timer = undefined; play.textContent = 'Play'; }
+  function start() {
+    pause();
+    function tick() {
+      timer = setTimeout(() => { frame = (frame + 1) % 8; render(); tick(); }, durations[frame] / Number(speed.value));
+    }
+    tick();
+    play.textContent = 'Pause';
+  }
+  play.addEventListener('click', () => timer === undefined ? start() : pause());
+  document.querySelector('#step').addEventListener('click', () => { pause(); frame = (frame + 1) % 8; render(); });
+  speed.addEventListener('change', () => { if (timer !== undefined) start(); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
+</script>
+</html>

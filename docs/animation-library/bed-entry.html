@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ronnie · Approach and circle</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f3ed;color:#302c28;font:16px/1.5 system-ui,sans-serif}main{max-width:900px;margin:auto;padding:28px 20px}h1{font-size:28px}.note{padding:14px 18px;background:#fff1cc;border-left:4px solid #946900}canvas{display:block;width:100%;max-width:780px;height:auto;margin:24px auto;background:#eee9df;border-radius:12px}.controls{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}button,select{font:inherit;padding:10px 14px;border:1px solid #746a5f;border-radius:8px;background:white;color:inherit;min-height:44px}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #226a72;outline-offset:3px}.sheet{width:100%;height:auto}a{color:#225e65}output{display:block;text-align:center;margin:12px}</style>
+<main><p>BED ENTRY · CHECKPOINT 1 OF 3</p><nav><a href="curled-sleep.html">Approved curled pose</a> · <a href="sleeping.html">Approved sleeping action</a> · <a href="README.md">Library notes</a></nav>
+<h1>Approach the bed and circle</h1><p><a href="bed-entry/research.md">Video references and observations</a> · <a href="bed-entry/revision-2/before.gif">Previous draft</a></p>
+<p class="note"><strong>Motion draft — not locked.</strong> Video-guided revision: Ronnie lowers her nose, follows a tighter turn and pauses to investigate the cushion. Her original atlas remains the appearance reference. Foot contacts and the change from approach to lowered head still need refinement; this is a review draft.</p>
+<canvas id="scene" width="520" height="320" role="img" aria-label="Ronnie approaching her separate pink and cream bed, then circling"></canvas>
+<div class="controls"><button id="play" disabled>Play</button><button id="replay" disabled>Restart</button><button id="step" disabled>Next pose</button><label>Section <select id="phase"><option value="0">Full approach + circle</option><option value="33">Circle only</option></select></label><label><input type="checkbox" id="bed" checked> Show bed</label></div><output id="status" aria-live="polite">Loading sprites…</output>
+<p>Playback ends standing in the bed. The <a href="settling.html">settling checkpoint</a> now shows lowering and tucking into her approved curled pose for review. No game code has changed.</p>
+<details><summary>Approach poses and original reference</summary><img class="sheet" src="bed-entry/approach-contact.png" alt="Eight approach poses beside the original standing reference"></details>
+<details><summary>Turning poses and original reference</summary><img class="sheet" src="bed-entry/circle-contact.png" alt="Sixteen turning poses beside the original standing reference"></details>
+<p><a href="bed-entry/preview.gif">GIF preview</a> · <a href="bed-entry/timeline.json">Timing and positions</a> · <a href="bed-entry/job.json">Review findings</a></p>
+</main><script>
+const timeline={
+  "canvas": [
+    520,
+    320
+  ],
+  "cell": [
+    192,
+    208
+  ],
+  "columns": 8,
+  "anchor": [
+    96,
+    203
+  ],
+  "bed": {
+    "asset": "../curled-sleep/bed.png",
+    "position": [
+      252,
+      84
+    ]
+  },
+  "duration": 9160,
+  "steps": [
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        90.0,
+        230
+      ],
+      "to": [
+        99.0625,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        99.0625,
+        230
+      ],
+      "to": [
+        108.125,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        108.125,
+        230
+      ],
+      "to": [
+        117.1875,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        117.1875,
+        230
+      ],
+      "to": [
+        126.25,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        126.25,
+        230
+      ],
+      "to": [
+        135.3125,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        135.3125,
+        230
+      ],
+      "to": [
+        144.375,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        144.375,
+        230
+      ],
+      "to": [
+        153.4375,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        153.4375,
+        230
+      ],
+      "to": [
+        162.5,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        162.5,
+        230
+      ],
+      "to": [
+        171.5625,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        171.5625,
+        230
+      ],
+      "to": [
+        180.625,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        180.625,
+        230
+      ],
+      "to": [
+        189.6875,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        189.6875,
+        230
+      ],
+      "to": [
+        198.75,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        198.75,
+        230
+      ],
+      "to": [
+        207.8125,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        207.8125,
+        230
+      ],
+      "to": [
+        216.875,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        216.875,
+        230
+      ],
+      "to": [
+        225.9375,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        225.9375,
+        230
+      ],
+      "to": [
+        235.0,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        235.0,
+        230
+      ],
+      "to": [
+        244.0625,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        244.0625,
+        230
+      ],
+      "to": [
+        253.125,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        253.125,
+        230
+      ],
+      "to": [
+        262.1875,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        262.1875,
+        230
+      ],
+      "to": [
+        271.25,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        271.25,
+        230
+      ],
+      "to": [
+        280.3125,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        280.3125,
+        230
+      ],
+      "to": [
+        289.375,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        289.375,
+        230
+      ],
+      "to": [
+        298.4375,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        298.4375,
+        230
+      ],
+      "to": [
+        307.5,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 0,
+      "duration": 120,
+      "from": [
+        307.5,
+        230
+      ],
+      "to": [
+        316.5625,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 1,
+      "duration": 120,
+      "from": [
+        316.5625,
+        230
+      ],
+      "to": [
+        325.625,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 2,
+      "duration": 120,
+      "from": [
+        325.625,
+        230
+      ],
+      "to": [
+        334.6875,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 3,
+      "duration": 120,
+      "from": [
+        334.6875,
+        230
+      ],
+      "to": [
+        343.75,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 4,
+      "duration": 120,
+      "from": [
+        343.75,
+        230
+      ],
+      "to": [
+        352.8125,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 5,
+      "duration": 120,
+      "from": [
+        352.8125,
+        230
+      ],
+      "to": [
+        361.875,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 6,
+      "duration": 120,
+      "from": [
+        361.875,
+        230
+      ],
+      "to": [
+        370.9375,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 120,
+      "from": [
+        370.9375,
+        230
+      ],
+      "to": [
+        380.0,
+        230
+      ],
+      "phase": "Approach"
+    },
+    {
+      "asset": "approach",
+      "frame": 7,
+      "duration": 400,
+      "from": [
+        380,
+        230
+      ],
+      "to": [
+        380,
+        230
+      ],
+      "phase": "Pause at bed"
+    },
+    {
+      "asset": "circle",
+      "frame": 0,
+      "duration": 200,
+      "from": [
+        380.0,
+        230.0
+      ],
+      "to": [
+        384.3262379212493,
+        229.60845213036123
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 1,
+      "duration": 200,
+      "from": [
+        384.3262379212493,
+        229.60845213036123
+      ],
+      "to": [
+        388.61926065455924,
+        228.3040860288538
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 2,
+      "duration": 240,
+      "from": [
+        388.61926065455924,
+        228.3040860288538
+      ],
+      "to": [
+        392.2446758999515,
+        225.8784769619707
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 3,
+      "duration": 200,
+      "from": [
+        392.2446758999515,
+        225.8784769619707
+      ],
+      "to": [
+        393.9467257732844,
+        222.69724594198127
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 4,
+      "duration": 240,
+      "from": [
+        393.9467257732844,
+        222.69724594198127
+      ],
+      "to": [
+        393.15569669100273,
+        219.26383885339465
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 4,
+      "duration": 320,
+      "from": [
+        393.15569669100273,
+        219.26383885339465
+      ],
+      "to": [
+        393.15569669100273,
+        219.26383885339465
+      ],
+      "phase": "Investigate the cushion"
+    },
+    {
+      "asset": "circle",
+      "frame": 5,
+      "duration": 200,
+      "from": [
+        393.15569669100273,
+        219.26383885339465
+      ],
+      "to": [
+        389.54797704087497,
+        216.14917038704664
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 6,
+      "duration": 200,
+      "from": [
+        389.54797704087497,
+        216.14917038704664
+      ],
+      "to": [
+        385.0171512936342,
+        214.5313565880224
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 7,
+      "duration": 240,
+      "from": [
+        385.0171512936342,
+        214.5313565880224
+      ],
+      "to": [
+        379.75566630987805,
+        214.00121843874888
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 8,
+      "duration": 200,
+      "from": [
+        379.75566630987805,
+        214.00121843874888
+      ],
+      "to": [
+        374.3056869969388,
+        214.69163633885918
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 9,
+      "duration": 240,
+      "from": [
+        374.3056869969388,
+        214.69163633885918
+      ],
+      "to": [
+        369.43406587688116,
+        216.75152776807593
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 10,
+      "duration": 200,
+      "from": [
+        369.43406587688116,
+        216.75152776807593
+      ],
+      "to": [
+        366.9298740290392,
+        219.1330564036376
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 11,
+      "duration": 240,
+      "from": [
+        366.9298740290392,
+        219.1330564036376
+      ],
+      "to": [
+        366.0,
+        222.0
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 11,
+      "duration": 320,
+      "from": [
+        366.0,
+        222.0
+      ],
+      "to": [
+        366.0,
+        222.0
+      ],
+      "phase": "Investigate the cushion"
+    },
+    {
+      "asset": "circle",
+      "frame": 12,
+      "duration": 200,
+      "from": [
+        366.0,
+        222.0
+      ],
+      "to": [
+        366.9298740290392,
+        224.8669435963624
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 13,
+      "duration": 240,
+      "from": [
+        366.9298740290392,
+        224.8669435963624
+      ],
+      "to": [
+        369.92924279525886,
+        227.55726696367196
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 14,
+      "duration": 200,
+      "from": [
+        369.92924279525886,
+        227.55726696367196
+      ],
+      "to": [
+        374.7555076921772,
+        229.4174708365343
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 15,
+      "duration": 240,
+      "from": [
+        374.7555076921772,
+        229.4174708365343
+      ],
+      "to": [
+        380,
+        230
+      ],
+      "phase": "One circle"
+    },
+    {
+      "asset": "circle",
+      "frame": 0,
+      "duration": 800,
+      "from": [
+        380,
+        230
+      ],
+      "to": [
+        380,
+        230
+      ],
+      "phase": "End of checkpoint"
+    }
+  ]
+}
+;
+const canvas=document.querySelector('#scene'),ctx=canvas.getContext('2d');
+const play=document.querySelector('#play'),status=document.querySelector('#status');
+const assets={};let ready=false,playing=false,elapsed=0,started=0,raf;
+const starts=[];let total=0;for(const step of timeline.steps){starts.push(total);total+=step.duration;}
+function load(name,url){return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{assets[name]=image;resolve();};image.onerror=reject;image.src=url;});}
+function locate(time){let i=starts.length-1;while(i>0&&time<starts[i])i--;return i;}
+function draw(time){if(!playing)play.textContent=time>=total?'Replay':'Play';const i=locate(time),step=timeline.steps[i];const u=Math.min(1,Math.max(0,(time-starts[i])/step.duration));const x=step.from[0]+u*(step.to[0]-step.from[0]),y=step.from[1]+u*(step.to[1]-step.from[1]);ctx.fillStyle='#eee9df';ctx.fillRect(0,0,520,320);if(document.querySelector('#bed').checked)ctx.drawImage(assets.bed,252,84);ctx.imageSmoothingEnabled=false;ctx.drawImage(assets[step.asset],step.frame%8*192,Math.floor(step.frame/8)*208,192,208,Math.round(x-96),Math.round(y-203),192,208);status.textContent=`${step.phase} · pose ${step.frame+1} · ${(time/1000).toFixed(1)} / ${(total/1000).toFixed(2)} s`;}
+function pause(){if(playing)elapsed=Math.min(total,performance.now()-started);playing=false;cancelAnimationFrame(raf);play.textContent=elapsed>=total?'Replay':'Play';if(ready)draw(elapsed);}
+function tick(now){if(!playing)return;elapsed=Math.min(total,now-started);draw(elapsed);if(elapsed>=total){playing=false;play.textContent='Replay';return;}raf=requestAnimationFrame(tick);}
+function start(){if(!ready)return;if(elapsed>=total)elapsed=starts[Number(document.querySelector('#phase').value)];started=performance.now()-elapsed;playing=true;play.textContent='Pause';raf=requestAnimationFrame(tick);}
+play.addEventListener('click',()=>playing?pause():start());
+document.querySelector('#replay').addEventListener('click',()=>{pause();elapsed=starts[Number(document.querySelector('#phase').value)];draw(elapsed);});
+document.querySelector('#step').addEventListener('click',()=>{pause();elapsed=starts[(locate(elapsed)+1)%starts.length];draw(elapsed);});
+document.querySelector('#phase').addEventListener('change',event=>{pause();elapsed=starts[Number(event.target.value)];if(ready)draw(elapsed);});
+document.querySelector('#bed').addEventListener('change',()=>{if(ready)draw(elapsed);});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+Promise.all([load('approach','bed-entry/approach.png'),load('circle','bed-entry/circle.png'),load('bed','curled-sleep/bed.png')]).then(()=>{ready=true;for(const id of ['play','replay','step'])document.querySelector('#'+id).disabled=false;draw(0);}).catch(()=>{status.textContent='A sprite could not load. Reopen the local preview.';});
+</script></html>

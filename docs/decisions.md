@@ -1,5 +1,23 @@
 # Decisions
 
+## 2026-09-14 — Approve movement before integrating gameplay
+
+**Decision:** Package the staged animation library under `docs/animation-library`, preserving the original atlas and separate props. Keep timing/pose metadata with the artwork and review the full bedtime sequence before game integration.
+
+**Why:** Character style and motion can be checked without changing care rewards, save behavior or the deployed game.
+
+**Tradeoff:** Standalone HTML duplicates timeline JSON for direct file preview; changes must keep them equal. Approved visual caveats remain documented, especially gait contacts and curled breathing. Integration remains a separate PR.
+
+## 2026-09-13 — Version the board and delegate project tracking
+
+**Context:** Ideas, completed work and open reviews were scattered across conversation history. Josh requested a project manager agent and Kanban before further feature work.
+
+**Decision:** Keep `KANBAN.md` in the repository, with a reusable `project_manager` role and explicit checkpoint delegation in `AGENTS.md`.
+
+**Why:** The board and its evidence travel with the code. The PM keeps status current while Josh controls priority and implementation remains in separate feature PRs.
+
+**Alternatives and tradeoff:** A hosted board adds another service and synchronization responsibility; conversation-only tracking disappears on clear. Markdown is easy to review but has no drag-and-drop or background sync. Done requires verified acceptance and merge, even when a preview is already live.
+
 ## 2026-09-13 — Refine timing and motion before expanding the animation set
 
 **Context:** Constant-speed travel starts/stops abruptly. Uniform frame rates repeat gestures too quickly, while reward timers can cut off a jump or wave mid-cycle. The owner wants slower, more realistic motion and a foundation for future animation work.

@@ -1,0 +1,133 @@
+{
+  "stage": "eating",
+  "status": "user-approved",
+  "user_approved": true,
+  "frameCount": 8,
+  "frameSize": [
+    192,
+    208
+  ],
+  "frameMs": [
+    280,
+    180,
+    180,
+    180,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    280,
+    180,
+    180,
+    180
+  ],
+  "sourceSize": [
+    1704,
+    923
+  ],
+  "sharedScale": 0.45,
+  "sharedCrop": [
+    89,
+    24,
+    338,
+    444
+  ],
+  "registration": "Original shared extraction followed by integer translation [0,+6] for source poses5\u20138, aligning solid front paw baseline at203px. Offsets already baked into pixels; no redraw, rescale or further cleanup.",
+  "source": "work/ronnie-animation-library/eating/revision-2/decoded/source.png",
+  "generation_tool": "built-in image_gen",
+  "reference_roles": [
+    "Current eating family as edit target",
+    "Original standing crop as authoritative character/color reference"
+  ],
+  "qa_note": "Revision3 corrects the six-pixel vertical shift between source rows. Five-second timing and artwork details unchanged. All solid front paw baselines now203px; underlying pose/face differences remain. Josh approved this steadied revision.",
+  "playbackFrames": [
+    0,
+    6,
+    1,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3,
+    4,
+    5,
+    4,
+    3,
+    4,
+    5,
+    4,
+    3,
+    2,
+    1,
+    6
+  ],
+  "revision_request": {
+    "neck": "Darker black neck coat, preserve tan head and white bib.",
+    "prop": "Remove bowl/plate/food entirely from dog sprite; separate bowl animation remains future work.",
+    "duration_ms": 5000
+  },
+  "revision": 3,
+  "propsIncluded": false,
+  "postRegistrationOffsets": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      6
+    ]
+  ],
+  "validation": {
+    "gif_steps": 20,
+    "cycle_ms": 5000,
+    "gif_and_before_after_timing_match": true,
+    "html_timing_and_order_match": true,
+    "front_paw_baseline_range_px": 0,
+    "rear_paw_baseline_range_px": 1,
+    "art_pixels_preserved": true,
+    "nonzero_alpha_counts_preserved": true,
+    "no_clipping": true,
+    "original_atlas_unchanged": true,
+    "approved_sheet_unchanged": true,
+    "visual_contact_review": "Corrected placement inspected on final contact sheet; approval of perceived movement remains with Josh."
+  },
+  "approval": {
+    "date": "2026-09-13",
+    "user_message": "approve",
+    "context": "Approved steadied revision3: corrected6pxregistration, darkneck/tanhead, no props and5000ms cycle."
+  }
+}

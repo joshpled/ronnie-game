@@ -68,7 +68,7 @@ export const CLIPS = {
     still: 36,
   },
   // Lower and raise her head through the existing directional poses. These are
-  // temporary snack motions until dedicated eating artwork is commissioned.
+  // temporary snack motions until approved eating artwork is integrated.
   snack: {
     frames: frames([
       [76, 180],
