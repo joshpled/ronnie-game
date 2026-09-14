@@ -14,7 +14,7 @@ Animation creation is the current priority, and the list may expand as Josh adds
 | [RON-008 — Toy carrying](#ron-008)                         |       |             |                                              | [RON-012 — Curled-sleep breathing](#ron-012)      |
 | [RON-009 — Capacitor iPhone package](#ron-009)             |       |             |                                              | [RON-002 — Refine existing motion](#ron-002)     |
 | [RON-011 — Body shake (drying off)](#ron-011)              |       |             |                                              |                                                 |
-| [RON-013 — Ears pulled back](#ron-013) | | | | |
+| | | [RON-013 — Ears pulled back](#ron-013) | | |
 | [RON-014 — Howling](#ron-014) | | | | |
 | [RON-015 — Barking](#ron-015) | | | | |
 | [RON-016 — Shaking scared](#ron-016) | | | | |
@@ -28,7 +28,7 @@ Outside the active pipeline: [RON-005 — Withdrawn](#ron-005).
 
 - **Ideas:** Possible work awaiting Josh's scope and priority decision.
 - **Ready:** Josh selected the scope and acceptance criteria are clear; no implementation started.
-- **In progress:** No implementation is active and Review is empty. RON-002 is Done after verified PR #2 merge; RON-010 and RON-012 remain Done after their verified merges. RON-005 is withdrawn and must not be promoted back into the pipeline without a new explicit user instruction.
+- **In progress:** RON-013 is the only active implementation, awaiting endpoint-pose approval before intermediate frames and playback. Review is empty. RON-002, RON-010 and RON-012 remain Done after their verified merges. RON-005 remains withdrawn.
 - **Review:** Deliverable exists and validation is recorded; review, acceptance or merge remains.
 - **Done:** Acceptance criteria have evidence. Repository changes require a verified merged PR; device testing requires an actual device report.
 - **Withdrawn:** Rejected or cancelled work, kept outside the pipeline as a minimal tombstone. It is not Done and must not be used as a future design reference.
@@ -37,6 +37,7 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ## Change history
 
+- **2026-09-14:** Josh approved the RON-013 standalone plan; work is on `feature/ears-pulled-back`. The endpoint comparison is ready for visual review, with `npm run check` passing typecheck, lint, 13 tests and build. Reported pixel QA finds 1,559 changed pixels only at x66–147/y14–60 and zero protected face/body/paw changes. The horizontal silhouette may read as airplane ears rather than tightly pinned-back ears. RON-013 stays In progress: endpoint acceptance, intermediate frames, full-loop validation and final approval remain pending. No app integration or merge is claimed; the expanding-set iPhone gate is unchanged.
 - **2026-09-14:** Josh clarified that animation creation comes first and the animation list may expand; physical iPhone testing waits until he declares the full set complete and selects an integrated build. Added RON-013–019 as Ideas in his supplied order: ears pulled back, howling, barking, shaking scared, sad, jumping, waking up and shaking off the sleep. These are backlog entries, not implementation authorization. Original atlas/approved artwork remain protected; no audio, triggers, gameplay, app integration or raster creation is authorized. Reconciled RON-006/007 next actions with completed library work and RON-011 with the completed batch.
 - **2026-09-14:** RON-002 moves to Done after the coordinating agent verified [PR #2](https://github.com/joshpled/ronnie-game/pull/2) squash-merged at 18:49:15 UTC as [798e4a4](https://github.com/joshpled/ronnie-game/commit/798e4a4a96863296fdb2ea1a7646d8cfbb423344). Reviewed head `1a35661ff0e1b7423e4ec48529047cb8faede78a` had both GitHub Checks jobs and GitGuardian successful. Feature-branch deletion is verified locally and remotely, `git fetch -p` completed and `main` was clean. Eight-pose gait limits and pending physical iPhone validation remain; no further implementation is authorized.
 - **2026-09-14:** Josh explicitly requested “review and merge” for RON-002 / [PR #2](https://github.com/joshpled/ronnie-game/pull/2). Latest `main` integration conflicts are resolved; fresh `npm run check` passes typecheck, lint, 13 tests and build, and the coordinating agent's source review found no blocking issues. Original atlas hash is unchanged, with no differences from `origin/main` in `public/assets` or `docs/animation-library`. Fresh local in-app browser smoke passes Feed, Pet, Play, rest persistence after reload and Wake, with no browser error logs. Earlier full Chrome/WebKit and repeated-click checks remain historical. RON-002 stays in Review until exact-head CI and the authorized merge are verified.
@@ -245,12 +246,15 @@ Maintain at most one item in progress. The project manager reconciles the board 
 
 ### RON-013 — Ears pulled back
 
-- **Status:** Ideas — requested animation backlog item; no implementation authorized.
-- **Owner:** Josh selects scope and approves the plan; implementer unassigned.
-- **Source / evidence:** Josh: “Ears pulled back”. Listed 1 of the seven new animation requests; no implementation or validation evidence yet.
-- **Proposed acceptance:** A readable ears-back pose with a controlled transition and recovery; preserve her face, proportions and coat markings.
-- **Next action:** Josh selects the item, then reviews and approves a bounded animation plan before implementation. Inspect approved source material during planning and preserve the original atlas style and approved artwork.
-- **Dependency / boundary:** Define the ear motion and held pose; do not assign a gameplay emotion trigger. No audio, triggers, gameplay, app integration or raster creation is authorized by adding this card. The animation backlog may expand; this item does not independently define the iPhone-testing gate.
+- **Status:** In progress — plan approved; endpoint candidate awaits Josh's visual approval before intermediate frames and the full animation.
+- **Owner:** Codex artwork/preview implementation; Josh visual approval; project manager board evidence.
+- **Authority:** Josh selected RON-013 and approved its standalone plan, as reported by the coordinating agent. This authorizes the endpoint checkpoint on `feature/ears-pulled-back`; it does not establish visual acceptance or authorize app integration or merge.
+- **Scope:** Use original atlas row 0/column 0 as the neutral base. Pull her ears backward at their roots with perspective shortening while preserving her pointed-ear anatomy and holding the original face, body, markings and paws fixed. Review the endpoint first, then create intermediate poses and a standalone loop in separate 192×208 candidate cells. Proposed timing remains 400 ms neutral, 400 ms pull back, 800 ms hold, 500 ms return and 300 ms neutral (2.4 seconds).
+- **Acceptance:** Readable ears-back pose, consistent original-atlas style and anatomy, controlled transition and exact neutral recovery; original atlas and approved artwork unchanged. Endpoint approval precedes full-loop work; final visual approval, appropriate checks, review and verified merge are required for completion.
+- **Evidence:** The [endpoint comparison](docs/animation-library/ears-pulled-back/index.html) and [review/QA notes](docs/animation-library/ears-pulled-back/README.md) are ready in verified [draft PR #10](https://github.com/joshpled/ronnie-game/pull/10). The coordinating agent reports `npm run check` passing typecheck, lint, 13 tests and build. Pixel QA reports 1,559 changed pixels confined to x66–147/y14–60, with zero protected face/body/paw changes. These checks cover the endpoint, not completed animation playback.
+- **Review limitation:** The horizontal ear silhouette may read as airplane ears rather than ears tightly pinned back. Josh's endpoint/style acceptance is pending; no intermediate-frame or full-loop acceptance is claimed.
+- **Next action / blocker:** Josh reviews the endpoint and decides whether its ear pose is suitable or needs adjustment. Do not proceed to intermediates/full preview before that approval. The coordinating agent confirmed the existing [GitHub Projects](https://github.com/users/joshpled/projects/1) card is synchronized to In progress with the endpoint checkpoint, QA and draft PR #10 evidence.
+- **Dependency / boundary:** Preserve the original atlas and all approved artwork; no approved-sheet or manifest promotion. Standalone animation only, with no audio, gameplay emotion triggers or app integration. One feature/PR at a time. The animation list may expand; physical iPhone testing waits until Josh declares the full set complete and selects an integrated build.
 
 <a id="ron-014"></a>
 
