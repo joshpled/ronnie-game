@@ -14,7 +14,7 @@ Open the HTML files directly, or run `python3 -m http.server 8768 --directory do
 | Eating | [Preview](eating.html) | 5000 ms | [Row](eating/candidate.png) |
 | Sleeping | [Preview](sleeping.html) | 8000 ms; breathing loop 2400 ms | [Row](sleeping/candidate.png) |
 | Curled sleep | [Preview](curled-sleep.html) | 4000 ms pose loop; refined breathing unfinished | [Row](curled-sleep/candidate.png) |
-| Curled breathing candidate | [Preview](curled-sleep-breathing/index.html) | 4000 ms; isolated upper-back motion, awaiting visual approval | Existing approved curl frame 0, animated in Canvas |
+| Curled breathing · approved revision 2 | [Preview](curled-sleep-breathing/index.html) | 4000 ms; isolated upper-back motion, maximum 3 px lift | Existing approved curl frame 0, animated in Canvas |
 | Approach/circle | [Preview](bed-entry.html) | 9160 ms standalone study | [Approach](bed-entry/approach.png), [circle](bed-entry/circle.png) |
 | Settling | [Preview](settling.html) | 5160 ms including endpoint holds | [Row](settling/candidate.png) |
 | Complete bedtime | [Preview](bedtime.html) | 13520 ms | Existing assets composed together |
@@ -31,7 +31,7 @@ Future game integration must preserve action completion semantics: animation fra
 
 ## Approval and limitations
 
-User approvals are distinct from technical validation. Existing face/fur differences, the fuller turn torso, foot sliding/repeated headings, missing bed-rim step, and the settling hip-drop/head-tuck joins remain disclosed. The original curled breathing is visually indistinct. A separate [breathing refinement candidate](curled-sleep-breathing/README.md) now animates the approved resting pose with fixed head, ears, paws and bed; it awaits visual approval. The final bedtime preview still holds the exact approved curled pose; it does not claim a finished breathing loop.
+User approvals are distinct from technical validation. Existing face/fur differences, the fuller turn torso, foot sliding/repeated headings, missing bed-rim step, and the settling hip-drop/head-tuck joins remain disclosed. The original curled breathing is visually indistinct. Josh approved revision 2 of the separate [breathing refinement](curled-sleep-breathing/README.md), which animates the approved resting pose with fixed head, ears, paws and bed. The final bedtime preview still holds the exact approved curled pose; the breathing refinement has not been integrated into that sequence.
 
 Per-stage `job.json`, cleanup/registration reports and comparison media retain review evidence. [Motion research](bed-entry/research.md) distinguishes inspected video behavior from generated motion. Original photos, external footage and raw generated sources remain outside this repository. The excluded withdrawn walk material is not a design reference.
 
