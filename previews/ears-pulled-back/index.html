@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronnie · Ears pulled back</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #f6f3ed;
+      color: #302c28;
+      font:
+        16px/1.5 system-ui,
+        sans-serif;
+    }
+    main {
+      max-width: 1020px;
+      margin: auto;
+      padding: 28px 20px;
+    }
+    h1 {
+      font-size: 30px;
+      margin: 8px 0;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 32px;
+    }
+    a {
+      color: #225e65;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: #6b635b;
+    }
+    .note {
+      padding: 12px 16px;
+      background: #fff1cc;
+      border-left: 4px solid #946900;
+    }
+    .pair {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin: 24px 0;
+    }
+    figure {
+      margin: 0;
+      text-align: center;
+    }
+    figcaption {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    img {
+      display: block;
+      width: 192px;
+      height: 208px;
+      background: #eee9df;
+      border-radius: 12px;
+    }
+    .large img {
+      width: 384px;
+      height: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .large figure {
+      max-width: 100%;
+    }
+    .details {
+      color: #6b635b;
+      max-width: 760px;
+    }
+    @media (max-width: 480px) {
+      .pair:not(.large) {
+        flex-wrap: nowrap;
+        gap: 12px;
+      }
+      .pair:not(.large) figure {
+        width: calc((100% - 12px) / 2);
+      }
+      .pair:not(.large) img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+  <main>
+    <a href="https://github.com/joshpled/ronnie-game/tree/feature/ears-pulled-back/docs/animation-library">Animation library</a>
+    <p class="eyebrow">RON-013 · ENDPOINT CHECKPOINT</p>
+    <h1>Ears pulled back</h1>
+    <p class="note">
+      Candidate for pose and style review. The transition will follow after this
+      pose is approved.
+    </p>
+    <h2>Compare poses</h2>
+    <div class="pair">
+      <figure>
+        <figcaption>Original neutral</figcaption>
+        <img
+          src="neutral.png"
+          alt="Ronnie standing front-facing with her original upright ears."
+        />
+      </figure>
+      <figure>
+        <figcaption>Ears-back candidate</figcaption>
+        <img
+          src="candidate.png"
+          alt="Ronnie in the proposed ears-back endpoint pose."
+        />
+      </figure>
+    </div>
+    <h2>Closer look</h2>
+    <div class="pair large">
+      <figure>
+        <figcaption>Original neutral · enlarged</figcaption>
+        <img
+          src="neutral.png"
+          alt="Enlarged original neutral pose for inspecting her face and ear shape."
+        />
+      </figure>
+      <figure>
+        <figcaption>Ears-back candidate · enlarged</figcaption>
+        <img
+          src="candidate.png"
+          alt="Enlarged ears-back candidate for inspecting the ear roots and style."
+        />
+      </figure>
+    </div>
+    <p class="details">
+      Review the backward ear angle, pointed shape, attachment and Ronnie’s
+      original character details. See <a href="https://github.com/joshpled/ronnie-game/blob/feature/ears-pulled-back/docs/animation-library/ears-pulled-back/README.md">review notes</a> for
+      preservation checks and any limitations.
+    </p>
+  </main>
+</html>
