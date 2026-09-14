@@ -18,6 +18,18 @@
 
 **Alternatives and tradeoff:** A hosted board adds another service and synchronization responsibility; conversation-only tracking disappears on clear. Markdown is easy to review but has no drag-and-drop or background sync. Done requires verified acceptance and merge, even when a preview is already live.
 
+## 2026-09-13 — Refine timing and motion before expanding the animation set
+
+**Context:** Constant-speed travel starts/stops abruptly. Uniform frame rates repeat gestures too quickly, while reward timers can cut off a jump or wave mid-cycle. The owner wants slower, more realistic motion and a foundation for future animation work.
+
+**Decision:** Use a velocity controller with acceleration and braking; advance the gait according to actual distance. Put explicit pose durations and gait definitions in a shared catalogue. Emit action completion from the end of a one-shot clip.
+
+**Why:** This improves body movement, turns, pauses and action rhythm with the existing artwork. More poses can be inserted into clips without touching hunger, happiness or the save format.
+
+**Alternatives:** Globally reducing FPS would hold every intermediate pose longer and increase visible stepping. Crossfading full-body frames would add ghosted/doubled legs. A skeletal rig or denser hand-authored frame sequences could improve joint-level motion later, but require an art pass and are not claimed here.
+
+**Tradeoffs:** The eight-pose trot and pose changes still have visual limits. Longer interactions intentionally delay rewards. One controller owns movement and completion, so care must sequence through it rather than changing sprite frames or launching reward timers directly.
+
 ## 2026-09-13 — Separate care rules from sprite behavior
 
 **Context:** New animations will be added as the game grows. Care progress must stay reliable when interactions or artwork change.

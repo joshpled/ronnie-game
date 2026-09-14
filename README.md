@@ -4,7 +4,7 @@ A cozy 2D pet-care prototype starring **Ronnie (she/her)**, based on her owner's
 
 ## Play
 
-Public prototype: **https://joshpled.github.io/ronnie-game/** (available after the first Pages deployment).
+Public prototype: **https://joshpled.github.io/ronnie-game/**.
 
 Tap the rug to call Ronnie over. Tap her, or use **Pet**, to show affection. **Feed** restores fullness, **Play** starts a ball chase, and **Rest** restores energy over time. While she rests, **Wake** brings her back. The call button provides an alternative to tapping the canvas.
 
@@ -39,8 +39,9 @@ No environment variables or API keys are required. `vite.config.ts` uses relativ
 - Fullness, happiness, energy, and a count of completed care moments.
 - Saved progress and time-based needs, capped at eight hours away.
 - Accessible HTML care controls, readable status messages, and reduced-motion support.
+- Slower movement with acceleration/braking, distance-driven steps, calmer idle/rest, and complete one-shot gestures. See [the motion guide](docs/motion.md) for tuning and adding future frames.
 
-This first prototype reuses the approved desktop pet atlas. Feeding uses her downward gaze; rest uses a seated pose. Dedicated eating and sleeping artwork is available in the [approved animation library](docs/animation-library/README.md), with disclosed motion limitations; it is not integrated into gameplay. Toy-carrying art remains future work. The existing small sprites may look soft when enlarged. Canvas details do not have a full screen-reader equivalent, although all care actions are available as HTML buttons.
+This prototype reuses the approved desktop pet atlas. Feeding lowers and raises her head through existing gaze poses; rest uses calm seated poses. Dedicated eating and sleeping artwork is available in the [approved animation library](docs/animation-library/README.md), with disclosed motion limitations; it is not integrated into gameplay. Toy-carrying art remains future work. Timing refinements do not create new in-between limb drawings: the eight-pose trot still limits anatomical smoothness, and small sprites may look soft when enlarged. Canvas details do not have a full screen-reader equivalent, although all care actions are available as HTML buttons.
 
 ## Project map
 
