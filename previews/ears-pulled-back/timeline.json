@@ -1,0 +1,57 @@
+[
+  {
+    "pose": 0,
+    "duration": 400,
+    "phase": "Neutral"
+  },
+  {
+    "pose": 1,
+    "duration": 100,
+    "phase": "Ears drawing back"
+  },
+  {
+    "pose": 2,
+    "duration": 100,
+    "phase": "Ears drawing back"
+  },
+  {
+    "pose": 3,
+    "duration": 100,
+    "phase": "Ears drawing back"
+  },
+  {
+    "pose": 4,
+    "duration": 100,
+    "phase": "Ears drawing back"
+  },
+  {
+    "pose": 4,
+    "duration": 800,
+    "phase": "Sad hold"
+  },
+  {
+    "pose": 3,
+    "duration": 125,
+    "phase": "Returning"
+  },
+  {
+    "pose": 2,
+    "duration": 125,
+    "phase": "Returning"
+  },
+  {
+    "pose": 1,
+    "duration": 125,
+    "phase": "Returning"
+  },
+  {
+    "pose": 0,
+    "duration": 125,
+    "phase": "Returning"
+  },
+  {
+    "pose": 0,
+    "duration": 300,
+    "phase": "Neutral"
+  }
+]
