@@ -19,6 +19,14 @@ Open the HTML files directly, or run `python3 -m http.server 8768 --directory do
 | Settling | [Preview](settling.html) | 5160 ms including endpoint holds | [Row](settling/candidate.png) |
 | Complete bedtime | [Preview](bedtime.html) | 13520 ms | Existing assets composed together |
 
+## Candidate checkpoints
+
+[RON-013 — Ears pulled back](ears-pulled-back/index.html) is a standalone static
+endpoint comparison awaiting Josh's pose/style approval. Its generated ear layer
+is combined with protected original pixels. The transition and playback are not
+implemented yet; see the [review notes](ears-pulled-back/README.md). This candidate
+is separate from the approved artwork listed above.
+
 ## Files and integration contract
 
 [manifest.json](manifest.json) records zero-based atlas rows, pose order, timings and approval scope. [approved-spritesheet.png](approved-spritesheet.png) is 1536 × 3328: its first 11 rows exactly preserve the original atlas; rows 12–16 contain the five approved base movements. Curled sleep and bed-entry assets remain separate families, with their own pose/timeline metadata. The original atlas remains the style authority; these additions do not redefine Ronnie’s design.
