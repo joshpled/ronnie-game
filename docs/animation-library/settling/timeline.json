@@ -1,0 +1,88 @@
+{
+  "canvas": [
+    384,
+    320
+  ],
+  "cell": [
+    192,
+    208
+  ],
+  "columns": 8,
+  "bedPosition": [
+    64,
+    64
+  ],
+  "dogPosition": [
+    96,
+    20
+  ],
+  "steps": [
+    {
+      "asset": "start",
+      "frame": 0,
+      "duration": 600,
+      "label": "After the circle"
+    },
+    {
+      "asset": "settling",
+      "frame": 0,
+      "duration": 240,
+      "label": "Prepare to settle"
+    },
+    {
+      "asset": "settling",
+      "frame": 1,
+      "duration": 280,
+      "label": "Bend front legs"
+    },
+    {
+      "asset": "settling",
+      "frame": 2,
+      "duration": 320,
+      "label": "Lower chest"
+    },
+    {
+      "asset": "settling",
+      "frame": 3,
+      "duration": 360,
+      "label": "Lower hindquarters"
+    },
+    {
+      "asset": "settling",
+      "frame": 4,
+      "duration": 360,
+      "label": "Rest hips"
+    },
+    {
+      "asset": "settling",
+      "frame": 5,
+      "duration": 360,
+      "label": "Curl body"
+    },
+    {
+      "asset": "settling",
+      "frame": 6,
+      "duration": 400,
+      "label": "Tuck head"
+    },
+    {
+      "asset": "settling",
+      "frame": 7,
+      "duration": 440,
+      "label": "Close eyes"
+    },
+    {
+      "asset": "curl",
+      "frame": 0,
+      "duration": 1800,
+      "label": "Approved curled endpoint"
+    }
+  ],
+  "durationMs": 5160,
+  "sources": {
+    "start": "../bed-entry/circle.png",
+    "settling": "candidate.png",
+    "curl": "../curled-sleep/candidate.png",
+    "bed": "../curled-sleep/bed.png"
+  }
+}

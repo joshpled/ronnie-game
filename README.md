@@ -40,7 +40,7 @@ No environment variables or API keys are required. `vite.config.ts` uses relativ
 - Saved progress and time-based needs, capped at eight hours away.
 - Accessible HTML care controls, readable status messages, and reduced-motion support.
 
-This first prototype reuses the approved desktop pet atlas. Feeding uses her downward gaze; rest uses a seated pose. Dedicated eating, curled-up sleeping, and toy-carrying art are future additions, not finished animations. The existing small sprites may look soft when enlarged. Canvas details do not have a full screen-reader equivalent, although all care actions are available as HTML buttons.
+This first prototype reuses the approved desktop pet atlas. Feeding uses her downward gaze; rest uses a seated pose. Dedicated eating and sleeping artwork is available in the [approved animation library](docs/animation-library/README.md), with disclosed motion limitations; it is not integrated into gameplay. Toy-carrying art remains future work. The existing small sprites may look soft when enlarged. Canvas details do not have a full screen-reader equivalent, although all care actions are available as HTML buttons.
 
 ## Project map
 

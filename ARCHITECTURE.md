@@ -50,3 +50,7 @@ Vite bundles the application and copies public assets. GitHub Actions runs the r
 ## Project coordination
 
 `KANBAN.md` records project status outside the game runtime. `.codex/agents/project_manager.toml` defines the PM role; `AGENTS.md` requests its use at work checkpoints. The [workflow](docs/project-management.md) defines evidence for each status and separates project tracking from gameplay changes. This adds no application dependency, server or scheduled background job.
+
+## Animation artwork library
+
+`docs/animation-library/` contains reviewed sprite families, timing metadata and standalone HTML/GIF previews. Its extended sheet preserves the original 11 rows and adds five base movements; curled sleep, approach/circle and settling remain separate families. Props are separate assets. The library is documentation/artwork and is not imported by Vite or the game. Future integration must route completion through the existing care callbacks. See the [library contract](docs/animation-library/README.md).

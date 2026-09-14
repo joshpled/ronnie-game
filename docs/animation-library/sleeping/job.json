@@ -1,0 +1,131 @@
+{
+  "stage": "sleeping",
+  "revision": 2,
+  "status": "user-approved",
+  "user_approved": true,
+  "frameCount": 8,
+  "frameSize": [
+    192,
+    208
+  ],
+  "playbackFrames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    3,
+    2,
+    1
+  ],
+  "frameMs": [
+    300,
+    300,
+    300,
+    300,
+    400,
+    1200,
+    1200,
+    1200,
+    1200,
+    400,
+    400,
+    400,
+    400
+  ],
+  "sleepLoop": {
+    "playbackFrames": [
+      5,
+      6
+    ],
+    "frameMs": [
+      1200,
+      1200
+    ]
+  },
+  "sourceSize": [
+    1704,
+    923
+  ],
+  "sharedScale": 0.4489311163895487,
+  "sharedCrop": [
+    72,
+    30,
+    353,
+    451
+  ],
+  "postRegistrationOffsets": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "registration": "One shared crop/scale followed by integer ground-contact registration to y203 in every pose; no clipped alpha pixels.",
+  "source": "work/ronnie-animation-library/sleeping/revision-2/decoded/source.png",
+  "generation_tool": "built-in image_gen",
+  "reference_roles": [
+    "Current sleeping family as corrective edit target",
+    "Original standing crop as authoritative identity reference"
+  ],
+  "propsIncluded": false,
+  "qa_note": "First source breathing was too subtle. Corrective source and final contact sheet show raised black ribcage contour in pose7 versus6, with shared floor203. Head/paws appear closely aligned but pixels are not identical. Fur and facial detail remain smoother/altered compared with original. Josh approved this variant.",
+  "validation": {
+    "full_gif_steps": 13,
+    "full_cycle_ms": 8000,
+    "sleep_loop_steps": 2,
+    "sleep_loop_ms": 2400,
+    "html_profiles_match_gifs": true,
+    "floor_baselines": [
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203
+    ],
+    "all_frames_unclipped": true,
+    "original_atlas_unchanged": true,
+    "approved_sheet_original_pixels_unchanged": true,
+    "browser": "Original/candidate render; switching to sleeping-only resets to pose6; Next frame reaches pose7; Play/Pause toggle correctly. Contact sheet and resting pose visually inspected."
+  },
+  "approval": {
+    "date": "2026-09-13",
+    "user_message": "approved, also want a sleeping position curled up in a dog bed, see image attached for reference",
+    "context": "Approves current front-rest sleeping revision2; adds a separate curled-sleep variant for review."
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "stage": "curled-sleep",
+  "status": "user-approved-pose-and-style",
+  "revision": 2,
+  "generation": "built-in imagegen",
+  "artReferences": "Original standing sprite for style/identity; private user photo for curled posture and bed only. Corrective row uses original standing sprite and current candidate edit target.",
+  "sourcePhotoCommitted": false,
+  "dogPropsIncluded": false,
+  "separateBed": "bed.png",
+  "playbackFrames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "frameMs": [
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500
+  ],
+  "durationMs": 4000,
+  "cleanupPassesPerSelectedSource": 1,
+  "dogSourceSha256": "18b1b7c3d92c223ca28b7b253a1b3efef262159e3efa099c0105f3f9c9cfd014",
+  "bedSourceSha256": "83adb0fa33b6795a414067144f18caa4819486262c352d0bb5d4dd687568a74d",
+  "visualReview": {
+    "pose": "Closed eyes, black back on left, tan haunch forward, tucked tan head on right, visible white paw.",
+    "bed": "Complete separate empty cream/pink shag donut bed. Fixed composite offset puts dog in center well.",
+    "caveats": [
+      "Breathing is visually indistinct at sprite size despite one corrective generation; this is primarily a curled sleeping pose checkpoint, not a confirmed refined breathing loop.",
+      "Fur and face details differ from original; no exact style or pixel identity is claimed.",
+      "Small ear/head and coat variations remain between frames."
+    ],
+    "userApproval": {
+      "scope": "Curled pose and style with disclosed caveats",
+      "date": "2026-09-14",
+      "breathingRefinementComplete": false
+    }
+  },
+  "checks": {
+    "rgbaDogSize": [
+      1536,
+      208
+    ],
+    "rgbaBedSize": [
+      256,
+      224
+    ],
+    "originalAtlasUnchanged": true,
+    "approvedOriginalRegionPixelEqual": true,
+    "sleepingRow16PixelEqual": true,
+    "variantInApprovedSheet": false,
+    "gifTimingMs": 4000,
+    "browserRendering": true,
+    "browserPoseStep": true,
+    "browserSeparateLayerControls": true,
+    "browserPlayPauseAndAdvancement": true,
+    "javascriptParses": true,
+    "localLinksResolve": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "settling",
+  "checkpoint": 2,
+  "status": "user-approved-with-disclosed-caveats",
+  "userApproved": true,
+  "revision": 2,
+  "generation": "built-in imagegen",
+  "generationCalls": 2,
+  "sourceSha256": "2dfc7d48f9889da3ac5b14a40c8b9addd9619d9dcfae56a552f07285650793c1",
+  "propsIncluded": false,
+  "styleAuthority": "Original atlas and original standing crop. Circle and curled sprites provide endpoints only.",
+  "processing": "Complete silhouettes, one common family scale, midpoint registration, solid floor y203, one final cleanup per processed source.",
+  "motionReview": {
+    "sequencePresent": [
+      "front lowering",
+      "hip lowering",
+      "body curling",
+      "head tuck"
+    ],
+    "caveats": [
+      "The largest body change remains between transition poses4 and5.",
+      "The generated final pose leaves a visible white paw and a different head-to-haunch tuck; the exact approved endpoint is held separately, so that join remains visible.",
+      "Early transition poses are somewhat wider than the current circle start; original rendering and markings remain recognizable, with face/fur differences."
+    ],
+    "parentInspected": [
+      "candidate-contact.png",
+      "sequence-contact.png"
+    ]
+  },
+  "unchangedAssets": {
+    "bed-entry/circle.png": "2c517f008bf95633121da3e59d6841ffbb5fa6569f38c0ae234cf2c2756f1967",
+    "bed-entry/approach.png": "bc50092aead164956224e0918ed8097326004b71aea405bca9e00a30edf47d2f",
+    "curled-sleep/bed.png": "4df7b37a8172a836e6426386cda4a1d45da520019e2433d2b5d55fe131f300aa",
+    "curled-sleep/candidate.png": "ed03030b269a2df3e9b4c1546d489df082388acfbb598a0ec1155fe31c955163",
+    "approved-spritesheet.png": "096a1d2af90026d647d9b7d6a3f9b0aaa5292849e3b106bc9dfa30c88444d743"
+  },
+  "lieDownApprovalPending": false,
+  "combinedSequence": "checkpoint-3-ready-for-review",
+  "appIntegration": false,
+  "durationMs": 5160,
+  "checks": {
+    "preview.gif": {
+      "durationMs": 5160,
+      "frames": 10
+    },
+    "dog-only.gif": {
+      "durationMs": 5160,
+      "frames": 10
+    },
+    "rgbaCellBounds": true,
+    "sceneBounds": true,
+    "canonicalAtlasUnchanged": true,
+    "approvedOriginalPixelsEqual": true,
+    "approvedEndpointExact": true,
+    "htmlTimelineEqual": true,
+    "localLinksResolve": true,
+    "javascriptParses": true,
+    "browserRendering": true,
+    "browserNextPose": true,
+    "browserPlaybackAdvancementAndEndStop": true,
+    "browserDogOnlyLayer": true,
+    "browserRestartResetsPositionAndLabel": true
+  },
+  "userApproval": {
+    "message": "approved",
+    "scope": "Settling checkpoint with disclosed hip-drop and final-tuck joins",
+    "date": "2026-09-14"
+  }
+}

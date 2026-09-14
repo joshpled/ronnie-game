@@ -1,0 +1,17 @@
+{
+  "preview.gif": {
+    "durationMs": 5160,
+    "frames": 10
+  },
+  "dog-only.gif": {
+    "durationMs": 5160,
+    "frames": 10
+  },
+  "rgbaCellBounds": true,
+  "sceneBounds": true,
+  "canonicalAtlasUnchanged": true,
+  "approvedOriginalPixelsEqual": true,
+  "approvedEndpointExact": true,
+  "htmlTimelineEqual": true,
+  "localLinksResolve": true
+}

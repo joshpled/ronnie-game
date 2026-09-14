@@ -1,0 +1,38 @@
+{
+  "stage": "tail-wag",
+  "status": "user-approved",
+  "input_images": [
+    "Private working source; not committed",
+    "Private working source; not committed",
+    "Private working source; not committed"
+  ],
+  "frameCount": 8,
+  "frameSize": [
+    192,
+    208
+  ],
+  "cycleMs": 800,
+  "source_sha256": "b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e",
+  "user_approved": true,
+  "qa_note": "Tail poses extracted; visual QA fails detail preservation: larger eyes and softer facial/body shading than the original. Do not use candidate frames as character references or install them.",
+  "selected_attempt": 2,
+  "selected_attempt_reference_roles": [
+    "Exact original-sprite layout as edit target",
+    "Original standing crop as supporting reference"
+  ],
+  "generation_tool": "built-in image_gen",
+  "validation": {
+    "original_atlas_unchanged": true,
+    "frame_count": 8,
+    "frame_size": [
+      192,
+      208
+    ],
+    "cycle_ms": 800
+  },
+  "approval": {
+    "date": "2026-09-13",
+    "user_message": "approved",
+    "context": "Approval of the displayed stage 1 checkpoint, with face-detail QA differences disclosed. Original atlas remains character reference."
+  }
+}
