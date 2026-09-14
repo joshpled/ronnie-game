@@ -14,6 +14,7 @@ Open the HTML files directly, or run `python3 -m http.server 8768 --directory do
 | Eating | [Preview](eating.html) | 5000 ms | [Row](eating/candidate.png) |
 | Sleeping | [Preview](sleeping.html) | 8000 ms; breathing loop 2400 ms | [Row](sleeping/candidate.png) |
 | Curled sleep | [Preview](curled-sleep.html) | 4000 ms pose loop; refined breathing unfinished | [Row](curled-sleep/candidate.png) |
+| Curled breathing candidate | [Preview](curled-sleep-breathing/index.html) | 4000 ms; isolated upper-back motion, awaiting visual approval | Existing approved curl frame 0, animated in Canvas |
 | Approach/circle | [Preview](bed-entry.html) | 9160 ms standalone study | [Approach](bed-entry/approach.png), [circle](bed-entry/circle.png) |
 | Settling | [Preview](settling.html) | 5160 ms including endpoint holds | [Row](settling/candidate.png) |
 | Complete bedtime | [Preview](bedtime.html) | 13520 ms | Existing assets composed together |
@@ -30,8 +31,8 @@ Future game integration must preserve action completion semantics: animation fra
 
 ## Approval and limitations
 
-User approvals are distinct from technical validation. Existing face/fur differences, the fuller turn torso, foot sliding/repeated headings, missing bed-rim step, and the settling hip-drop/head-tuck joins remain disclosed. Curled breathing is visually indistinct and needs refinement. The final bedtime preview holds the exact approved curled pose; it does not claim a finished breathing loop.
+User approvals are distinct from technical validation. Existing face/fur differences, the fuller turn torso, foot sliding/repeated headings, missing bed-rim step, and the settling hip-drop/head-tuck joins remain disclosed. The original curled breathing is visually indistinct. A separate [breathing refinement candidate](curled-sleep-breathing/README.md) now animates the approved resting pose with fixed head, ears, paws and bed; it awaits visual approval. The final bedtime preview still holds the exact approved curled pose; it does not claim a finished breathing loop.
 
 Per-stage `job.json`, cleanup/registration reports and comparison media retain review evidence. [Motion research](bed-entry/research.md) distinguishes inspected video behavior from generated motion. Original photos, external footage and raw generated sources remain outside this repository. The excluded withdrawn walk material is not a design reference.
 
-[Release validation and review](release-review.md) records the packaging checks and maintenance notes. [KANBAN.md](../../KANBAN.md) remains the project status authority; acceptance does not mark this work Done until the PR is merged.
+[Release validation and review](release-review.md) records the packaging checks and maintenance notes for the library merged in PR #5. [KANBAN.md](../../KANBAN.md) remains the project status authority; the new breathing refinement remains a separate review checkpoint.

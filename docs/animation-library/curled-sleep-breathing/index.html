@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronnie · Quiet breathing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #f6f3ed;
+      color: #302c28;
+      font:
+        16px/1.5 system-ui,
+        sans-serif;
+    }
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 28px 20px;
+    }
+    h1 {
+      font-size: 30px;
+      margin: 8px 0;
+    }
+    a {
+      color: #225e65;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: #6b635b;
+    }
+    .note {
+      padding: 12px 16px;
+      background: #fff1cc;
+      border-left: 4px solid #946900;
+    }
+    .pair {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin: 24px 0;
+    }
+    figure {
+      margin: 0;
+      text-align: center;
+    }
+    figcaption {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .scene {
+      position: relative;
+      width: 256px;
+      height: 224px;
+      background: #eee9df;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .bed {
+      position: absolute;
+      inset: 0;
+      width: 256px;
+      height: 224px;
+    }
+    .dog {
+      position: absolute;
+      left: 32px;
+      top: -44px;
+      width: 192px;
+      height: 208px;
+    }
+    .still {
+      background: url("../curled-sleep/candidate.png") 0 0 / 1536px 208px;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    button,
+    select {
+      font: inherit;
+      color: inherit;
+      background: #fff;
+      border: 1px solid #827568;
+      border-radius: 8px;
+      padding: 10px 14px;
+      min-height: 44px;
+    }
+    button {
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.5;
+    }
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #226a72;
+      outline-offset: 3px;
+    }
+    .scrub {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      max-width: 650px;
+      margin: 20px auto;
+    }
+    .scrub input {
+      flex: 1;
+      min-width: 80px;
+    }
+    output {
+      font-variant-numeric: tabular-nums;
+    }
+    .large {
+      overflow: auto;
+      background: #eee9df;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+    .large .scene {
+      width: 512px;
+      height: 448px;
+      transform-origin: top left;
+    }
+    .large .bed {
+      width: 512px;
+      height: 448px;
+    }
+    .large .dog {
+      left: 64px;
+      top: -88px;
+      width: 384px;
+      height: 416px;
+    }
+    details {
+      margin-top: 24px;
+    }
+    p {
+      max-width: 760px;
+    }
+    .error {
+      color: #9d2424;
+    }
+    [hidden] {
+      display: none !important;
+    }
+  </style>
+  <main>
+    <p class="eyebrow">RONNIE · BREATHING REVIEW</p>
+    <a href="../README.md">Animation library</a>
+    <h1>A quiet breath, curled in her bed</h1>
+    <p>
+      Her upper back gently rises and settles. Her head, ears, paws and bed stay
+      still.
+    </p>
+    <p class="note">
+      New motion candidate · awaiting your visual approval. The approved artwork
+      is preserved.
+    </p>
+    <div class="pair">
+      <figure>
+        <figcaption>Approved resting pose</figcaption>
+        <div class="scene">
+          <img class="bed" src="../curled-sleep/bed.png" alt="" />
+          <div
+            class="dog still"
+            role="img"
+            aria-label="Approved Ronnie curled sleeping pose"
+          ></div>
+        </div>
+      </figure>
+      <figure>
+        <figcaption>Breathing · actual size</figcaption>
+        <div class="scene">
+          <img class="bed" src="../curled-sleep/bed.png" alt="" /><canvas
+            id="dog"
+            class="dog"
+            width="192"
+            height="208"
+            role="img"
+            aria-label="Ronnie’s breathing candidate"
+            >Ronnie curled asleep.</canvas
+          >
+        </div>
+      </figure>
+    </div>
+    <div class="controls">
+      <button id="play" disabled>Play</button
+      ><button id="rest" disabled>Rest pose</button
+      ><button id="inhale" disabled>Full inhale</button>
+      <label
+        >Layers
+        <select id="layers">
+          <option value="both">Ronnie + bed</option>
+          <option value="dog">Ronnie only</option>
+          <option value="bed">Bed only</option>
+        </select></label
+      >
+    </div>
+    <label class="scrub"
+      >Cycle
+      <input
+        id="time"
+        type="range"
+        min="0"
+        max="4000"
+        step="20"
+        value="0"
+        disabled
+      /><output id="time-label">0.00 s</output></label
+    >
+    <p id="status" role="status">Loading approved artwork…</p>
+    <p>
+      One breath takes four seconds: a gentle inhale, a longer exhale, then a
+      short rest. Starts paused; use the slider to inspect any moment.
+    </p>
+    <details id="enlarged">
+      <summary>Inspect at 2× size</summary>
+      <div class="large">
+        <div class="scene">
+          <img class="bed" src="../curled-sleep/bed.png" alt="" /><canvas
+            id="zoom"
+            class="dog"
+            width="192"
+            height="208"
+            role="img"
+            aria-label="Enlarged breathing candidate"
+          ></canvas>
+        </div>
+      </div>
+    </details>
+    <p>
+      <a href="README.md">Motion notes and validation</a> ·
+      <a href="../bedtime.html">Approved bedtime sequence</a>
+    </p>
+  </main>
+  <script>
+    // Preview-only animation. Always sample approved curl frame 0, never prior variations.
+    const image = new Image();
+    const canvas = document.querySelector("#dog");
+    const context = canvas.getContext("2d");
+    const zoom = document.querySelector("#zoom").getContext("2d");
+    const play = document.querySelector("#play");
+    const slider = document.querySelector("#time");
+    const status = document.querySelector("#status");
+    const duration = 4000;
+    let time = 0;
+    let running = false;
+    let request;
+    let previous;
+    const ease = (t) => (1 - Math.cos(Math.PI * t)) / 2;
+    function breathAt(ms) {
+      if (ms <= 1400) return ease(ms / 1400);
+      if (ms < 3400) return 1 - ease((ms - 1400) / 2000);
+      return 0;
+    }
+    function render(ms) {
+      time = ms;
+      const breath = breathAt(ms);
+      context.clearRect(0, 0, 192, 208);
+      context.drawImage(image, 0, 0, 192, 208, 0, 0, 192, 208);
+      if (breath > 0) {
+        // Confine movement to the upper-left torso. The lower edge is anchored at y154.
+        // Column weights taper to zero before head/ears at x104 and below the ribcage.
+        context.clearRect(18, 94, 86, 60);
+        for (let x = 18; x < 104; x++) {
+          const weight =
+            x < 48 ? ease((x - 18) / 30) : x < 66 ? 1 : 1 - ease((x - 66) / 38);
+          const lift = 2 * weight * breath;
+          context.drawImage(image, x, 96, 1, 58, x, 96 - lift, 1, 58 + lift);
+        }
+      }
+      zoom.clearRect(0, 0, 192, 208);
+      zoom.drawImage(canvas, 0, 0);
+      slider.value = ms;
+      document.querySelector("#time-label").textContent =
+        `${(ms / 1000).toFixed(2)} s`;
+      if (!running)
+        status.textContent =
+          breath === 0
+            ? "Paused · exact approved resting pose."
+            : "Paused · breathing pose.";
+    }
+    function pause() {
+      running = false;
+      cancelAnimationFrame(request);
+      previous = undefined;
+      play.textContent = "Play";
+      status.textContent = "Paused · use the slider to inspect the breath.";
+    }
+    function tick(now) {
+      if (!running) return;
+      if (previous !== undefined) render((time + now - previous) % duration);
+      previous = now;
+      request = requestAnimationFrame(tick);
+    }
+    play.addEventListener("click", () => {
+      if (running) {
+        pause();
+        return;
+      }
+      running = true;
+      previous = undefined;
+      play.textContent = "Pause";
+      status.textContent = "Playing · four-second breathing loop.";
+      request = requestAnimationFrame(tick);
+    });
+    document.querySelector("#rest").addEventListener("click", () => {
+      pause();
+      render(0);
+    });
+    document.querySelector("#inhale").addEventListener("click", () => {
+      pause();
+      render(1400);
+    });
+    slider.addEventListener("input", () => {
+      pause();
+      render(Number(slider.value));
+    });
+    document.querySelector("#layers").addEventListener("change", (event) => {
+      const layer = event.target.value;
+      document
+        .querySelectorAll(".bed")
+        .forEach((el) => (el.hidden = layer === "dog"));
+      document
+        .querySelectorAll(".dog")
+        .forEach((el) => (el.hidden = layer === "bed"));
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) pause();
+    });
+    image.onload = () => {
+      render(0);
+      document
+        .querySelectorAll("button, input")
+        .forEach((el) => (el.disabled = false));
+      status.textContent = "Ready · paused at the exact approved resting pose.";
+    };
+    image.onerror = () => {
+      status.textContent =
+        "Could not load the approved sprite. Open this preview from the animation-library folder.";
+      status.className = "error";
+    };
+    image.src = "../curled-sleep/candidate.png";
+  </script>
+</html>
