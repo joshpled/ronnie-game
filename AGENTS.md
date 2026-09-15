@@ -36,6 +36,8 @@ Ronnie is a girl; use she/her. Preserve her tall ears, tan face, black saddle, w
 
 ## Decisions log
 
+- 2026-09-14 — Merge RON-013 ears-back/sad animation through PR #10 (`2be3a6d`) after Josh’s “Approve. Merge” — five saved poses and a 2.4-second JSON timeline preserve exact neutral/sad endpoints and protected body pixels. Typecheck, lint, 13 tests, build and source review passed. The final tuck and subtle sleepy/pleading expression remain accepted caveats. Standalone preview only; no app integration or physical iPhone validation.
+
 - 2026-09-14 — Merge the existing-motion refinement through PR #2 (`798e4a4`) — velocity-driven travel and distance-matched gait make starts/stops calmer; one-shot completion owns reward timing while `care.ts` owns amounts. Review, 13 tests, typecheck, lint, build and fresh care/rest browser smoke checks pass. Eight-pose gait limits and physical iPhone testing remain; the approved library and curled-breathing preview are unchanged and separate from gameplay.
 
 - 2026-09-14 — Animate curled breathing from one approved rest frame in a standalone Canvas preview — a tapered 3 px maximum upper-back lift makes the four-second breath readable while holding head, ears, paws and bed fixed. Josh approved revision 2; PR #6 merged as `02d9c9f`. Preserve the torso boundary when tuning motion; resampling may soften moving fur. No app or bedtime-sequence integration.

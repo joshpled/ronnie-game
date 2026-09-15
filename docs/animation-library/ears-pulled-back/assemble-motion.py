@@ -82,6 +82,6 @@ assert np.array_equal(np.array(poses[-1]), endpoint)
 report = {"revision": 3, "durationMs": 2400, "uniquePoses": 5,
           "originalAtlasSha256": digest, "neutralExact": True, "sadEndpointExact": True,
           "frames": checks, "endpointApproval": "Josh: Yes continue",
-          "motionApproval": "Pending Josh's visual review"}
+          "motionApproval": "Approved by Josh: Approve. Merge (2026-09-14)"}
 (HERE / "qa-motion.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report, indent=2))

@@ -1,10 +1,10 @@
-# Ears pulled back — animation review
+# Ears pulled back — approved animation
 
 [Play revision 3](index.html) · [Public phone preview](https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/?v=3) · [Animated GIF](motion-v3.gif)
 
 Josh approved the revision-2 sad endpoint with “Yes continue.” Revision 3 now
-animates neutral → ears back with a sad face → hold → neutral. The full motion
-awaits his visual approval. Her original atlas remains the design authority.
+animates neutral → ears back with a sad face → hold → neutral. He approved the full motion with “Approve. Merge”;
+[PR #10](https://github.com/joshpled/ronnie-game/pull/10) merged as `2be3a6d`. Her original atlas remains the design authority.
 
 ## Revision 3 motion
 
@@ -45,7 +45,7 @@ stable identity/body and no conspicuous seams, with a warning: the broad third
 intermediate narrows noticeably into the folded endpoint. That final tuck may
 read abruptly; five discrete poses also make the stepping visible. The
 independent GIF viewer showed only frame 0, so it did not verify live smoothness.
-Josh should judge the complete motion in the player.
+Josh approved the complete motion with these caveats retained.
 
 ## Revision 2
 
@@ -111,9 +111,8 @@ The shortened, nearly horizontal ears read more like airplane ears than tightly
 pinned-back ears; their detail is softer when enlarged. Those ear caveats remain
 in revision 2. The original neutral-face endpoint was not visually approved.
 
-## Next checkpoint
+## Completed scope
 
-Josh reviews the full animation, especially the final ear tuck and the sad
-expression. No gameplay emotion trigger, app integration or approved-atlas
+The full animation is approved and merged; no additional animation is selected. No gameplay emotion trigger, app integration or approved-atlas
 promotion is included. Physical iPhone testing waits until Josh declares the
 potentially expanding animation set complete and selects an integrated build.
