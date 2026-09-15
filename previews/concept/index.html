@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f7f4ed" />
+    <title>A little time with Ronnie · Concept preview</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="Ronnie concept home"
+        ><span class="brand-mark">r.</span> ronnie</a
+      ><span class="concept-tag">A playful little concept</span>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="eyebrow">YOUR LITTLE COMPANION</div>
+        <h1>A little time<br />with <em>Ronnie.</em></h1>
+        <p>
+          A familiar face. A few small moments.<br />Explore how her animations
+          could feel in the app.
+        </p>
+      </section>
+      <div class="preview-layout">
+        <section class="phone-column" aria-label="App concept">
+          <div class="phone">
+            <div class="phone-top">
+              <span>9:41</span><span class="island" aria-hidden="true"></span
+              ><span aria-label="Full battery">▰</span>
+            </div>
+            <div class="app-header">
+              <div>
+                <span class="small-label">A GOOD DAY TOGETHER</span>
+                <h2>Hi, Ronnie.</h2>
+              </div>
+              <span class="heart" aria-hidden="true">♡</span>
+            </div>
+            <div class="room" id="room">
+              <div class="window" aria-hidden="true">
+                <div class="sun"></div>
+                <div class="hill"></div>
+              </div>
+              <div class="picture" aria-hidden="true"><span>r.</span></div>
+              <div class="floor" aria-hidden="true"></div>
+              <div class="rug" aria-hidden="true"></div>
+              <canvas
+                id="ronnie"
+                width="256"
+                height="256"
+                role="img"
+                aria-label="Ronnie demonstrating the tail wag animation"
+              ></canvas>
+              <div class="room-caption">
+                <span class="dot"></span><span id="mood">Happy to see you</span>
+              </div>
+            </div>
+            <div class="app-bottom">
+              <p class="invite">Make a little moment.</p>
+              <div class="care-actions" aria-label="Try a care moment">
+                <button data-action="eating" disabled>
+                  <span aria-hidden="true">◡</span>Feed
+                </button>
+                <button data-action="tail-wag" disabled>
+                  <span aria-hidden="true">◉</span>Play
+                </button>
+                <button data-action="curled-sleep" disabled>
+                  <span aria-hidden="true">☾</span>Rest
+                </button>
+              </div>
+              <div class="home-bar" aria-hidden="true"></div>
+            </div>
+          </div>
+          <p class="phone-note">App concept · tap a moment to try it</p>
+        </section>
+        <section class="library" aria-labelledby="library-title">
+          <div class="library-heading">
+            <div>
+              <div class="eyebrow">THE ANIMATION COLLECTION</div>
+              <h2 id="library-title">
+                Little moves.<br />Lots of personality.
+              </h2>
+            </div>
+            <span class="count">07</span>
+          </div>
+          <p class="library-intro">
+            Choose an animation to see it in Ronnie’s room.
+          </p>
+          <div id="gallery" class="gallery"></div>
+          <div class="playback">
+            <div class="playing-heading">
+              <div>
+                <span class="small-label">PREVIEWING</span>
+                <h3 id="clip-title">Tail wag</h3>
+              </div>
+              <span id="duration">0.8 s</span>
+            </div>
+            <div class="playback-buttons">
+              <button id="toggle" disabled>Play</button
+              ><button id="replay" disabled>Replay</button
+              ><label
+                ><input id="loop" type="checkbox" checked disabled />
+                Loop</label
+              ><span id="status" role="status">Loading artwork…</span>
+            </div>
+            <label class="sr-only" for="scrub">Animation progress</label
+            ><input
+              id="scrub"
+              type="range"
+              min="0"
+              max="800"
+              value="0"
+              step="10"
+              disabled
+            /><span class="time" id="time">0.0 / 0.8 s</span>
+          </div>
+          <p class="scope-note">
+            A preview of the idea, using her existing approved artwork. Howling
+            is back in the backlog. <a href="README.md">Preview notes ↗</a>
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <span>Small moments, together.</span><span>RONNIE · CONCEPT 01</span>
+    </footer>
+    <script type="module" src="player.js"></script>
+  </body>
+</html>

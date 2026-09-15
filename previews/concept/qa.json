@@ -1,0 +1,45 @@
+{
+  "scope": "Standalone concept only; no app integration",
+  "artworkCopiesExact": 8,
+  "clips": {
+    "tail-wag": 800,
+    "sniffing": 1920,
+    "stretching": 1920,
+    "eating": 5000,
+    "sleeping": 8000,
+    "curled-sleep": 4000,
+    "ears-back": 2400
+  },
+  "allGallerySelectionsVerified": true,
+  "singleSelectedGalleryItem": true,
+  "phoneActions": {
+    "Feed": "eating",
+    "Play": "tail-wag",
+    "Rest": "curled-sleep"
+  },
+  "curledBedVisuallyVerified": true,
+  "mobileViewportWidth": 390,
+  "horizontalOverflow": false,
+  "mobileSelectionReturnsToPhone": true,
+  "reducedMotionStartsPaused": true,
+  "scrubEarsBack": {
+    "time": 800,
+    "pose": 4,
+    "status": "Paused"
+  },
+  "loopOffCompletion": {
+    "time": 2400,
+    "pose": 0,
+    "status": "Paused"
+  },
+  "consoleWarningsOrErrors": [],
+  "repositoryChecks": "typecheck, lint, 13 tests and build pass",
+  "moduleSyntaxChecks": true,
+  "sourceReview": "No blocking issue found in renderer, timeline selection, scope or copied artwork",
+  "limitations": [
+    "Activity switches are immediate, not animated transitions",
+    "Existing discrete pose and artwork differences retained",
+    "Not physical-device validation",
+    "Concept visual acceptance pending"
+  ]
+}

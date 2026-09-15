@@ -1,0 +1,42 @@
+[
+  {
+    "asset": "assets/tail-wag.png",
+    "source": "../animation-library/tail-wag/candidate.png",
+    "sha256": "55995a202936c1b0ff69df5cfebfcdde76db5dd40ed00bd0e8a63544840db007"
+  },
+  {
+    "asset": "assets/sniffing.png",
+    "source": "../animation-library/sniffing/candidate.png",
+    "sha256": "57e8a791c465047b0515c7cd8c49234caecca0b210971de3434fb83b3478dd45"
+  },
+  {
+    "asset": "assets/stretching.png",
+    "source": "../animation-library/stretching/candidate.png",
+    "sha256": "bd65d5ef2e0267900c2459dd41a17062e4a20ec6eee920ca53cc6aaba73ae41b"
+  },
+  {
+    "asset": "assets/eating.png",
+    "source": "../animation-library/eating/candidate.png",
+    "sha256": "262c8cbc73c59cf520e809af5967d21ae4fb5042a15bfa751d84fad8edd013b9"
+  },
+  {
+    "asset": "assets/sleeping.png",
+    "source": "../animation-library/sleeping/candidate.png",
+    "sha256": "5243825361f7992a384fbac2ccb134f57f1e4fe8ac4b4e496332b1d9dcb7e5f4"
+  },
+  {
+    "asset": "assets/curled-sleep.png",
+    "source": "../animation-library/curled-sleep/candidate.png",
+    "sha256": "ed03030b269a2df3e9b4c1546d489df082388acfbb598a0ec1155fe31c955163"
+  },
+  {
+    "asset": "assets/ears-back.png",
+    "source": "../animation-library/ears-pulled-back/motion-v3.png",
+    "sha256": "2c028443321d5b7ed1b42ccc9b77ed76df551db481eab154b9be8753c2891149"
+  },
+  {
+    "asset": "assets/bed.png",
+    "source": "../animation-library/curled-sleep/bed.png",
+    "sha256": "4df7b37a8172a836e6426386cda4a1d45da520019e2433d2b5d55fe131f300aa"
+  }
+]
