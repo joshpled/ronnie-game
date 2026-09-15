@@ -1,13 +1,20 @@
-# Ronnie howling — revised peak review
+# Ronnie — revised straight-up howling motion
 
-[Open review](index.html) · [Comparison](comparison-v2.png)
+[Play revised motion](index-v2.html) · [GIF](motion-v2.gif) · [Six poses](motion-contact-v2.png) · [Approved peak comparison](endpoint-v2.html)
 
-Revision 2 uses Ronnie’s original straight-up head pose (atlas frame 72) and
-fixed frame 76 body, with a localized generated open mouth. Josh approved this
-revised direction; acceptance of this new still is pending before revised motion.
+Josh approved the straight-up peak on 2026-09-15. The revised six-pose,
+3.2-second motion turns her muzzle toward center before the howl and returns
+to her original rest. Full-motion visual acceptance is pending.
 
-The original atlas, previous artwork, lower body and visible tail are preserved.
-The mouth is modest at sprite size and the neck join needs review in motion.
-[Pixel checks](qa-v2.json) and [generation prompt](prompt-v2.txt) record this still.
+The original neutral and approved peak are exact. Body and visible tail remain
+fixed in every pose. The intermediate head turn and partial mouth are generated
+layers; the original atlas remains the design authority. Six poses can step,
+the held howl is static, and the neck join needs visual review.
 
-This is a standalone remote review, with no audio, game integration or device-validation claim.
+Pause, Replay, Loop and scrubbing are available. Reduced-motion settings start
+paused on the peak. [Pixel/timing QA](qa-motion-v2.json) passes; browser controls,
+390px layout, typecheck, lint, 13 model tests and build were checked.
+
+Standalone preview only. Source PR/merge, app integration and physical iPhone
+testing remain pending. The URL query v=3 refreshes the earlier still review;
+these motion assets are revision 2.
