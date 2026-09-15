@@ -1,0 +1,66 @@
+{
+  "turnNeckFrom80ExactToOriginalUpwardNeck": true,
+  "generatedCropBoundaryExcluded": true,
+  "jawStagesChangeOnlyMouth": true,
+  "durationMs": 3200,
+  "gifDurationMs": 3200,
+  "poseCount": 6,
+  "neutralExact": true,
+  "approvedPeakExact": true,
+  "originalAtlasSha256": "b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e",
+  "poses": [
+    {
+      "pose": 0,
+      "changedPixels": 0,
+      "outsideEditMask": 0,
+      "bodyExact": true,
+      "visibleTailExact": true,
+      "clearCellEdges": true
+    },
+    {
+      "pose": 1,
+      "changedPixels": 5582,
+      "outsideEditMask": 0,
+      "bodyExact": true,
+      "visibleTailExact": true,
+      "clearCellEdges": true
+    },
+    {
+      "pose": 2,
+      "changedPixels": 5743,
+      "outsideEditMask": 0,
+      "bodyExact": true,
+      "visibleTailExact": true,
+      "clearCellEdges": true
+    },
+    {
+      "pose": 3,
+      "changedPixels": 5705,
+      "outsideEditMask": 0,
+      "bodyExact": true,
+      "visibleTailExact": true,
+      "clearCellEdges": true
+    },
+    {
+      "pose": 4,
+      "changedPixels": 5705,
+      "outsideEditMask": 0,
+      "bodyExact": true,
+      "visibleTailExact": true,
+      "clearCellEdges": true
+    },
+    {
+      "pose": 5,
+      "changedPixels": 5705,
+      "outsideEditMask": 0,
+      "bodyExact": true,
+      "visibleTailExact": true,
+      "clearCellEdges": true
+    }
+  ],
+  "limitations": [
+    "Six discrete poses can step; sustained howl holds a single pose.",
+    "GIF uses a fixed background and 256-color shared palette.",
+    "The repaired neck removes the hard crop boundary; discrete head angles still need visual acceptance."
+  ]
+}

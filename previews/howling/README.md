@@ -1,20 +1,17 @@
-# Ronnie — revised straight-up howling motion
+# Ronnie — repaired lift and return (revision 3)
 
-[Play revised motion](index-v2.html) · [GIF](motion-v2.gif) · [Six poses](motion-contact-v2.png) · [Approved peak comparison](endpoint-v2.html)
+[Play animation](index-v3.html) · [GIF](motion-v3.gif) · [Six poses](motion-contact-v3.png) · [Approved peak](endpoint-v2.html)
 
-Josh approved the straight-up peak on 2026-09-15. The revised six-pose,
-3.2-second motion turns her muzzle toward center before the howl and returns
-to her original rest. Full-motion visual acceptance is pending.
+The reported halfway-pose neck/chest seam is repaired. The moving head now
+blends into the original neck before the old crop boundary. Ronnie lifts from
+neutral to the approved upward howl and returns to neutral in 3.2 seconds.
+The approved endpoints, other five poses, body/tail and timing are unchanged.
 
-The original neutral and approved peak are exact. Body and visible tail remain
-fixed in every pose. The intermediate head turn and partial mouth are generated
-layers; the original atlas remains the design authority. Six poses can step,
-the held howl is static, and the neck join needs visual review.
+The repaired frame was inspected during lift and return in the browser.
+Playback returns to neutral at 3,200 ms. Pixel/timing checks, typecheck, lint,
+13 tests and build pass. [Saved asset checks](qa-motion-v3.json).
 
-Pause, Replay, Loop and scrubbing are available. Reduced-motion settings start
-paused on the peak. [Pixel/timing QA](qa-motion-v2.json) passes; browser controls,
-390px layout, typecheck, lint, 13 model tests and build were checked.
-
-Standalone preview only. Source PR/merge, app integration and physical iPhone
-testing remain pending. The URL query v=3 refreshes the earlier still review;
-these motion assets are revision 2.
+Six discrete poses can still step, and the held howl is static. Full-motion
+visual acceptance remains pending. Standalone preview only; no source merge,
+app integration or physical device validation. URL query v=4 refreshes the
+previous review; these are revision-3 assets.
