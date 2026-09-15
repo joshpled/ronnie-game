@@ -1,0 +1,19 @@
+{
+  "status": "Awaiting Josh revised-peak acceptance",
+  "sourceFrame": 72,
+  "bodyFrame": 76,
+  "changedPixels": 5705,
+  "bounds": [
+    49,
+    11,
+    140,
+    101
+  ],
+  "outsideMask": 0,
+  "bodyExact": true,
+  "visibleTailExact": true,
+  "upperHeadRowsBefore20ExactToFrame72": true,
+  "edgesClear": true,
+  "atlasSha256": "b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e",
+  "v1PeakSha256": "231f45e06b13968327528863702bdf6effdbf680fdc36940b781d34e3fb487fb"
+}

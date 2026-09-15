@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ronnie · Straight-up howl revision</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #302b25;
+        background: #f4f0e9;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      main {
+        max-width: 960px;
+        margin: auto;
+        padding: 32px 20px;
+      }
+      h1 {
+        font-size: clamp(28px, 6vw, 44px);
+        margin: 8px 0 12px;
+        letter-spacing: -0.04em;
+      }
+      .eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #765638;
+      }
+      p {
+        line-height: 1.6;
+        max-width: 680px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        margin: 28px 0;
+      }
+      figure {
+        margin: 0;
+        background: #e8e2d8;
+        border: 1px solid #d6cbbb;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+      }
+      figure img {
+        display: block;
+        width: 192px;
+        height: 208px;
+        margin: auto;
+      }
+      figcaption {
+        font-weight: 600;
+        margin-top: 12px;
+      }
+      small {
+        display: block;
+        margin-top: 6px;
+        color: #625c53;
+      }
+      a {
+        color: #704624;
+      }
+      details {
+        border-top: 1px solid #d6cbbb;
+        padding-top: 20px;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .large {
+        width: min(100%, 384px);
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        background: #e8e2d8;
+        border-radius: 16px;
+      }
+      .note {
+        font-size: 14px;
+        color: #625c53;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">RON-014 · Revision 2 peak review</div>
+      <h1>Nose to the sky.</h1>
+      <p>
+        Ronnie's head now points straight upward. This corrected peak replaces
+        the sideways direction for review; the revised motion will follow after
+        the still is accepted.
+      </p>
+      <div class="grid">
+        <figure>
+          <img
+            src="candidate.png"
+            width="192"
+            height="208"
+            alt="Previous angled-up howl facing right"
+          />
+          <figcaption>Previous angled howl</figcaption>
+          <small>Direction rejected in motion</small>
+        </figure>
+        <figure>
+          <img
+            src="up-reference-v2.png"
+            width="192"
+            height="208"
+            alt="Original atlas pose with nose pointing straight upward"
+          />
+          <figcaption>Original straight-up pose</figcaption>
+          <small>Head-angle reference</small>
+        </figure>
+        <figure>
+          <img
+            src="candidate-v2.png"
+            width="192"
+            height="208"
+            alt="Revised howl with centered upward nose and open jaw"
+          />
+          <figcaption>Revised howl</figcaption>
+          <small>Awaiting your approval</small>
+        </figure>
+      </div>
+      <details open>
+        <summary>Closer look</summary>
+        <img
+          class="large"
+          src="candidate-v2.png"
+          width="192"
+          height="208"
+          alt="Enlarged straight-up howling candidate"
+        />
+      </details>
+      <p class="note">
+        Review the centered nose, upward head angle, mouth opening and neck
+        join. This is a still pose; the previous animation has not yet been
+        rebuilt.
+      </p>
+      <p>
+        <a href="comparison-v2.png">Save comparison</a> ·
+        <a href="candidate-v2.png">Open revised candidate</a> ·
+        <a href="README.md">Review notes</a>
+      </p>
+    </main>
+  </body>
+</html>
