@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Ronnie · Body shake key poses</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#302c27;background:#f7f4ed;font-synthesis:none;--panel:#eee9df;--border:#d8d0c2;--muted:#685e51;--accent:#2f654f}
+    *{box-sizing:border-box}body{margin:0}main{max-width:860px;margin:auto;padding:32px 20px 48px}header{max-width:650px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:750}h1{font-size:clamp(30px,6vw,44px);letter-spacing:-.04em;margin:10px 0}p{line-height:1.55}.intro{color:var(--muted);margin:0 0 24px}.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}button,select{font:inherit;color:inherit;border:1px solid var(--border);border-radius:10px;background:transparent;padding:11px 14px;min-height:44px}button{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #b08128;outline-offset:3px}.poses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.poses button{font-size:14px}.poses button[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}figure{margin:0;min-width:0}.art{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px 0;display:flex;justify-content:center;align-items:center;min-height:242px}.art img{display:block;width:192px;max-width:100%;height:auto}figcaption{font-size:14px;margin-top:9px;color:var(--muted)}figcaption strong{color:inherit;display:block}.note{padding:14px 16px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 8px 8px 0;margin:24px 0}.note p{margin:0;font-size:14px}.detail{margin-top:16px;font-size:15px;min-height:48px}.sheet{margin-top:30px}.sheet h2{font-size:20px}.sheet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 12px}.sheet .art{min-height:0;padding:10px 0}.sheet figcaption{font-size:13px}footer{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}a{color:inherit}.zoom .comparison{grid-template-columns:1fr}.zoom .comparison .art img{width:384px;image-rendering:pixelated}.dark{background:#181d1a;color:#eee9df;--panel:#252d27;--border:#425046;--muted:#c2c8be;--accent:#578b70}.dark .eyebrow{color:#a3cead}
+    @media(max-width:520px){main{padding:24px 14px 36px}.art{min-height:190px;padding:10px 0}.comparison{gap:8px}.poses button{padding:10px 5px;font-size:12px}.sheet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intro{font-size:15px}.toolbar{font-size:14px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">RON-011 · Revision 1 · Still poses</div>
+    <h1>A shake, from head to tail.</h1>
+    <p class="intro">Choose a pose and compare her with the original. This review sets the anatomy and direction of the shake; the in-between frames and full motion come after pose approval.</p>
+  </header>
+  <nav class="poses" aria-label="Choose a key pose">
+    <button data-pose="0" aria-pressed="false">1 · Neutral</button>
+    <button data-pose="1" aria-pressed="false">2 · Wind-up</button>
+    <button data-pose="2" aria-pressed="true">3 · Left roll</button>
+    <button data-pose="3" aria-pressed="false">4 · Crossing</button>
+    <button data-pose="4" aria-pressed="false">5 · Right roll</button>
+    <button data-pose="5" aria-pressed="false">6 · Recovery</button>
+  </nav>
+  <div class="toolbar">
+    <label for="background">Background</label>
+    <select id="background"><option value="light">Light</option><option value="dark">Dark</option></select>
+    <button id="zoom" aria-pressed="false">Enlarge details</button>
+  </div>
+  <div class="comparison">
+    <figure><div class="art"><img src="neutral.png" alt="Ronnie's unchanged original standing neutral pose" width="192" height="208"></div><figcaption><strong>Original</strong>Design reference</figcaption></figure>
+    <figure><div class="art"><img id="selected" src="left-roll-v1.png" alt="Proposed left-roll key pose" width="192" height="208"></div><figcaption id="caption" aria-live="polite"><strong>3 · Left roll</strong>Proposed key pose</figcaption></figure>
+  </div>
+  <p class="detail" id="description">Her head rolls left; the neck and shoulders carry a smaller twist. Her paws keep their original contact positions.</p>
+  <aside class="note"><p><strong>Look closely at the neck, chest and feet.</strong> The head roll is more pronounced than the torso twist. Generated face and coat details differ slightly from the original; these stills are candidates for your review.</p></aside>
+  <section class="sheet" aria-labelledby="all-poses"><h2 id="all-poses">All six key poses</h2><div class="sheet-grid">
+    <figure><div class="art"><img src="neutral-v1.png" alt="Exact original neutral" width="192" height="208"></div><figcaption>1 · Neutral</figcaption></figure>
+    <figure><div class="art"><img src="wind-up-v1.png" alt="Small counter-roll before the first shake" width="192" height="208"></div><figcaption>2 · Wind-up</figcaption></figure>
+    <figure><div class="art"><img src="left-roll-v1.png" alt="Left head and shoulder roll" width="192" height="208"></div><figcaption>3 · Left roll</figcaption></figure>
+    <figure><div class="art"><img src="crossing-v1.png" alt="Head crossing toward the center" width="192" height="208"></div><figcaption>4 · Crossing</figcaption></figure>
+    <figure><div class="art"><img src="right-roll-v1.png" alt="Right head and shoulder roll" width="192" height="208"></div><figcaption>5 · Right roll</figcaption></figure>
+    <figure><div class="art"><img src="recovery-v1.png" alt="Near-neutral recovery pose" width="192" height="208"></div><figcaption>6 · Recovery</figcaption></figure>
+  </div></section>
+  <footer>Still artwork only · Full animation awaits pose approval.<br>Original and previously approved artwork remain unchanged. <a href="key-poses-v1.png">Open contact sheet</a></footer>
+</main>
+<script>
+  const poses = [
+    ['neutral-v1.png','1 · Neutral','Exact original neutral. The complete animation will start and finish here.'],
+    ['wind-up-v1.png','2 · Wind-up','A small counter-roll prepares the first leftward shake. The torso remains centered over her feet.'],
+    ['left-roll-v1.png','3 · Left roll','Her head rolls left; the neck and shoulders carry a smaller twist. Her paws keep their original contact positions.'],
+    ['crossing-v1.png','4 · Crossing','The head returns toward center before the next roll. The final motion will need more distinct torso and ear lag here.'],
+    ['right-roll-v1.png','5 · Right roll','Her head rolls right with a smaller turn through her shoulders. Check the uninterrupted neck and chest.'],
+    ['recovery-v1.png','6 · Recovery','A near-neutral settle pose. The final recovery will diminish into the exact original neutral.']
+  ];
+  document.querySelectorAll('[data-pose]').forEach(button=>button.addEventListener('click',()=>{
+    const [src,title,description]=poses[Number(button.dataset.pose)];
+    document.querySelector('#selected').src=src;document.querySelector('#selected').alt=title+' proposed key pose';
+    document.querySelector('#caption strong').textContent=title;document.querySelector('#description').textContent=description;
+    document.querySelectorAll('[data-pose]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
+  }));
+  document.querySelector('#background').addEventListener('change',event=>document.body.classList.toggle('dark',event.target.value==='dark'));
+  document.querySelector('#zoom').addEventListener('click',event=>{
+    const zoomed=document.body.classList.toggle('zoom');event.currentTarget.setAttribute('aria-pressed',String(zoomed));event.currentTarget.textContent=zoomed?'Return to comparison':'Enlarge details';
+  });
+</script>
+</body>
+</html>
