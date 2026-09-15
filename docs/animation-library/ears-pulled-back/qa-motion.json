@@ -1,0 +1,42 @@
+{
+  "revision": 3,
+  "durationMs": 2400,
+  "uniquePoses": 5,
+  "originalAtlasSha256": "b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e",
+  "neutralExact": true,
+  "sadEndpointExact": true,
+  "frames": [
+    {
+      "pose": 0,
+      "changedPixels": 0,
+      "outsideAllowedRegion": 0,
+      "bodyExact": true
+    },
+    {
+      "pose": 1,
+      "changedPixels": 2451,
+      "outsideAllowedRegion": 0,
+      "bodyExact": true
+    },
+    {
+      "pose": 2,
+      "changedPixels": 2639,
+      "outsideAllowedRegion": 0,
+      "bodyExact": true
+    },
+    {
+      "pose": 3,
+      "changedPixels": 2679,
+      "outsideAllowedRegion": 0,
+      "bodyExact": true
+    },
+    {
+      "pose": 4,
+      "changedPixels": 2427,
+      "outsideAllowedRegion": 0,
+      "bodyExact": true
+    }
+  ],
+  "endpointApproval": "Josh: Yes continue",
+  "motionApproval": "Pending Josh's visual review"
+}

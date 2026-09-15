@@ -1,0 +1,23 @@
+{
+  "sourceSize": [1254, 1254],
+  "normalizedSize": [60, 60],
+  "sourceCropInOriginal": [78, 30, 138, 90],
+  "patches": [
+    {
+      "name": "left-eye",
+      "bounds": [87, 42, 106, 66],
+      "sourceOffset": [77, 32]
+    },
+    {
+      "name": "right-eye",
+      "bounds": [110, 42, 130, 66],
+      "sourceOffset": [80, 32]
+    },
+    {
+      "name": "mouth",
+      "bounds": [96, 76, 122, 85],
+      "sourceOffset": [78, 36]
+    }
+  ],
+  "mask": "ellipse with smoothstep feather over outer 40 percent of squared radius; retain original silhouette alpha; intersect with v1 protected face region to preserve every ear pixel"
+}

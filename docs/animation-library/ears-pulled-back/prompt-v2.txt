@@ -1,0 +1,6 @@
+Use case: precise-object-edit
+Asset type: a revised square face crop for Ronnie's ears-pulled-back sad-expression endpoint.
+Image 1 is the only edit target: exact 60x60 face crop. Image 2 is the current full-body endpoint, for identity and lighting context only. Image 3 is the original atlas style reference only.
+Return ONLY the same square face crop as Image 1, with the exact same crop boundaries, framing, head geometry and facial landmark positions. Do not show the full dog or add padding. Prefer exact 60x60 output, otherwise square larger resolution with exactly proportional framing.
+Change her expression to naturally sad: softened, slightly lowered upper eyelids; gentle sorrowful downward gaze with eyes visibly open; faintly raised inner-eye fur/eyelid shape; subtly downturned closed mouth corners. The expression should be legible at small sprite size, without exaggeration.
+Preserve her original face shape, head width and position, muzzle, nose, tan/black/white markings, light, colors and softly rendered fur texture. Keep the swept-back pointed ears exactly as in the target wherever visible. No head lowering, turning or tilting. No sleep, closed eyes, blink, tears, drawn eyebrow lines, cartoon pout, face enlargement, restyling, extra accessories or text. Only the eyelids/gaze, tiny inner-eye fur and mouth corners change.

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ronnie · Ears back & sad</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f6f3ed;
+        color: #302c28;
+        font:
+          16px/1.5 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 780px;
+        margin: auto;
+        padding: 24px 20px 48px;
+      }
+      h1 {
+        font-size: 30px;
+        margin: 6px 0;
+      }
+      h2 {
+        font-size: 20px;
+        margin-top: 28px;
+      }
+      a {
+        color: #225e65;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: #6b635b;
+      }
+      .pair {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 24px 0 16px;
+      }
+      figure {
+        margin: 0;
+        text-align: center;
+        min-width: 0;
+      }
+      figcaption {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      canvas,
+      img {
+        display: block;
+        background: #eee9df;
+        border-radius: 12px;
+        width: 192px;
+        height: auto;
+        max-width: 100%;
+      }
+      .controls {
+        background: #fffdf9;
+        padding: 16px;
+        border: 1px solid #ded7ca;
+        border-radius: 16px;
+      }
+      .buttons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      button {
+        border: 1px solid #225e65;
+        color: #225e65;
+        background: transparent;
+        font: inherit;
+        padding: 10px 20px;
+        border-radius: 10px;
+        min-height: 44px;
+        cursor: pointer;
+      }
+      #toggle {
+        background: #225e65;
+        color: white;
+        min-width: 92px;
+      }
+      button:disabled {
+        opacity: 0.5;
+      }
+      label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+      }
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #225e65;
+      }
+      input[type="range"] {
+        display: block;
+        width: 100%;
+        min-height: 44px;
+        accent-color: #225e65;
+      }
+      #status {
+        font-weight: 600;
+      }
+      #phase {
+        font-variant-numeric: tabular-nums;
+        margin: 4px 0 0;
+        color: #6b635b;
+      }
+      .large {
+        display: flex;
+        justify-content: center;
+      }
+      .large canvas {
+        width: 384px;
+      }
+      .details {
+        color: #6b635b;
+      }
+      :focus-visible {
+        outline: 3px solid #a96718;
+        outline-offset: 3px;
+      }
+      @media (max-width: 480px) {
+        .pair figure {
+          width: calc((100% - 16px) / 2);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">RON-013 · REVISION 3 · ANIMATION REVIEW</p>
+      <h1>Ears back & sad</h1>
+      <p>
+        Her ears ease back as her face turns sad, hold, then return to neutral.
+        A 2.4-second loop.
+      </p>
+      <div class="pair">
+        <figure>
+          <figcaption>Original neutral</figcaption>
+          <img
+            src="neutral.png"
+            width="192"
+            height="208"
+            alt="Ronnie with her original upright ears."
+          />
+        </figure>
+        <figure>
+          <figcaption>Animated Ronnie</figcaption>
+          <canvas
+            id="player"
+            width="192"
+            height="208"
+            role="img"
+            aria-label="Ronnie drawing her ears back with a sad face, then returning to neutral."
+          ></canvas>
+        </figure>
+      </div>
+      <div class="controls">
+        <div class="buttons">
+          <button id="toggle" disabled>Play</button>
+          <button id="replay" disabled>Replay</button>
+          <label
+            ><input id="loop" type="checkbox" checked disabled />Loop</label
+          >
+        </div>
+        <label for="scrub">Scrub the animation</label>
+        <input
+          id="scrub"
+          type="range"
+          min="0"
+          max="2400"
+          step="1"
+          value="0"
+          disabled
+        />
+        <span id="status" role="status">Loading animation…</span>
+        <p id="phase">Neutral · 0.0 / 2.4 s</p>
+      </div>
+      <h2>Closer look</h2>
+      <div class="large">
+        <canvas
+          id="large-player"
+          width="192"
+          height="208"
+          role="img"
+          aria-label="Enlarged version of the same animation."
+        ></canvas>
+      </div>
+      <p class="details">
+        The approved sad pose is preserved. This preview is ready for your
+        motion review. Reduced-motion settings start playback paused; press Play
+        when ready.
+      </p>
+      <p>
+        <a href="motion-v3.gif">Open animated GIF</a> ·
+        <a href="candidate-v2.png">Approved sad pose</a> ·
+        <a href="README.md">Review notes</a>
+      </p>
+      <noscript
+        ><p>
+          JavaScript is off. <a href="motion-v3.gif">Watch the animated GIF.</a>
+        </p></noscript
+      >
+    </main>
+    <script type="module" src="player.js"></script>
+  </body>
+</html>

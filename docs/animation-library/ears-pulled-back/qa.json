@@ -1,0 +1,64 @@
+{
+  "checkpoint": "static endpoint only",
+  "date": "2026-09-14",
+  "userVisualApproval": "pending",
+  "imageGeneration": "built-in imagegen, initial plus one correction",
+  "originalAtlasSha256": "b7f6304beea6f7fe16a6201ab82d7b25b97b19ab3824aaf8342ebea41085bd6e",
+  "neutralExactlyMatchesOriginalCell": true,
+  "candidateSize": [192, 208],
+  "changedPixels": 1559,
+  "changedBoundsInclusive": [66, 14, 147, 60],
+  "protectedPixelChanges": 0,
+  "changesAtOrBelowY61": 0,
+  "transparentCanvasEdges": true,
+  "previouslyTrackedArtworkUnchanged": true,
+  "checks": "npm run check passed: typecheck, lint, 13 tests, build",
+  "browser": "Local standalone page loaded and rendered comparison; natural-size screenshot inspected",
+  "independentVisualQA": "pass for endpoint review with caveat",
+  "caveats": [
+    "Nearly horizontal shortened silhouette reads airplane ears more strongly than tightly pinned-back ears.",
+    "Generated ear detail is softer when enlarged.",
+    "No intermediate frames, loop, motion approval, app integration or device test."
+  ],
+  "sourceRegistration": {
+    "inputSize": [1205, 1305],
+    "resizedTo": [160, 173],
+    "offset": [16, 25]
+  },
+  "earExtractionPolygons": [
+    [
+      [65, 40],
+      [87, 34],
+      [100, 35],
+      [97, 45],
+      [92, 59],
+      [85, 60],
+      [72, 49]
+    ],
+    [
+      [119, 35],
+      [132, 36],
+      [146, 42],
+      [141, 50],
+      [130, 61],
+      [124, 56],
+      [121, 43]
+    ]
+  ],
+  "protectedRegionBoundary": [
+    [0, 61],
+    [86, 61],
+    [87, 51],
+    [90, 44],
+    [93, 39],
+    [97, 35],
+    [117, 35],
+    [122, 39],
+    [126, 45],
+    [128, 52],
+    [130, 61],
+    [192, 61],
+    [192, 208],
+    [0, 208]
+  ]
+}
