@@ -1,0 +1,44 @@
+[
+  {
+    "pose": 1,
+    "sourceCell": 0,
+    "resize": [
+      112,
+      112
+    ],
+    "offset": [
+      50,
+      0
+    ],
+    "faceRegistrationMSE": 87.97,
+    "expressionFraction": 0.25
+  },
+  {
+    "pose": 2,
+    "sourceCell": 1,
+    "resize": [
+      112,
+      112
+    ],
+    "offset": [
+      51,
+      0
+    ],
+    "faceRegistrationMSE": 252.55,
+    "expressionFraction": 0.5
+  },
+  {
+    "pose": 3,
+    "sourceCell": 2,
+    "resize": [
+      112,
+      112
+    ],
+    "offset": [
+      51,
+      0
+    ],
+    "faceRegistrationMSE": 119.22,
+    "expressionFraction": 0.75
+  }
+]

@@ -1,13 +1,51 @@
-# Ears pulled back — sad-expression checkpoint
+# Ears pulled back — animation review
 
-[Open revision 2](index.html) · [Public phone preview](https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/?v=2)
+[Play revision 3](index.html) · [Public phone preview](https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/?v=3) · [Animated GIF](motion-v3.gif)
 
-This is a **still pose**, awaiting Josh's visual approval. Josh approved the
-sad-expression revision after requesting that Ronnie's face look sad when her
-ears are back. Softer, slightly lowered eyelids and a subtly downturned closed
-mouth replace the earlier fixed-face constraint. Her original head shape,
-markings and body remain the design authority. The proposed 2.4-second animation
-waits for approval of this revised endpoint.
+Josh approved the revision-2 sad endpoint with “Yes continue.” Revision 3 now
+animates neutral → ears back with a sad face → hold → neutral. The full motion
+awaits his visual approval. Her original atlas remains the design authority.
+
+## Revision 3 motion
+
+Five 192 × 208 poses live in `motion-v3.png`. The first and last poses are exact
+copies of original neutral and the approved sad endpoint. Three intermediate
+ear poses were generated together using the attached original and approved
+endpoint references; [prompt-motion.txt](prompt-motion.txt) records the request.
+The generated head/body pixels are discarded. `motion-ear-layers.png` preserves
+only the registered ears; [motion-registration.json](motion-registration.json)
+records their common scale and individual placement. Expression pixels blend
+toward the approved sad face at 25%, 50% and 75%, only within its existing mask.
+
+`assemble-motion.py` deterministically rebuilds the atlas, contact sheet, GIF,
+timeline and [pixel checks](qa-motion.json) from these saved layers. Use the
+bundled workspace Python with Pillow and NumPy; no app dependency was added.
+Every pose keeps all pixels outside the ear/expression regions exact, including
+the entire body from y=85 downward. Both endpoints are pixel-exact, no cell
+edges clip her silhouette, and the original atlas SHA-256 is unchanged.
+
+[timeline.json](timeline.json) owns the 2400 ms sequence: 400 ms neutral,
+400 ms drawing back, 800 ms sad hold, 500 ms return, 300 ms neutral. These are
+discrete pose samples: the full sad pose appears during the last 100 ms of the
+pullback too; the final 125 ms return sample is already exact neutral. The GIF
+samples at 10 ms, so the 125 ms return steps alternate 130/120 ms; the browser
+uses the exact timeline. Both total 2400 ms.
+
+The responsive player autoplays with Pause, Replay, Loop and a scrub slider.
+Reduced-motion preference starts paused on the approved sad pose; manual Play
+remains available. The HTML player requires HTTP hosting because it loads the
+timeline; run a local static server or use the public link above. The GIF can
+be opened directly.
+
+Validation: `npm run check` passes typecheck, lint, 13 tests and build. Local
+browser checks at 390 px confirm playback advancement, pause, scrub, replay,
+loop-off completion at 2400 ms on neutral, and reduced-motion start paused at
+800 ms. No browser errors were recorded. Independent contact-sheet QA found
+stable identity/body and no conspicuous seams, with a warning: the broad third
+intermediate narrows noticeably into the folded endpoint. That final tuck may
+read abruptly; five discrete poses also make the stepping visible. The
+independent GIF viewer showed only frame 0, so it did not verify live smoothness.
+Josh should judge the complete motion in the player.
 
 ## Revision 2
 
@@ -46,16 +84,11 @@ retain the exact existing ears. See the
 
 ## Preview and deployment
 
-The page compares original neutral with revision 2, then offers larger views.
-Both poses stay side by side on narrow phone screens. The page explicitly labels
-this as a still-pose review, not completed animation playback. Comparison PNGs
-use nearest-neighbor enlargement; the browser uses normal image scaling.
-
 At Josh's request, the standalone review is published beneath
 `previews/ears-pulled-back/` on the existing `gh-pages` branch. Revision-specific
-image filenames prevent the previous face from being reused from cache.
-Deployment changes only the standalone preview. It does not merge the candidate
-into `main`, change the game, or establish physical-device validation.
+motion filenames avoid stale image caches. Only the isolated preview changes;
+the game, approved library, source merge and formal device-testing status do not.
+The old [revision-2 still comparison](endpoint.html) remains as historical evidence.
 
 ## Historical revision 1
 
@@ -80,9 +113,7 @@ in revision 2. The original neutral-face endpoint was not visually approved.
 
 ## Next checkpoint
 
-After revised endpoint approval, create intermediate poses and playback:
-neutral 400 ms → ears back with sad face 400 ms → hold 800 ms → return 500 ms →
-neutral 300 ms. Then pause for motion review. No gameplay emotion trigger, app
-integration or approved-atlas promotion is included. Physical iPhone testing
-waits until Josh declares the potentially expanding animation set complete and
-selects an integrated build.
+Josh reviews the full animation, especially the final ear tuck and the sad
+expression. No gameplay emotion trigger, app integration or approved-atlas
+promotion is included. Physical iPhone testing waits until Josh declares the
+potentially expanding animation set complete and selects an integrated build.

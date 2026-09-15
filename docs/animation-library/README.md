@@ -21,12 +21,15 @@ Open the HTML files directly, or run `python3 -m http.server 8768 --directory do
 
 ## Candidate checkpoints
 
-[RON-013 — Ears pulled back](ears-pulled-back/index.html) is a standalone static
-endpoint comparison awaiting Josh's pose/style approval. Revision 2 adds the
-requested sad expression; generated ear, eye and mouth regions are combined with
-protected original pixels. The transition and playback are not
-implemented yet; see the [review notes](ears-pulled-back/README.md). This candidate
-is separate from the approved artwork listed above.
+[RON-013 — Ears pulled back](ears-pulled-back/index.html) is a standalone
+2.4-second animation awaiting Josh's motion approval. He approved revision 2's
+sad endpoint; revision 3 adds three generated intermediate ear poses and a
+responsive player with pause, replay and scrubbing. Both approved endpoints and
+all protected pixels remain exact. Use the HTTP server above or the
+[public preview](https://joshpled.github.io/ronnie-game/previews/ears-pulled-back/?v=3)
+because this player loads a JSON timeline. See the
+[review notes](ears-pulled-back/README.md), including the pronounced final ear
+tuck. This candidate remains separate from the approved artwork listed above.
 
 ## Files and integration contract
 
